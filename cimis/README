@@ -1,0 +1,14 @@
+Unix Libraries
+proj4
+gdal
+
+Perl Modules
+Geo::Proj4
+LWP::Simple
+
+export GH=/usr/lib/grass64
+export GRASS_ADDON=/home/quinn/grass6
+
+/home/quinn/cimis
+make GRASS_HOME=. MODULE_TOPDIR=${GH} DIST_DIR=${GRASS_ADDON} install
+

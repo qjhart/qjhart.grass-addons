@@ -44,8 +44,8 @@ extern "C" {
 #define DIRPERMS 0755
 #define BLOCK0_SIZE 8040
 
-const int grasswriterLib::ew_res[grasswriterLib::m_numOfChannels] = {1,4,4,4,4};
-const int grasswriterLib::ns_res[grasswriterLib::m_numOfChannels] = {1,4,8,4,4};
+const int grasswriterLib::ew_res[grasswriterLib::m_numOfChannels] = {1,4,4,4,4,4};
+const int grasswriterLib::ns_res[grasswriterLib::m_numOfChannels] = {1,4,4,4,4,4};
 
 extern char* gisloc;
 
@@ -245,60 +245,15 @@ void grasswriterLib::write(Block* block) {
     uint16* data;
     LineDoc* lineDoc;
 
-    if(header->blockId () == 1) {
-      //write data into ch4
-      for(int i=0; i<2; i++) {
+    for(int i=0; i<4; i++) {
         data = block1or2->getData(i) ;
         lineDoc = block1or2->getLineDoc(i) ;
 
-        if(lineDoc->licha() == 4) {
-	  if ((lineDoc->lidet() == 1) || (lineDoc->lidet() == 2)) {
-            
+	if(lineDoc->licha() >= 2 && lineDoc->licha() <= 6 ) {
 	    writeDataToChannel (lineDoc->licha()-1, data, 
 				block1or2->getDataLen(i)) ;
-	  }
-        }//if
-      }//for
-
-      //cpy data into ch5
-      for(int i = 2; i < 4; i++) {
-        data = block1or2->getData(i);
-        lineDoc = block1or2->getLineDoc(i);
-
-        if(lineDoc->licha() == 5) {
-          if((lineDoc->lidet() == 3) || (lineDoc->lidet() == 4)) {
-	    writeDataToChannel (lineDoc->licha()-1, data, 
-				block1or2->getDataLen(i)) ;
-	  }
-        }//if
-      }//for
-    }//else if
-    else if(header->blockId () == 2) {
-      //cpy data into ch2
-      for(int i = 0; i < 2; i++) {
-        data = block1or2->getData(i);
-        lineDoc = block1or2->getLineDoc(i) ;
-
-        if(lineDoc->licha() == 2) {
-          if((lineDoc->lidet() == 5) || (lineDoc->lidet() == 6)) {
-	    writeDataToChannel (lineDoc->licha()-1, data, 
-				block1or2->getDataLen(i)) ;
-	  }
-        }
-      }//for
-
-      //cpy data into ch3
-      data = block1or2->getData(2);
-      lineDoc = block1or2->getLineDoc(2) ;
-
-      if(lineDoc->licha() == 3) {
-        if(lineDoc->lidet() == 7) { 
-	  writeDataToChannel (lineDoc->licha()-1, data, 
-			      block1or2->getDataLen (lineDoc->licha()-1)) ;
 	}
-      }//if
-    }//else if
-    
+    }
     delete block1or2;
     delete block ;
   }// end else if block 1-2

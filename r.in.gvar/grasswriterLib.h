@@ -13,7 +13,7 @@ using namespace Gvar;
 
 class grasswriterLib {
 private:
-   static const int m_numOfChannels = 5;
+   static const int m_numOfChannels = 6;
 
    // the ew and ns resolution for each channel
    static const int ew_res[grasswriterLib::m_numOfChannels];

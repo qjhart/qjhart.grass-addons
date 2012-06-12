@@ -1,0 +1,252 @@
+#! /usr/bin/perl -w 
+
+package Etxml::Schema::Result::Station;
+use base qw/DBIx::Class::Core/;
+
+__PACKAGE__->table('station');
+__PACKAGE__->add_columns(qw/st_number name city region county district type ascii_lat ascii_lng latitude longitude connect_date disconnect_date enabled eto_switch elevation/);
+__PACKAGE__->set_primary_key('st_number');
+__PACKAGE__->has_many(records => 'Etxml::Schema::Result::StationZips', 'st_number');
+
+1;
+
+package Etxml::Schema::Result::StationZips;
+use base qw/DBIx::Class::Core/;
+
+__PACKAGE__->table('stationZips');
+__PACKAGE__->add_columns(qw/st_number zipcode/);
+__PACKAGE__->set_primary_key('st_number','zipcode');
+
+1;
+
+package Etxml::Schema;
+use base qw/DBIx::Class::Schema/;
+__PACKAGE__->register_class(Station => 'Etxml::Schema::Result::Station');
+__PACKAGE__->register_class(StationZips => 'Etxml::Schema::Result::StationZips');
+
+1;
+
+package Etxml;
+use LWP::Simple;
+use XML::Simple;
+use Data::Dumper;
+use Geo::Proj4;
+use AppConfig;
+
+our $Config = AppConfig->new
+  ({CASE=>1},
+   etxml => {
+	     DEFAULT=>"https://et.water.ca.gov/etxml",
+	    },
+   listcmd => {
+	    DEFAULT=>"CimisService.asmx/GetStationList",
+	   }, 
+   daily => {
+	     DEFAULT=>"EtXmlService.asmx/GetDailyDataByIDs",
+	    },
+  );
+
+sub new {
+  my $class = shift;
+  my $self = {};
+  bless $self, $class;
+  return $self;
+}
+
+sub getSchema {
+my $schema=<<SCHEMA;
+create table station (
+st_number serial primary key,
+name text,
+city text,
+region text,
+county text,
+district text,
+type varchar(12),
+ascii_lat varchar(32),
+ascii_lng varchar(32),
+latitude float,
+longitude float,
+connect_date date,
+disconnect_date date,
+enabled boolean,
+eto_switch boolean,
+elevation float
+);
+
+create table stationZips (
+st_number integer references station,
+zipcode varchar(5),
+unique(st_number,zipcode)
+);
+SCHEMA
+$schema;
+}
+
+sub getStationList {
+  my $self = shift;
+  my $config = shift;
+
+#  my $proj = Geo::Proj4->new(init => "espg:3310");
+#+proj=aea +lat_1=34 +lat_2=40.5 +lat_0=0 +lon_0=-120 +x_0=0 +y_0=-4000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs 
+  my $proj = Geo::Proj4->new
+      (proj=>"aea",lat_1=>34, lat_2=>40.5, lat_0=>0, lon_0=>-120, 
+       x_0=>0, y_0=>-4000000, ellps=>'GRS80', datum=>'NAD83', 
+       units=>'m',no_defs=>'');
+
+  unless ($self->{stationList}) {
+    my $link=sprintf
+      (
+       '%s/%s?userID=%s&password=%s',
+       $Config->get('etxml'),$Config->get('listcmd'),
+       $config->get('userID'),$config->get('password')
+      );
+    
+    my $content = get($link);
+    die "Couldn't get $link" unless defined $content;
+  
+    my $xml= new XML::Simple;
+    my $data= $xml->XMLin
+      ($content,
+       KeyAttr => 'number'
+      );
+    $data=$data->{"station-list"}->{"data"}->{"station"};
+    $self->{stationList}=$data;
+  }
+  while (my ($k, $v) = each %{$self->{stationList}}) {
+      my($e,$n)=$proj->forward($v->{"decimal-lat"},-1*$v->{"decimal-lng"});
+      $v->{east}=$e;
+      $v->{north}=$n;
+  } 
+  $self->{stationList};
+}
+
+sub getDailyDataByIds {
+  my $self=shift;
+  my $config=shift;
+  my $link=sprintf
+    (
+     '%s/%s?stationIDs=%s&dataItems=%s&startDate=%s&endDate=%s&englishUnits=false&userID=%s&password=%s',
+     $Config->get('etxml'),$Config->get('daily'),
+     join(',',@{$config->get('stationIds')}),
+     join(',',@{$config->get('dataItems')}),
+     $config->get(startDate),$config->get(endDate),
+     $config->get('userID'),$config->get('password')
+    );
+
+  my $content = get($link);
+  die "Couldn't get $link" unless defined $content;
+  
+  my $xml= new XML::Simple;
+  my $data= $xml->XMLin
+    ($content,
+     KeyAttr => 'number'
+    );
+  my $h={};
+  foreach(@{$data->{"et-xml"}->{"data"}->{"provider"}->{"record"}}) {
+      $h->{$_->{"location"}}=$_;
+  }
+  $h;
+}
+
+1;
+
+package main;
+
+use AppConfig;
+use AppConfig::Getopt;
+use Getopt::Long;
+use Date::Calc (qw/Today Add_Delta_Days/);
+
+our $config = AppConfig->new
+  ({CASE=>1},
+   'dataItems=s@' => {
+		 DEFAULT=>['day-air-tmp-min','day-air-tmp-max',
+			   'day-wind-spd-avg','day-rel-hum-max'],
+		 },
+   'stationIds=s@',
+   'out=s' => {
+       DEFAULT=>'etxml'
+   },
+   startDate => {
+       ARGS=>'=s',
+   },
+   endDate => {
+       ARGS=>'=s',
+   },
+   userID => {
+	      ALIAS => 'user',
+	      DEFAULT=>'ws_ucdcimis',
+	      ARGS=>'=s'
+	     },
+   password => {
+		DEFAULT=>'9944',
+		ARGS=>'=s'
+	       },
+  );
+
+# Test you are in Grass
+defined($ENV{GISRC}) or die "Must be in CIMIS grass mapset";
+my $mapset=`g.gisenv MAPSET`;
+chomp $mapset;
+
+# These are the command line options
+$config->define("list","ascii","schema","savedb");
+$config->set('startDate',$mapset);
+$config->set('endDate',$mapset);
+$config->getopt(\@ARGV);
+
+my $et=new Etxml();
+
+my $stations = $et->getStationList($config);
+map( {$config->stationIds($_)} sort {$a <=> $b} keys %$stations) 
+    unless ($#{$config->get('stationIds')}!=-1);
+
+print $et->getSchema if ($config->get('schema'));
+
+if ($config->get('dataItems')) {
+    # get columns
+    my @cols=('station integer','x double precision','y double precision','z double precision','date varchar(10)');
+    foreach (@{$config->get('dataItems')}) {
+	my $c=$_;
+	$c=~s/-/_/g;
+	push @cols,"$c double precision","${c}_qc varchar(1)"; 
+    }
+    my $items = $et->getDailyDataByIds($config);
+    my $cmd=sprintf("v.in.ascii out=%s cat=1 x=2 y=3 z=4 columns='%s'",
+		    $config->out,join(',',@cols));
+
+    $pid = open(V_IN_ASCII, "| $cmd") or die "Couldn't fork: $!\n";
+    foreach (sort {$a<=>$b} keys %$items) {
+	my $s=$stations->{$_};
+	my $i=$items->{$_};
+	# Elevation should be in meters
+	my @v=($_,$s->{east},$s->{north},$s->{elevation}*0.3048,$i->{date});
+	foreach my $di (@{$config->dataItems}) {
+	    my $v=$i->{$di};
+	    my $q=$v->{qc};
+	    $q='K' if ($q eq ' ');
+	    push @v,$v->{'content'},$q;
+	}
+	print V_IN_ASCII join("|",@v),"\n";
+    }
+    close(V_IN_ASCII) or die "Couldn't close: $!\n";
+}
+
+if ($config->get('savedb')) {
+  my $schema = Etxml::Schema->connect('dbi:SQLite:dbname=etxml.sql3');
+  foreach (sort keys %$data) { 
+    my %r=%{$data->{$_}};
+    delete($r{'zip-codes'});
+    # Fix up some naming issues
+    foreach (qw/ascii-lat ascii-lng connect-date disconnect-date eto-switch/) {
+      my $n=($_=~s/-/_/g);
+      $r{$n}=$r{$_};
+      delete $r{$_};
+    }
+    my $station = $schema->resultset('Station')->
+      new({ st_number => $_, %r });
+    $station->insert;
+    printf "$_ $data->{$_}->{name}\n";
+  }
+} 

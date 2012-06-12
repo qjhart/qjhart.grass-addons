@@ -1,10 +1,7 @@
 ##
 ##  Makefile -- Build procedure for r.in.gvar module
 ##
-MODULE_TOPDIR := /var/cache/apt-build/build/grass-6.4.0~rc5
-GRASS_HOME := .
-RUN_GISBASE:= .
-#MODULE_TOPDIR := /usr/lib/grass64/
+MODULE_TOPDIR := ../../..
 
 PGM = r.in.gvar
 
@@ -17,11 +14,10 @@ DEPENDENCIES = $(GISDEP)
 MOD_OBJS = $(subst .c,.o,$(wildcard *.c)) $(subst .cpp,.o,$(wildcard *.cpp))
 
 include $(MODULE_TOPDIR)/include/Make/Module.make
+# For debugging
+CXXFLAGS1 = -ggdb -Wall -Werror-implicit-function-declaration
+
 
 default: cmd
-
-$(OBJDIR)/%.o : %.cpp $(LOCAL_HEADERS) 
-	@test -d $(OBJDIR) || mkdir $(OBJDIR)   
-	$(CXX) $(CXXFLAGS) $(EXTRA_CFLAGS) $(NLS_CFLAGS) $(EXTRA_INC) $(INC)  -o $(OBJDIR)/$*.o -c $*.cpp
 
 
