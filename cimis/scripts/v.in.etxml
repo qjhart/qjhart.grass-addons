@@ -1,5 +1,7 @@
 #! /usr/bin/perl -w
 package Etxml;
+use SOAP::Lite; # +trace;
+
 use LWP::Simple;
 use XML::Simple;
 use Data::Dumper;
@@ -56,7 +58,7 @@ SCHEMA
 $schema;
 }
 
-sub getStationList {
+sub getStationListViaRest {
   my $self = shift;
   my $config = shift;
 
@@ -94,7 +96,70 @@ sub getStationList {
   $self->{stationList};
 }
 
-sub getDailyDataByIds {
+sub getStationList {
+  my $self = shift;
+  my $config = shift;
+
+#  my $proj = Geo::Proj4->new(init => "espg:3310");
+#+proj=aea +lat_1=34 +lat_2=40.5 +lat_0=0 +lon_0=-120 +x_0=0 +y_0=-4000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs 
+  my $proj = Geo::Proj4->new
+      (proj=>"aea",lat_1=>34, lat_2=>40.5, lat_0=>0, lon_0=>-120, 
+       x_0=>0, y_0=>-4000000, ellps=>'GRS80', datum=>'NAD83', 
+       units=>'m',no_defs=>'');
+
+  unless ($self->{stationList}) {
+    my $soap=SOAP::Lite->new()
+	->soapversion('1.2')
+	->envprefix('soap12')
+	->readable(1)
+	->proxy('https://et.water.ca.gov/etxml/CIMISService.asmx?WSDL')
+	->default_ns('http://et.water.ca.gov/')
+	->on_action( sub { join '', @_ } )
+	->outputxml(1);
+
+    my $som_xml=$soap->call('GetStationList',
+			SOAP::Data->name('userID')->value($config->{user}),
+			SOAP::Data->name('password')->value($config->{passwd}),
+	);
+
+    my $deserial=SOAP::Deserializer->new;
+    my $som=$deserial->deserialize($som_xml);
+    die $som->fault->{ faultstring } if $som->fault;
+
+    # my @dl=$som->dataof("//station-list/data/station");
+    # my @vl=$som->valueof("//station-list/data/station");
+    # my $data={};
+    # for (my $i=0;$i<=$#dl;$i++) {
+    # 	my $v=$vl[$i];
+    # 	my $d=$dl[$i];
+    # 	$v->{name}=$d->attr->{'name'};
+    # 	$v->{number}=$d->attr->{'number'};
+    # 	my($e,$n)=$proj->forward($v->{"decimal-lat"},-1*$v->{"decimal-lng"});
+    # 	$v->{east}=$e;
+    # 	$v->{north}=$n;
+    # 	$data->{$v->{number}}=$v;
+    # } 
+
+    my $xml= new XML::Simple;
+    my $data= $xml->XMLin
+      ($som_xml,
+       KeyAttr => 'number'
+      );
+    $data=$data->{"soap:Body"}->{"GetStationListResponse"}->{"GetStationListResult"};
+
+    $data=$data->{"station-list"}->{"data"}->{"station"};
+    
+    while (my ($k, $v) = each %{$self->{stationList}}) {
+	my($e,$n)=$proj->forward($v->{"decimal-lat"},-1*$v->{"decimal-lng"});
+	$v->{east}=$e;
+	$v->{north}=$n;
+    }
+    $self->{stationList}=$data; 
+  }
+  $self->{stationList};
+}
+ 
+sub getDailyDataByIdsViaRest {
   my $self=shift;
   my $config=shift;
   my $link=sprintf
@@ -115,6 +180,47 @@ sub getDailyDataByIds {
     ($content,
      KeyAttr => 'number'
     );
+  my $h={};
+  foreach(@{$data->{"et-xml"}->{"data"}->{"provider"}->{"record"}}) {
+      $h->{$_->{"location"}}=$_;
+  }
+  $h;
+}
+
+sub getDailyDataByIds {
+  my $self=shift;
+  my $config=shift;
+
+  my $soap=SOAP::Lite->new()
+      ->soapversion('1.2')
+      ->envprefix('soap12')
+      ->readable(1)
+      ->proxy('https://et.water.ca.gov/etxml/EtXmlService.asmx?WSDL')
+      ->default_ns('http://et.water.ca.gov/')
+      ->on_action( sub { join '', @_ } )
+      ->outputxml(1);
+
+  my $som_xml=$soap->call
+      ('GetDailyDataByIDs',
+       SOAP::Data->name('userID')->value($config->{user}),
+       SOAP::Data->name('password')->value($config->{passwd}),
+       SOAP::Data->name('stationIDs')->value($config->{stationIds}),
+       SOAP::Data->name('dataItems')->value($config->{items}),
+       SOAP::Data->name('startDate')->value($config->{date}),
+       SOAP::Data->name('endDate')->value($config->{date}),
+       SOAP::Data->name('englishUnits')->value('false'),
+      );
+  my $deserial=SOAP::Deserializer->new;
+  my $som=$deserial->deserialize($som_xml);
+  die $som->fault->{ faultstring } if $som->fault;
+
+  my $xml= new XML::Simple;
+  my $data= $xml->XMLin
+    ($som_xml,
+     KeyAttr => 'number'
+    );
+  $data=$data->{"soap:Body"}->{"GetDailyDataByIDsResponse"}->{"GetDailyDataByIDsResult"};
+
   my $h={};
   foreach(@{$data->{"et-xml"}->{"data"}->{"provider"}->{"record"}}) {
       $h->{$_->{"location"}}=$_;
@@ -206,6 +312,10 @@ chomp($config->{passwd});
 my $et=new Etxml();
 
 my $stations = $et->getStationList($config);
+
+# remove after debug
+#$config->{output}='baz';$config->{date}='2012-04-01';
+#$config->{items}='day-air-tmp-min,day-air-tmp-max,day-wind-spd-avg,day-rel-hum-max,day-dew-pnt';
 
 $config->{stationIds}=$ENV{GIS_OPT_STATIONIDS} ||
     join(',',sort {$a <=> $b} keys %$stations);
