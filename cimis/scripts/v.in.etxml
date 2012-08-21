@@ -126,20 +126,6 @@ sub getStationList {
     my $som=$deserial->deserialize($som_xml);
     die $som->fault->{ faultstring } if $som->fault;
 
-    # my @dl=$som->dataof("//station-list/data/station");
-    # my @vl=$som->valueof("//station-list/data/station");
-    # my $data={};
-    # for (my $i=0;$i<=$#dl;$i++) {
-    # 	my $v=$vl[$i];
-    # 	my $d=$dl[$i];
-    # 	$v->{name}=$d->attr->{'name'};
-    # 	$v->{number}=$d->attr->{'number'};
-    # 	my($e,$n)=$proj->forward($v->{"decimal-lat"},-1*$v->{"decimal-lng"});
-    # 	$v->{east}=$e;
-    # 	$v->{north}=$n;
-    # 	$data->{$v->{number}}=$v;
-    # } 
-
     my $xml= new XML::Simple;
     my $data= $xml->XMLin
       ($som_xml,
@@ -149,7 +135,7 @@ sub getStationList {
 
     $data=$data->{"station-list"}->{"data"}->{"station"};
     
-    while (my ($k, $v) = each %{$self->{stationList}}) {
+    while (my ($k, $v) = each %{$data}) {
 	my($e,$n)=$proj->forward($v->{"decimal-lat"},-1*$v->{"decimal-lng"});
 	$v->{east}=$e;
 	$v->{north}=$n;
@@ -233,10 +219,53 @@ sub getDailyDataByIds {
 package main;
 use Date::Calc (qw/Today Add_Delta_Days/);
 
+sub makeStations {
+    my $stations = shift;
+    my @cols=('station integer',
+	      'x double precision','y double precision','z double precision',
+	      'name text','city text','region text',
+	      'county text','district text','type varchar(12)',
+	      'ascii_lat varchar(32)','ascii_lng varchar(32)',
+	      'latitude double precision','longitude double precision',
+	      'connect_date date','disconnect_date date',
+	      'enabled varchar(1)','eto_switch varchar(1)'
+	);
+
+    my $cmd=sprintf("v.in.ascii %s out=%s cat=1 x=2 y=3 z=4 columns='%s'",
+		    $ENV{GIS_FLAG_OVERWRITE}?'--overwrite':'',
+		    $config->{output},join(',',@cols));
+    
+    open(V_IN_ASCII, "| $cmd") or die "Couldn't fork: $!\n";
+    foreach (sort {$a<=>$b} keys %$stations) {
+	my $s=$stations->{$_};
+	# Elevation should be in meters
+	my @v=($_,$s->{east},$s->{north},$s->{elevation}*0.3048,
+	       $s->{name},$s->{city},$s->{region},
+	       $s->{county},$s->{district},$s->{type},
+	       $s->{'ascii-lat'},$s->{'ascii-lng'},
+	       $s->{'decimal-lat'},$s->{'decimal-lng'},
+	       $s->{'connect-date'},$s->{'disconnect-date'},
+	       $s->{enabled},$s->{'eto-switch'}
+	    );
+	
+	print V_IN_ASCII join("|",@v),"\n";
+    }
+    close(V_IN_ASCII) or die "Couldn't close: $!\n";
+}
+
+
 #%Module
 #%  description: Get Daily Vector from ETXML
 #%  keywords: CIMIS,etxml,evapotranspiration
 #%End
+#%flag
+#% key: stations
+#% description: Output Stations
+#%end
+#%flag
+#% key: overwrite
+#% description: Overwrite
+#%end
 #%option
 #% key: output
 #% type: string
@@ -320,7 +349,9 @@ my $stations = $et->getStationList($config);
 $config->{stationIds}=$ENV{GIS_OPT_STATIONIDS} ||
     join(',',sort {$a <=> $b} keys %$stations);
 
-if ($config->{items}) {
+if ($ENV{GIS_FLAG_S}) {
+    makeStations($stations);
+} elsif ($config->{date} and $config->{items}) {
     # get columns
     my @cols=('station integer','x double precision','y double precision','z double precision','date varchar(10)');
     foreach (split(',',$config->{items})) {
@@ -349,4 +380,3 @@ if ($config->{items}) {
     }
     close(V_IN_ASCII) or die "Couldn't close: $!\n";
 }
-

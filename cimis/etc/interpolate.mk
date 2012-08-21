@@ -22,8 +22,11 @@ info::
 ###############################################################
 # All interpolations depend on the etxml vector
 ##############################################################
+etxml:${vect}/etxml
+
 ${vect}/etxml:
-	v.in.etxml date=${MAPSET}
+	db.connect driver=sqlite database='$$GISDBASE/$$LOCATION_NAME/$$MAPSET/sqlite.db'
+	v.in.etxml --overwrite output=etxml date=${MAPSET}
 
 # Define some .PHONY raster interpolation targets
 $(foreach p,U2 Tn Tx Tdew RHx ea es,$(eval $(call grass_raster_shorthand,$(p))))

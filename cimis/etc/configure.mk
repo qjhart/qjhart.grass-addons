@@ -7,8 +7,7 @@ ifndef GISBASE
 endif
 
 # Set ETXML Username and password
-ETXML_USER:=ws_ucdcimis
-ETXML_PASSWD:=9944
+include etxml_configure.mk
 $(shell g.gisenv set=ETXML_USER=${ETXML_USER})
 $(shell g.gisenv set=ETXML_PASSWD=${ETXML_PASSWD})
 
