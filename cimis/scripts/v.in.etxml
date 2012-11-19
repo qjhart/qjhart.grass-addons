@@ -1,0 +1,382 @@
+#! /usr/bin/perl -w
+package Etxml;
+use SOAP::Lite; # +trace;
+
+use LWP::Simple;
+use XML::Simple;
+use Data::Dumper;
+use Geo::Proj4;
+use AppConfig;
+
+our $Config = AppConfig->new
+  ({CASE=>1},
+   etxml => {
+	     DEFAULT=>"https://et.water.ca.gov/etxml",
+	    },
+   listcmd => {
+	    DEFAULT=>"CimisService.asmx/GetStationList",
+	   }, 
+   daily => {
+	     DEFAULT=>"EtXmlService.asmx/GetDailyDataByIDs",
+	    },
+  );
+
+sub new {
+  my $class = shift;
+  my $self = {};
+  bless $self, $class;
+  return $self;
+}
+
+sub getSchema {
+my $schema=<<SCHEMA;
+create table station (
+st_number serial primary key,
+name text,
+city text,
+region text,
+county text,
+district text,
+type varchar(12),
+ascii_lat varchar(32),
+ascii_lng varchar(32),
+latitude float,
+longitude float,
+connect_date date,
+disconnect_date date,
+enabled boolean,
+eto_switch boolean,
+elevation float
+);
+
+create table stationZips (
+st_number integer references station,
+zipcode varchar(5),
+unique(st_number,zipcode)
+);
+SCHEMA
+$schema;
+}
+
+sub getStationListViaRest {
+  my $self = shift;
+  my $config = shift;
+
+#  my $proj = Geo::Proj4->new(init => "espg:3310");
+#+proj=aea +lat_1=34 +lat_2=40.5 +lat_0=0 +lon_0=-120 +x_0=0 +y_0=-4000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs 
+  my $proj = Geo::Proj4->new
+      (proj=>"aea",lat_1=>34, lat_2=>40.5, lat_0=>0, lon_0=>-120, 
+       x_0=>0, y_0=>-4000000, ellps=>'GRS80', datum=>'NAD83', 
+       units=>'m',no_defs=>'');
+
+  unless ($self->{stationList}) {
+    my $link=sprintf
+      (
+       '%s/%s?userID=%s&password=%s',
+       $Config->get('etxml'),$Config->get('listcmd'),
+       $config->{user},$config->{passwd}
+      );
+    
+    my $content = get($link);
+    die "Couldn't get $link" unless defined $content;
+  
+    my $xml= new XML::Simple;
+    my $data= $xml->XMLin
+      ($content,
+       KeyAttr => 'number'
+      );
+    $data=$data->{"station-list"}->{"data"}->{"station"};
+    $self->{stationList}=$data;
+  }
+  while (my ($k, $v) = each %{$self->{stationList}}) {
+      my($e,$n)=$proj->forward($v->{"decimal-lat"},-1*$v->{"decimal-lng"});
+      $v->{east}=$e;
+      $v->{north}=$n;
+  } 
+  $self->{stationList};
+}
+
+sub getStationList {
+  my $self = shift;
+  my $config = shift;
+
+#  my $proj = Geo::Proj4->new(init => "espg:3310");
+#+proj=aea +lat_1=34 +lat_2=40.5 +lat_0=0 +lon_0=-120 +x_0=0 +y_0=-4000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs 
+  my $proj = Geo::Proj4->new
+      (proj=>"aea",lat_1=>34, lat_2=>40.5, lat_0=>0, lon_0=>-120, 
+       x_0=>0, y_0=>-4000000, ellps=>'GRS80', datum=>'NAD83', 
+       units=>'m',no_defs=>'');
+
+  unless ($self->{stationList}) {
+    my $soap=SOAP::Lite->new()
+	->soapversion('1.2')
+	->envprefix('soap12')
+	->readable(1)
+	->proxy('https://et.water.ca.gov/etxml/CIMISService.asmx?WSDL')
+	->default_ns('http://et.water.ca.gov/')
+	->on_action( sub { join '', @_ } )
+	->outputxml(1);
+
+    my $som_xml=$soap->call('GetStationList',
+			SOAP::Data->name('userID')->value($config->{user}),
+			SOAP::Data->name('password')->value($config->{passwd}),
+	);
+
+    my $deserial=SOAP::Deserializer->new;
+    my $som=$deserial->deserialize($som_xml);
+    die $som->fault->{ faultstring } if $som->fault;
+
+    my $xml= new XML::Simple;
+    my $data= $xml->XMLin
+      ($som_xml,
+       KeyAttr => 'number'
+      );
+    $data=$data->{"soap:Body"}->{"GetStationListResponse"}->{"GetStationListResult"};
+
+    $data=$data->{"station-list"}->{"data"}->{"station"};
+    
+    while (my ($k, $v) = each %{$data}) {
+	my($e,$n)=$proj->forward($v->{"decimal-lat"},-1*$v->{"decimal-lng"});
+	$v->{east}=$e;
+	$v->{north}=$n;
+    }
+    $self->{stationList}=$data; 
+  }
+  $self->{stationList};
+}
+ 
+sub getDailyDataByIdsViaRest {
+  my $self=shift;
+  my $config=shift;
+  my $link=sprintf
+    (
+     '%s/%s?stationIDs=%s&dataItems=%s&startDate=%s&endDate=%s&englishUnits=false&userID=%s&password=%s',
+     $Config->get('etxml'),$Config->get('daily'),
+     $config->{stationIds},
+     $config->{items},
+     $config->{date},$config->{date},
+     $config->{user},$config->{passwd}
+    );
+
+  my $content = get($link);
+  die "Couldn't get $link" unless defined $content;
+  
+  my $xml= new XML::Simple;
+  my $data= $xml->XMLin
+    ($content,
+     KeyAttr => 'number'
+    );
+  my $h={};
+  foreach(@{$data->{"et-xml"}->{"data"}->{"provider"}->{"record"}}) {
+      $h->{$_->{"location"}}=$_;
+  }
+  $h;
+}
+
+sub getDailyDataByIds {
+  my $self=shift;
+  my $config=shift;
+
+  my $soap=SOAP::Lite->new()
+      ->soapversion('1.2')
+      ->envprefix('soap12')
+      ->readable(1)
+      ->proxy('https://et.water.ca.gov/etxml/EtXmlService.asmx?WSDL')
+      ->default_ns('http://et.water.ca.gov/')
+      ->on_action( sub { join '', @_ } )
+      ->outputxml(1);
+
+  my $som_xml=$soap->call
+      ('GetDailyDataByIDs',
+       SOAP::Data->name('userID')->value($config->{user}),
+       SOAP::Data->name('password')->value($config->{passwd}),
+       SOAP::Data->name('stationIDs')->value($config->{stationIds}),
+       SOAP::Data->name('dataItems')->value($config->{items}),
+       SOAP::Data->name('startDate')->value($config->{date}),
+       SOAP::Data->name('endDate')->value($config->{date}),
+       SOAP::Data->name('englishUnits')->value('false'),
+      );
+  my $deserial=SOAP::Deserializer->new;
+  my $som=$deserial->deserialize($som_xml);
+  die $som->fault->{ faultstring } if $som->fault;
+
+  my $xml= new XML::Simple;
+  my $data= $xml->XMLin
+    ($som_xml,
+     KeyAttr => 'number'
+    );
+  $data=$data->{"soap:Body"}->{"GetDailyDataByIDsResponse"}->{"GetDailyDataByIDsResult"};
+
+  my $h={};
+  foreach(@{$data->{"et-xml"}->{"data"}->{"provider"}->{"record"}}) {
+      $h->{$_->{"location"}}=$_;
+  }
+  $h;
+}
+
+1;
+
+package main;
+use Date::Calc (qw/Today Add_Delta_Days/);
+
+sub makeStations {
+    my $stations = shift;
+    my @cols=('station integer',
+	      'x double precision','y double precision','z double precision',
+	      'name text','city text','region text',
+	      'county text','district text','type varchar(12)',
+	      'ascii_lat varchar(32)','ascii_lng varchar(32)',
+	      'latitude double precision','longitude double precision',
+	      'connect_date date','disconnect_date date',
+	      'enabled varchar(1)','eto_switch varchar(1)'
+	);
+
+    my $cmd=sprintf("v.in.ascii %s out=%s cat=1 x=2 y=3 z=4 columns='%s'",
+		    $ENV{GIS_FLAG_OVERWRITE}?'--overwrite':'',
+		    $config->{output},join(',',@cols));
+    
+    open(V_IN_ASCII, "| $cmd") or die "Couldn't fork: $!\n";
+    foreach (sort {$a<=>$b} keys %$stations) {
+	my $s=$stations->{$_};
+	# Elevation should be in meters
+	my @v=($_,$s->{east},$s->{north},$s->{elevation}*0.3048,
+	       $s->{name},$s->{city},$s->{region},
+	       $s->{county},$s->{district},$s->{type},
+	       $s->{'ascii-lat'},$s->{'ascii-lng'},
+	       $s->{'decimal-lat'},$s->{'decimal-lng'},
+	       $s->{'connect-date'},$s->{'disconnect-date'},
+	       $s->{enabled},$s->{'eto-switch'}
+	    );
+	
+	print V_IN_ASCII join("|",@v),"\n";
+    }
+    close(V_IN_ASCII) or die "Couldn't close: $!\n";
+}
+
+
+#%Module
+#%  description: Get Daily Vector from ETXML
+#%  keywords: CIMIS,etxml,evapotranspiration
+#%End
+#%flag
+#% key: stations
+#% description: Output Stations
+#%end
+#%flag
+#% key: overwrite
+#% description: Overwrite
+#%end
+#%option
+#% key: output
+#% type: string
+#% gisprompt: new,vector,vector
+#% description: Output Vector
+#% answer: etxml
+#% required : yes
+#%end
+#%option
+#% key: items
+#% type: string
+#% description: Variables to include
+#% multiple: yes
+#% answer:day-air-tmp-min,day-air-tmp-max,day-wind-spd-avg,day-rel-hum-max,day-dew-pnt
+#% required : yes
+#%end
+#%option
+#% key: stationIds
+#% type: string
+#% description: Stations to include
+#% multiple: yes
+#% required : no
+#%end
+#%option
+#% key: date
+#% type: string
+#% description: Measurement date
+#% multiple: no
+#% required : yes
+#%end
+#%option
+#% key: user
+#% type: string
+#% description: ETXML Username.  If not specified look in g.gisenv ETXML_USER
+#% multiple: no
+#% required : no
+#%end
+#%option
+#% key: passwd
+#% type: string
+#% description: ETXML Password.  If not specified look in g.gisenv ETXML_PASSWD
+#% multiple: no
+#% required : no
+#%end
+
+if ( !$ENV{'GISBASE'} ) {
+    die "You must be in GRASS GIS to run this program.\n";
+}
+
+if ($ARGV[0] ne '@ARGS_PARSED@') {
+    my $arg = "";
+    for (my $i=0; $i < @ARGV;$i++) {
+        $arg .= " $ARGV[$i] ";
+    }
+    system("$ENV{GISBASE}/bin/g.parser $0 $arg");
+    exit;
+}
+
+my $mapset=`g.gisenv MAPSET`;
+chomp $mapset;
+
+# These are the command line options
+$config={};
+$config->{output}=$ENV{GIS_OPT_OUTPUT};
+$config->{date}=$ENV{GIS_OPT_DATE}||$mapset;
+$config->{items}=$ENV{GIS_OPT_ITEMS};
+$config->{user}=$ENV{GIS_OPT_USER}||`g.gisenv ETXML_USER`;
+chomp($config->{user});
+$config->{passwd}=$ENV{GIS_OPT_PASSWD}||`g.gisenv ETXML_PASSWD`;
+chomp($config->{passwd});
+
+
+my $et=new Etxml();
+
+my $stations = $et->getStationList($config);
+
+# remove after debug
+#$config->{output}='baz';$config->{date}='2012-04-01';
+#$config->{items}='day-air-tmp-min,day-air-tmp-max,day-wind-spd-avg,day-rel-hum-max,day-dew-pnt';
+
+$config->{stationIds}=$ENV{GIS_OPT_STATIONIDS} ||
+    join(',',sort {$a <=> $b} keys %$stations);
+
+if ($ENV{GIS_FLAG_S}) {
+    makeStations($stations);
+} elsif ($config->{date} and $config->{items}) {
+    # get columns
+    my @cols=('station integer','x double precision','y double precision','z double precision','date varchar(10)');
+    foreach (split(',',$config->{items})) {
+	my $c=$_;
+	$c=~s/-/_/g;
+	push @cols,"$c double precision","${c}_qc varchar(1)"; 
+    }
+    my $items = $et->getDailyDataByIds($config);
+    my $cmd=sprintf("v.in.ascii %s out=%s cat=1 x=2 y=3 z=4 columns='%s'",
+		    $ENV{GIS_FLAG_OVERWRITE}?'--overwrite':'',
+		    $config->{output},join(',',@cols));
+    system "g.message -d '$cmd'";
+    open(V_IN_ASCII, "| $cmd") or die "Couldn't fork: $!\n";
+    foreach (sort {$a<=>$b} keys %$items) {
+	my $s=$stations->{$_};
+	my $i=$items->{$_};
+	# Elevation should be in meters
+	my @v=($_,$s->{east},$s->{north},$s->{elevation}*0.3048,$i->{date});
+	foreach my $di (split(',',$config->{items})) {
+	    my $v=$i->{$di};
+	    my $q=$v->{qc};
+	    $q='K' if ($q eq ' ');
+	    push @v,$v->{'content'},$q;
+	}
+	print V_IN_ASCII join("|",@v),"\n";
+    }
+    close(V_IN_ASCII) or die "Couldn't close: $!\n";
+}

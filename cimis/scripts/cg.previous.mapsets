@@ -1,0 +1,61 @@
+#! /usr/bin/perl -w
+
+use Date::Manip;
+
+use Getopt::Long qw[:config prefix_pattern=(--|-|) ];
+use Pod::Usage;
+use IO::Dir;
+
+our $days=14;
+our $exists=1;
+our $rast=undef;
+our $count=0;
+our $delim=',';
+our $quote=0;
+ 
+GetOptions(
+	   'days=s'=>\$days,
+	   'exists!'=>\$exists,
+	   'rast=s'=>\$rast,
+	   'delim=s'=>\$delim,
+	   'count!'=>\$count,
+	   'quote!'=>\$quote,
+	  );
+
+pod2usage(msg=>"Specify rast",exitval=>1) unless $rast;
+
+my $mapset=`g.gisenv MAPSET`; chomp $mapset;
+my $gisdbase=`g.gisenv GISDBASE`; chomp $gisdbase;
+my $location_name=`g.gisenv LOCATION_NAME`; chomp $location_name;
+my $loc=sprintf('%s/%s',$gisdbase,$location_name);
+my $today=ParseDate($mapset);
+my $start=DateCalc($today,"-$days days");
+my $end=DateCalc($today,"+1 days");
+
+my @dates=ParseRecur('0:0:0:1:0:0:0',$start,$start,$end);
+my @mapsets=map(UnixDate($_,"%Y-%m-%d"),@dates);
+
+my %dir;
+tie %dir, IO::Dir, $loc;
+
+my @ans;
+foreach my $mapset (@mapsets) {
+  if ($rast) {
+    if ($exists) {
+      my %cell;
+      tie %cell, IO::Dir,sprintf("%s/$mapset/cell",$loc);
+      push @ans,"$rast\@$mapset" if $cell{$rast};
+    } else {
+      push @ans,"$rast\@$mapset";
+    }      
+  } else {
+    push @ans,$mapset if ! $exists or $dir{$mapset};
+  }
+}
+if ($count) {
+    print $#ans+1;
+} else {
+    @ans = map("\"$_\"",@ans) if $quote;
+    print join($delim,@ans);
+}
+

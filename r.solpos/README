@@ -1,0 +1,134 @@
+[sent 05.01.03]
+Quinn
+
+1) time zone working: it's now asigned automatically
+   according to date, e.g
+       for date='2003-04-12', timezone = -7000
+       for date='2003-12-12', timezone = -8000
+   (finally I learned how to use strftime ;-)
+
+2) explanation for etr == etrn == etrtilt == 0.0:
+   According to http://rredc.nrel.gov/solar/codes_algs/solpos/:
+   etr       0.0 at night  
+   etrn      0.0 at night
+   etrtilt   0.0 when cosinc is less than 0    
+
+   cosinc (cosine of solar incidence angle on panel) is now
+   also reported with the -r option.
+
+   sretr/ssetr are also reported in HH:MM format with option -rv
+   so it's easier to check resulting etr*.
+
+let me know.
+
+carlos
+
+--------------------------------------------------
+[sent 04.30.03]
+Quinn,                  
+
+cimis.hour_angle is being implemented according to the following:
+
+* will work on a given day (current mapset, by default)
+
+* Since sunrise/set times are different across the region, suppose as an
+  example that minimum sunrise and maximum sunset times for the whole 
+  region are 0550 and 1720 respectively. 
+
+* given an interval = 30 mins, values ha(t) will be generated for
+  t = 0530, 0600, 0630, ..., 1700, 1730. Each ha(t) is calculated as:
+       ha(t) = MAX { srha(t), hrang(t) }
+       
+  [you also sketched something similar for MINs; which one is needed? both?...]
+       
+* for each ha(t) a raster will be generated, say 'ha0600' containing all 
+  ha(0600) values over the region.
+  
+* Maybe r.solpos itself could include this function with a new option
+  ha=PREFIX
+
+Any comments/corrections?
+Thanks!
+
+Carlos
+  
+--------------------------------------------------
+
+2003-04-30
+	Time zone included in date (optional)
+	r.solpos  date="2003-04-21T16:31:21 -0500" ... 
+	I haven't figured out how to use the time.h C functions to deal with 
+	names like PST8PDT.
+	
+2003-04-22
+
+	r.solpos  date="2003-04-21T16:31:21" hrang='hrang.map'
+	
+2003-04-21
+
+	r.solpos -r now working
+	
+
+--------------------------------------------------
+[sent 04.18.03]	
+Quinn,                  
+
+Based on the r.sunmask code, I wrote a simplified version (r.solpos)
+that just calculates the sun azimuth, sun angle above horz., and 
+sunrise/sunset times, given a location/date/time. Basically it runs
+like ``r.sunmask -s''. The program is under /home/goes/bin/ .
+
+I can now proceed with the specific functionality you want from this
+code. Could you please remind me the input/output specification you want?
+
+Carlos  
+
+------
+
+From:    Quinn Hart <qjhart@ucdavis.edu>
+Subject:   Re: r.sunmask compilation
+To:   carueda@ucdavis.edu
+Date:   17 Apr 2003 10:05:43 -0700
+ 
+
+Carlos,
+
+The libproj under /usr/lib, is probably a later version and may be why
+it doesn't work.  It certainly works for lots of other routines.  It's
+part of the 'proj' package:  I have noticed that grass doesn't try and
+find this library though, so they must compile it themselves.
+
+Which include file did you use?
+
+quinn@ceres:~$ dlocate /usr/lib/libproj.a
+proj: /usr/lib/libproj.a
+
+quinn@ceres:~$ dpkg -L proj | grep /usr/lib
+/usr/lib
+/usr/lib/libproj.so.0.3.1
+/usr/lib/libproj.la
+/usr/lib/libproj.a
+/usr/lib/libproj.so.0
+/usr/lib/libproj.so
+
+I'll compile the latest grass today.
+
+
+On Wed, 2003-04-16 at 18:56, Carlos Rueda wrote:
+> Quinn,
+> 
+> As a first step to get familiarity with the code, I've been 
+> trying to compile r.sunmask by myself. Finally I have been 
+> able to do so. But I had to use the libproj.a library(*)
+> from the grass compilation that I made under
+> /scratch/scratch_ceres/grass5/grass5.0.1/ on Feb 5.  
+> 
+> BTW, we are using now grass 5.0.0pre5; maybe we should update
+> to 5.0.1.
+> 
+> Carlos
+> 
+> (*) There is no libproj.a under /usr/local/grass5/, and the one
+> under /usr/lib/ doesn't work. I also tried a fresh libproj.a
+> compilation from remotesensing.org/proj/ but didn't work either.
+> 

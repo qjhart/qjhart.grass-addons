@@ -1,0 +1,5294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StationListDocument xmlns="http://et.water.ca.gov/">
+  <station-list schema-version="1.0" xmlns="">
+    <data>
+      <station number="1" name="Fresno/F.S.U. USDA">
+        <city>Fresno</city>
+        <region>San Joaquin Valley</region>
+        <county>Fresno</county>
+        <district>San Joaquin</district>
+        <type>CR21</type>
+        <ascii-lat>36D48'52"N</ascii-lat>
+        <ascii-lng>119D43'54"W</ascii-lng>
+        <decimal-lat>36.8140</decimal-lat>
+        <decimal-lng>119.7320</decimal-lng>
+        <connect-date>6/7/1982</connect-date>
+        <disconnect-date>9/25/1988</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>340</elevation>
+        <zip-codes>
+          <zip-code>93607</zip-code>
+          <zip-code>93608</zip-code>
+          <zip-code>93609</zip-code>
+          <zip-code>93652</zip-code>
+          <zip-code>93656</zip-code>
+          <zip-code>93660</zip-code>
+          <zip-code>93668</zip-code>
+          <zip-code>93234</zip-code>
+          <zip-code>93650</zip-code>
+          <zip-code>93701</zip-code>
+          <zip-code>93702</zip-code>
+          <zip-code>93703</zip-code>
+          <zip-code>93704</zip-code>
+          <zip-code>93705</zip-code>
+          <zip-code>93706</zip-code>
+          <zip-code>93707</zip-code>
+          <zip-code>93708</zip-code>
+          <zip-code>93709</zip-code>
+          <zip-code>93710</zip-code>
+          <zip-code>93711</zip-code>
+          <zip-code>93714</zip-code>
+          <zip-code>93715</zip-code>
+          <zip-code>93716</zip-code>
+          <zip-code>93717</zip-code>
+          <zip-code>93718</zip-code>
+          <zip-code>93720</zip-code>
+          <zip-code>93721</zip-code>
+          <zip-code>93722</zip-code>
+          <zip-code>93724</zip-code>
+          <zip-code>93725</zip-code>
+          <zip-code>93726</zip-code>
+          <zip-code>93727</zip-code>
+          <zip-code>93728</zip-code>
+          <zip-code>93729</zip-code>
+          <zip-code>93740</zip-code>
+          <zip-code>93741</zip-code>
+          <zip-code>93744</zip-code>
+          <zip-code>93745</zip-code>
+          <zip-code>93747</zip-code>
+          <zip-code>93750</zip-code>
+          <zip-code>93755</zip-code>
+          <zip-code>93759</zip-code>
+          <zip-code>93760</zip-code>
+          <zip-code>93761</zip-code>
+          <zip-code>93762</zip-code>
+          <zip-code>93766</zip-code>
+        </zip-codes>
+      </station>
+      <station number="2" name="FivePoints">
+        <city>Five Points</city>
+        <region>San Joaquin Valley</region>
+        <county>Fresno</county>
+        <district>San Joaquin</district>
+        <type>CR10x</type>
+        <ascii-lat>36D20'11"N</ascii-lat>
+        <ascii-lng>120D06'47"W</ascii-lng>
+        <decimal-lat>36.3360</decimal-lat>
+        <decimal-lng>120.1130</decimal-lng>
+        <connect-date>6/7/1982</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>285</elevation>
+        <zip-codes>
+          <zip-code>93624</zip-code>
+        </zip-codes>
+      </station>
+      <station number="3" name="Beach /Santa Cruz CO">
+        <city>Watsonville</city>
+        <region>Monterey Bay</region>
+        <county>Santa Cruz</county>
+        <district>San Joaquin</district>
+        <type>CR21</type>
+        <ascii-lat>36D52'50"N</ascii-lat>
+        <ascii-lng>121D47'36"W</ascii-lng>
+        <decimal-lat>36.8810</decimal-lat>
+        <decimal-lng>121.7930</decimal-lng>
+        <connect-date>5/30/1982</connect-date>
+        <disconnect-date>8/25/1986</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>10</elevation>
+        <zip-codes>
+          <zip-code>95018</zip-code>
+          <zip-code>95019</zip-code>
+          <zip-code>95075</zip-code>
+          <zip-code>95076</zip-code>
+          <zip-code>95077</zip-code>
+        </zip-codes>
+      </station>
+      <station number="4" name="Webb /Santa Cruz CO">
+        <city>Watsonville</city>
+        <region>Monterey Bay</region>
+        <county>Santa Cruz</county>
+        <district>San Joaquin</district>
+        <type>CR21</type>
+        <ascii-lat>36D58'21"N</ascii-lat>
+        <ascii-lng>121D43'34"W</ascii-lng>
+        <decimal-lat>36.9720</decimal-lat>
+        <decimal-lng>121.7260</decimal-lng>
+        <connect-date>5/30/1982</connect-date>
+        <disconnect-date>4/29/1988</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>230</elevation>
+        <zip-codes>
+          <zip-code>95018</zip-code>
+          <zip-code>95019</zip-code>
+          <zip-code>95075</zip-code>
+          <zip-code>95076</zip-code>
+          <zip-code>95077</zip-code>
+        </zip-codes>
+      </station>
+      <station number="5" name="Shafter/USDA">
+        <city>Shafter</city>
+        <region>San Joaquin Valley</region>
+        <county>Kern</county>
+        <district>San Joaquin</district>
+        <type>CR21</type>
+        <ascii-lat>35D31'59"N</ascii-lat>
+        <ascii-lng>119D16'52"W</ascii-lng>
+        <decimal-lat>35.5330</decimal-lat>
+        <decimal-lng>119.2810</decimal-lng>
+        <connect-date>6/1/1982</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>360</elevation>
+        <zip-codes>
+          <zip-code>93263</zip-code>
+          <zip-code>93280</zip-code>
+        </zip-codes>
+      </station>
+      <station number="6" name="Davis">
+        <city>Davis</city>
+        <region>Sacramento Valley</region>
+        <county>Yolo</county>
+        <district>Central</district>
+        <type>CR1000</type>
+        <ascii-lat>38D32'09"N</ascii-lat>
+        <ascii-lng>121D46'32"W</ascii-lng>
+        <decimal-lat>38.5360</decimal-lat>
+        <decimal-lng>121.7750</decimal-lng>
+        <connect-date>7/17/1982</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>60</elevation>
+        <zip-codes>
+          <zip-code>95616</zip-code>
+          <zip-code>95617</zip-code>
+          <zip-code>95618</zip-code>
+        </zip-codes>
+      </station>
+      <station number="7" name="Firebaugh/Telles">
+        <city>Firebaugh</city>
+        <region>San Joaquin Valley</region>
+        <county>Fresno</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>36D51'04"N</ascii-lat>
+        <ascii-lng>120D35'25"W</ascii-lng>
+        <decimal-lat>36.8510</decimal-lat>
+        <decimal-lng>120.59</decimal-lng>
+        <connect-date>9/22/1982</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>185</elevation>
+        <zip-codes>
+          <zip-code>93620</zip-code>
+          <zip-code>93665</zip-code>
+          <zip-code>93622</zip-code>
+        </zip-codes>
+      </station>
+      <station number="8" name="Gerber">
+        <city>Gerber</city>
+        <region>Sacramento Valley</region>
+        <county>Tehama</county>
+        <district>Northern</district>
+        <type>CR10</type>
+        <ascii-lat>40D02'42"N</ascii-lat>
+        <ascii-lng>122D09'52"W</ascii-lng>
+        <decimal-lat>40.0450</decimal-lat>
+        <decimal-lng>122.1640</decimal-lng>
+        <connect-date>9/22/1982</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>250</elevation>
+        <zip-codes>
+          <zip-code>96055</zip-code>
+          <zip-code>96078</zip-code>
+          <zip-code>96090</zip-code>
+          <zip-code>96092</zip-code>
+          <zip-code>96035</zip-code>
+        </zip-codes>
+      </station>
+      <station number="9" name="Lamont">
+        <city>LaMont</city>
+        <region>San Joaquin Valley</region>
+        <county>Kern</county>
+        <district>San Joaquin</district>
+        <type>CR21</type>
+        <ascii-lat>35D14'17"N</ascii-lat>
+        <ascii-lng>118D53'40"W</ascii-lng>
+        <decimal-lat>35.2380</decimal-lat>
+        <decimal-lng>118.8940</decimal-lng>
+        <connect-date>9/29/1982</connect-date>
+        <disconnect-date>4/10/1989</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>406</elevation>
+        <zip-codes>
+          <zip-code>93219</zip-code>
+          <zip-code>93201</zip-code>
+          <zip-code>93215</zip-code>
+          <zip-code>93216</zip-code>
+          <zip-code>93256</zip-code>
+          <zip-code>93272</zip-code>
+          <zip-code>93621</zip-code>
+        </zip-codes>
+      </station>
+      <station number="10" name="Bakersfield/Greenlee">
+        <city>Mettler Station</city>
+        <region>San Joaquin Valley</region>
+        <county>Kern</county>
+        <district>San Joaquin</district>
+        <type>CR21</type>
+        <ascii-lat>35D04'37"N</ascii-lat>
+        <ascii-lng>119D04'52"W</ascii-lng>
+        <decimal-lat>35.0770</decimal-lat>
+        <decimal-lng>119.0810</decimal-lng>
+        <connect-date>10/1/1982</connect-date>
+        <disconnect-date>4/16/1986</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>400</elevation>
+        <zip-codes>
+          <zip-code>93313</zip-code>
+          <zip-code>93381</zip-code>
+          <zip-code>93383</zip-code>
+        </zip-codes>
+      </station>
+      <station number="11" name="Bakersfield/Bonanza">
+        <city>Conner</city>
+        <region>San Joaquin Valley</region>
+        <county>Kern</county>
+        <district>San Joaquin</district>
+        <type>CR21</type>
+        <ascii-lat>35D09'38"N</ascii-lat>
+        <ascii-lng>119D10'51"W</ascii-lng>
+        <decimal-lat>35.16</decimal-lat>
+        <decimal-lng>119.1810</decimal-lng>
+        <connect-date>9/29/1982</connect-date>
+        <disconnect-date>4/17/1986</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>290</elevation>
+        <zip-codes>
+          <zip-code>93313</zip-code>
+          <zip-code>93381</zip-code>
+          <zip-code>93383</zip-code>
+        </zip-codes>
+      </station>
+      <station number="12" name="Durham">
+        <city>Chico</city>
+        <region>Sacramento Valley</region>
+        <county>Butte</county>
+        <district>Northern</district>
+        <type>CR10</type>
+        <ascii-lat>39D36'32"N</ascii-lat>
+        <ascii-lng>121D49'22"W</ascii-lng>
+        <decimal-lat>39.6090</decimal-lat>
+        <decimal-lng>121.8230</decimal-lng>
+        <connect-date>10/19/1982</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>130</elevation>
+        <zip-codes>
+          <zip-code>95938</zip-code>
+          <zip-code>95958</zip-code>
+          <zip-code>95974</zip-code>
+        </zip-codes>
+      </station>
+      <station number="13" name="Camino">
+        <city>Placerville</city>
+        <region>Sierra Foothill</region>
+        <county>El Dorado</county>
+        <district>Central</district>
+        <type>CR10</type>
+        <ascii-lat>38D45'13"N</ascii-lat>
+        <ascii-lng>120D43'57"W</ascii-lng>
+        <decimal-lat>38.7540</decimal-lat>
+        <decimal-lng>120.7320</decimal-lng>
+        <connect-date>10/19/1982</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>2780</elevation>
+        <zip-codes>
+          <zip-code>95709</zip-code>
+          <zip-code>95667</zip-code>
+        </zip-codes>
+      </station>
+      <station number="14" name="Orland">
+        <city>Orland</city>
+        <region>Sacramento Valley</region>
+        <county>Glenn</county>
+        <district>Northern</district>
+        <type>CR21</type>
+        <ascii-lat>39D44'22"N</ascii-lat>
+        <ascii-lng>122D10'17"W</ascii-lng>
+        <decimal-lat>39.7390</decimal-lat>
+        <decimal-lng>122.1710</decimal-lng>
+        <connect-date>10/30/1982</connect-date>
+        <disconnect-date>4/21/1987</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>235</elevation>
+        <zip-codes>
+          <zip-code>95963</zip-code>
+          <zip-code>95613</zip-code>
+          <zip-code>95943</zip-code>
+          <zip-code>95961</zip-code>
+        </zip-codes>
+      </station>
+      <station number="15" name="Stratford">
+        <city>Stratford</city>
+        <region>San Joaquin Valley</region>
+        <county>Kings</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>36D09'27"N</ascii-lat>
+        <ascii-lng>119D51'00"W</ascii-lng>
+        <decimal-lat>36.1580</decimal-lat>
+        <decimal-lng>119.85</decimal-lng>
+        <connect-date>10/29/1982</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>193</elevation>
+        <zip-codes>
+          <zip-code>93266</zip-code>
+          <zip-code>93202</zip-code>
+          <zip-code>93234</zip-code>
+          <zip-code>93245</zip-code>
+          <zip-code>93246</zip-code>
+        </zip-codes>
+      </station>
+      <station number="16" name="San Juan">
+        <city>Watsonville</city>
+        <region>Monterey Bay</region>
+        <county>Monterey</county>
+        <district>San Joaquin</district>
+        <type>CR21</type>
+        <ascii-lat>36D54'17"N</ascii-lat>
+        <ascii-lng>121D42'11"W</ascii-lng>
+        <decimal-lat>36.9050</decimal-lat>
+        <decimal-lng>121.7030</decimal-lng>
+        <connect-date>10/23/1982</connect-date>
+        <disconnect-date>8/24/1995</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>44</elevation>
+        <zip-codes>
+          <zip-code>95018</zip-code>
+          <zip-code>95019</zip-code>
+          <zip-code>95075</zip-code>
+          <zip-code>95076</zip-code>
+          <zip-code>95077</zip-code>
+        </zip-codes>
+      </station>
+      <station number="17" name="El Centro">
+        <city>Meloland</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Imperial</county>
+        <district>Southern</district>
+        <type>CR21</type>
+        <ascii-lat>32D50'47"N</ascii-lat>
+        <ascii-lng>115D26'54"W</ascii-lng>
+        <decimal-lat>32.8460</decimal-lat>
+        <decimal-lng>115.4480</decimal-lng>
+        <connect-date>11/8/1982</connect-date>
+        <disconnect-date>5/27/1987</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>-86</elevation>
+        <zip-codes>
+          <zip-code>92243</zip-code>
+          <zip-code>92244</zip-code>
+          <zip-code>92250</zip-code>
+          <zip-code>92251</zip-code>
+          <zip-code>92231</zip-code>
+          <zip-code>92232</zip-code>
+          <zip-code>92249</zip-code>
+        </zip-codes>
+      </station>
+      <station number="18" name="Westmorland">
+        <city>Westmorland</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Imperial</county>
+        <district>Southern</district>
+        <type>CR21</type>
+        <ascii-lat>33D04'39"N</ascii-lat>
+        <ascii-lng>115D36'50"W</ascii-lng>
+        <decimal-lat>33.0770</decimal-lat>
+        <decimal-lng>115.6140</decimal-lng>
+        <connect-date>11/11/1982</connect-date>
+        <disconnect-date>4/9/1986</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>-195</elevation>
+        <zip-codes>
+          <zip-code>92281</zip-code>
+          <zip-code>92227</zip-code>
+          <zip-code>92233</zip-code>
+        </zip-codes>
+      </station>
+      <station number="19" name="Castroville">
+        <city>Castroville</city>
+        <region>Monterey Bay</region>
+        <county>Monterey</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>36D46'05"N</ascii-lat>
+        <ascii-lng>121D46'25"W</ascii-lng>
+        <decimal-lat>36.7680</decimal-lat>
+        <decimal-lng>121.7740</decimal-lng>
+        <connect-date>11/18/1982</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>9</elevation>
+        <zip-codes>
+          <zip-code>95012</zip-code>
+        </zip-codes>
+      </station>
+      <station number="20" name="Corcoran">
+        <city>Corcoran</city>
+        <region>San Joaquin Valley</region>
+        <county>Kings</county>
+        <district>San Joaquin</district>
+        <type>CR21</type>
+        <ascii-lat>36D02'25"N</ascii-lat>
+        <ascii-lng>119D34'22"W</ascii-lng>
+        <decimal-lat>36.04</decimal-lat>
+        <decimal-lng>119.5730</decimal-lng>
+        <connect-date>11/22/1982</connect-date>
+        <disconnect-date>4/9/1986</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>190</elevation>
+        <zip-codes>
+          <zip-code>93282</zip-code>
+          <zip-code>93212</zip-code>
+        </zip-codes>
+      </station>
+      <station number="21" name="Kettleman">
+        <city>Kettleman City</city>
+        <region>San Joaquin Valley</region>
+        <county>Kings</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>35D52'08"N</ascii-lat>
+        <ascii-lng>119D53'39"W</ascii-lng>
+        <decimal-lat>35.8690</decimal-lat>
+        <decimal-lng>119.8940</decimal-lng>
+        <connect-date>11/19/1982</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>340</elevation>
+        <zip-codes>
+          <zip-code>93239</zip-code>
+          <zip-code>93249</zip-code>
+          <zip-code>93234</zip-code>
+          <zip-code>93266</zip-code>
+        </zip-codes>
+      </station>
+      <station number="22" name="Caruthers">
+        <city>Laton</city>
+        <region>San Joaquin Valley</region>
+        <county>Kings</county>
+        <district>San Joaquin</district>
+        <type>CR21</type>
+        <ascii-lat>36D29'25"N</ascii-lat>
+        <ascii-lng>119D46'45"W</ascii-lng>
+        <decimal-lat>36.49</decimal-lat>
+        <decimal-lng>119.7790</decimal-lng>
+        <connect-date>11/18/1982</connect-date>
+        <disconnect-date>6/6/1988</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>238</elevation>
+        <zip-codes>
+          <zip-code>93609</zip-code>
+          <zip-code>93652</zip-code>
+          <zip-code>93656</zip-code>
+        </zip-codes>
+      </station>
+      <station number="23" name="King City">
+        <city>King City</city>
+        <region>Monterey Bay</region>
+        <county>Monterey</county>
+        <district>San Joaquin</district>
+        <type>CR21</type>
+        <ascii-lat>36D10'28"N</ascii-lat>
+        <ascii-lng>121D07'02"W</ascii-lng>
+        <decimal-lat>36.1740</decimal-lat>
+        <decimal-lng>121.1170</decimal-lng>
+        <connect-date>11/19/1982</connect-date>
+        <disconnect-date>12/23/1985</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>300</elevation>
+        <zip-codes>
+          <zip-code>93930</zip-code>
+        </zip-codes>
+      </station>
+      <station number="24" name="Thermal">
+        <city>Thermal</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Riverside</county>
+        <district>Southern</district>
+        <type>CR21</type>
+        <ascii-lat>33D37'52"N</ascii-lat>
+        <ascii-lng>116D06'43"W</ascii-lng>
+        <decimal-lat>33.6310</decimal-lat>
+        <decimal-lng>116.1120</decimal-lng>
+        <connect-date>11/22/1982</connect-date>
+        <disconnect-date>3/3/1986</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>-120</elevation>
+        <zip-codes>
+          <zip-code>92236</zip-code>
+          <zip-code>92254</zip-code>
+          <zip-code>92274</zip-code>
+          <zip-code />
+        </zip-codes>
+      </station>
+      <station number="25" name="Rancho Mirage">
+        <city>Rancho Mirage</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Riverside</county>
+        <district>Southern</district>
+        <type>CR21</type>
+        <ascii-lat>33D45'52"N</ascii-lat>
+        <ascii-lng>116D25'26"W</ascii-lng>
+        <decimal-lat>33.7640</decimal-lat>
+        <decimal-lng>116.4240</decimal-lng>
+        <connect-date>11/22/1982</connect-date>
+        <disconnect-date>11/20/1985</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>240</elevation>
+        <zip-codes>
+          <zip-code>92270</zip-code>
+        </zip-codes>
+      </station>
+      <station number="26" name="Lost Hills">
+        <city>Lost Hills</city>
+        <region>San Joaquin Valley</region>
+        <county>Kern</county>
+        <district>Southern</district>
+        <type>CR21</type>
+        <ascii-lat>35D30'19"N</ascii-lat>
+        <ascii-lng>119D41'23"W</ascii-lng>
+        <decimal-lat>35.5050</decimal-lat>
+        <decimal-lng>119.69</decimal-lng>
+        <connect-date>11/29/1982</connect-date>
+        <disconnect-date>8/13/1986</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>410</elevation>
+        <zip-codes>
+          <zip-code>93249</zip-code>
+        </zip-codes>
+      </station>
+      <station number="27" name="Zamora">
+        <city>Woodland</city>
+        <region>Sacramento Valley</region>
+        <county>Yolo</county>
+        <district>Central</district>
+        <type>CR10</type>
+        <ascii-lat>38D48'30"N</ascii-lat>
+        <ascii-lng>121D54'29"W</ascii-lng>
+        <decimal-lat>38.8080</decimal-lat>
+        <decimal-lng>121.9080</decimal-lng>
+        <connect-date>12/5/1982</connect-date>
+        <disconnect-date>1/20/2006</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>50</elevation>
+        <zip-codes>
+          <zip-code>95698</zip-code>
+        </zip-codes>
+      </station>
+      <station number="28" name="Soledad">
+        <city>Soledad</city>
+        <region>Monterey Bay</region>
+        <county>Monterey</county>
+        <district>San Joaquin</district>
+        <type>CR21</type>
+        <ascii-lat>36D26'51"N</ascii-lat>
+        <ascii-lng>121D21'51"W</ascii-lng>
+        <decimal-lat>36.4470</decimal-lat>
+        <decimal-lng>121.3640</decimal-lng>
+        <connect-date>1/4/1983</connect-date>
+        <disconnect-date>2/11/1987</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>170</elevation>
+        <zip-codes>
+          <zip-code>93960</zip-code>
+        </zip-codes>
+      </station>
+      <station number="29" name="Cantua Creek">
+        <city>Cantua Creek</city>
+        <region>San Joaquin Valley</region>
+        <county>Fresno</county>
+        <district>San Joaquin</district>
+        <type>CR21</type>
+        <ascii-lat>36D30'59"N</ascii-lat>
+        <ascii-lng>120D18'52"W</ascii-lng>
+        <decimal-lat>36.5160</decimal-lat>
+        <decimal-lng>120.3140</decimal-lng>
+        <connect-date>1/2/1983</connect-date>
+        <disconnect-date>7/23/1985</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>275</elevation>
+        <zip-codes>
+          <zip-code>93608</zip-code>
+        </zip-codes>
+      </station>
+      <station number="30" name="Nicolaus">
+        <city>Nicolaus</city>
+        <region>Sacramento Valley</region>
+        <county>Sutter</county>
+        <district>Central</district>
+        <type>CR10</type>
+        <ascii-lat>38D52'16"N</ascii-lat>
+        <ascii-lng>121D32'43"W</ascii-lng>
+        <decimal-lat>38.8710</decimal-lat>
+        <decimal-lng>121.5450</decimal-lng>
+        <connect-date>1/3/1983</connect-date>
+        <disconnect-date>12/29/2011</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>32</elevation>
+        <zip-codes>
+          <zip-code>95659</zip-code>
+          <zip-code>95668</zip-code>
+          <zip-code>95674</zip-code>
+        </zip-codes>
+      </station>
+      <station number="31" name="McFarland/Kern Farms">
+        <city>McFarland</city>
+        <region>San Joaquin Valley</region>
+        <county>Kern</county>
+        <district>San Joaquin</district>
+        <type>CR21</type>
+        <ascii-lat>35D42'10"N</ascii-lat>
+        <ascii-lng>119D09'06"W</ascii-lng>
+        <decimal-lat>35.7030</decimal-lat>
+        <decimal-lng>119.1520</decimal-lng>
+        <connect-date>1/11/1983</connect-date>
+        <disconnect-date>3/8/1993</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>480</elevation>
+        <zip-codes>
+          <zip-code>93250</zip-code>
+        </zip-codes>
+      </station>
+      <station number="32" name="Colusa">
+        <city>Colusa</city>
+        <region>Sacramento Valley</region>
+        <county>Colusa</county>
+        <district>Northern</district>
+        <type>CR10</type>
+        <ascii-lat>39D13'35"N</ascii-lat>
+        <ascii-lng>122D01'25"W</ascii-lng>
+        <decimal-lat>39.2260</decimal-lat>
+        <decimal-lng>122.0240</decimal-lng>
+        <connect-date>1/13/1983</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>55</elevation>
+        <zip-codes>
+          <zip-code>95932</zip-code>
+        </zip-codes>
+      </station>
+      <station number="33" name="Visalia">
+        <city>Visalia</city>
+        <region>San Joaquin Valley</region>
+        <county>Tulare</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>36D18'03"N</ascii-lat>
+        <ascii-lng>119D13'23"W</ascii-lng>
+        <decimal-lat>36.3010</decimal-lat>
+        <decimal-lng>119.2230</decimal-lng>
+        <connect-date>1/5/1983</connect-date>
+        <disconnect-date>3/1/2007</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>350</elevation>
+        <zip-codes>
+          <zip-code>93277</zip-code>
+          <zip-code>93278</zip-code>
+          <zip-code>93279</zip-code>
+          <zip-code>93291</zip-code>
+          <zip-code>93292</zip-code>
+          <zip-code>93221</zip-code>
+          <zip-code>93223</zip-code>
+          <zip-code>93235</zip-code>
+        </zip-codes>
+      </station>
+      <station number="34" name="Rancho California">
+        <city>Rancho California</city>
+        <region>South Coast Valleys</region>
+        <county>Riverside</county>
+        <district>Southern</district>
+        <type>CR21</type>
+        <ascii-lat>33D29'19"N</ascii-lat>
+        <ascii-lng>117D11'55"W</ascii-lng>
+        <decimal-lat>33.4890</decimal-lat>
+        <decimal-lng>117.1990</decimal-lng>
+        <connect-date>1/21/1983</connect-date>
+        <disconnect-date>11/25/1986</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>1820</elevation>
+        <zip-codes>
+          <zip-code>92589</zip-code>
+          <zip-code>92590</zip-code>
+          <zip-code>92591</zip-code>
+          <zip-code>92592</zip-code>
+        </zip-codes>
+      </station>
+      <station number="35" name="Bishop">
+        <city>Bishop</city>
+        <region>Bishop</region>
+        <county>Inyo</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>37D21'29"N</ascii-lat>
+        <ascii-lng>118D24'14"W</ascii-lng>
+        <decimal-lat>37.3580</decimal-lat>
+        <decimal-lng>118.4040</decimal-lng>
+        <connect-date>2/4/1983</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>4170</elevation>
+        <zip-codes>
+          <zip-code>93512</zip-code>
+          <zip-code>93513</zip-code>
+          <zip-code>93514</zip-code>
+          <zip-code>93515</zip-code>
+        </zip-codes>
+      </station>
+      <station number="36" name="Blythe">
+        <city>Blythe</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Riverside</county>
+        <district>District 6</district>
+        <type>CR21</type>
+        <ascii-lat>33D39'17"N</ascii-lat>
+        <ascii-lng>114D33'29"W</ascii-lng>
+        <decimal-lat>33.6550</decimal-lat>
+        <decimal-lng>114.5580</decimal-lng>
+        <connect-date>3/13/1983</connect-date>
+        <disconnect-date>8/12/1988</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>270</elevation>
+        <zip-codes>
+          <zip-code>92225</zip-code>
+          <zip-code>92226</zip-code>
+          <zip-code>92227</zip-code>
+          <zip-code>92228</zip-code>
+        </zip-codes>
+      </station>
+      <station number="37" name="USDA Salinas">
+        <city>Salinas</city>
+        <region>Monterey Bay</region>
+        <county>Monterey</county>
+        <district>San Joaquin</district>
+        <type>CR21x</type>
+        <ascii-lat>36D37'14"N</ascii-lat>
+        <ascii-lng>121D32'43"W</ascii-lng>
+        <decimal-lat>36.62</decimal-lat>
+        <decimal-lng>121.5450</decimal-lng>
+        <connect-date>4/11/1983</connect-date>
+        <disconnect-date>7/27/1992</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>120</elevation>
+        <zip-codes>
+          <zip-code>93901</zip-code>
+          <zip-code>93902</zip-code>
+          <zip-code>93905</zip-code>
+          <zip-code>93906</zip-code>
+          <zip-code>93907</zip-code>
+          <zip-code>93908</zip-code>
+          <zip-code>93912</zip-code>
+          <zip-code>93915</zip-code>
+          <zip-code>93962</zip-code>
+        </zip-codes>
+      </station>
+      <station number="38" name="Santa Maria">
+        <city>Santa Maria</city>
+        <region>Central Coast Valleys</region>
+        <county>Santa Barbara</county>
+        <district>Southern</district>
+        <type>CR21</type>
+        <ascii-lat>34D57'16"N</ascii-lat>
+        <ascii-lng>120D23'03"W</ascii-lng>
+        <decimal-lat>34.9540</decimal-lat>
+        <decimal-lng>120.3840</decimal-lng>
+        <connect-date>5/3/1983</connect-date>
+        <disconnect-date>4/27/1999</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>270</elevation>
+        <zip-codes>
+          <zip-code>93454</zip-code>
+          <zip-code>93455</zip-code>
+          <zip-code>93456</zip-code>
+          <zip-code>93457</zip-code>
+          <zip-code>93458</zip-code>
+        </zip-codes>
+      </station>
+      <station number="39" name="Parlier">
+        <city>Parlier</city>
+        <region>San Joaquin Valley</region>
+        <county>Fresno</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>36D35'52"N</ascii-lat>
+        <ascii-lng>119D30'11"W</ascii-lng>
+        <decimal-lat>36.5980</decimal-lat>
+        <decimal-lng>119.5030</decimal-lng>
+        <connect-date>5/23/1983</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>337</elevation>
+        <zip-codes>
+          <zip-code>93648</zip-code>
+          <zip-code>93161</zip-code>
+          <zip-code>93618</zip-code>
+          <zip-code>93654</zip-code>
+          <zip-code>93657</zip-code>
+          <zip-code>93662</zip-code>
+        </zip-codes>
+      </station>
+      <station number="40" name="Mendota/MuriettaUSDA">
+        <city>Mendota</city>
+        <region>San Joaquin Valley</region>
+        <county>Fresno</county>
+        <district>San Joaquin</district>
+        <type>CR21</type>
+        <ascii-lat>36D41'00"N</ascii-lat>
+        <ascii-lng>120D23'14"W</ascii-lng>
+        <decimal-lat>36.6830</decimal-lat>
+        <decimal-lng>120.3870</decimal-lng>
+        <connect-date>6/14/1983</connect-date>
+        <disconnect-date>4/15/1992</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>187</elevation>
+        <zip-codes>
+          <zip-code>93668</zip-code>
+        </zip-codes>
+      </station>
+      <station number="41" name="Calipatria/Mulberry">
+        <city>Calipatria</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Imperial</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>33D02'37"N</ascii-lat>
+        <ascii-lng>115D24'56"W</ascii-lng>
+        <decimal-lat>33.0440</decimal-lat>
+        <decimal-lng>115.4150</decimal-lng>
+        <connect-date>7/17/1983</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>-110</elevation>
+        <zip-codes>
+          <zip-code>92233</zip-code>
+          <zip-code>92257</zip-code>
+          <zip-code>92281</zip-code>
+        </zip-codes>
+      </station>
+      <station number="42" name="Lodi">
+        <city>Lodi</city>
+        <region>San Joaquin Valley</region>
+        <county>San Joaquin</county>
+        <district>Central</district>
+        <type>CR10</type>
+        <ascii-lat>38D06'34"N</ascii-lat>
+        <ascii-lng>121D20'46"W</ascii-lng>
+        <decimal-lat>38.1090</decimal-lat>
+        <decimal-lng>121.3460</decimal-lng>
+        <connect-date>10/16/1983</connect-date>
+        <disconnect-date>1/18/2001</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>23</elevation>
+        <zip-codes>
+          <zip-code>95240</zip-code>
+          <zip-code>95241</zip-code>
+          <zip-code>95242</zip-code>
+        </zip-codes>
+      </station>
+      <station number="43" name="McArthur">
+        <city>Glenburn</city>
+        <region>Northeast Plateau</region>
+        <county>Shasta</county>
+        <district>Northern</district>
+        <type>CR10</type>
+        <ascii-lat>41D03'53"N</ascii-lat>
+        <ascii-lng>121D27'16"W</ascii-lng>
+        <decimal-lat>41.0650</decimal-lat>
+        <decimal-lng>121.4540</decimal-lng>
+        <connect-date>10/31/1983</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>3310</elevation>
+        <zip-codes>
+          <zip-code>96056</zip-code>
+          <zip-code>96028</zip-code>
+        </zip-codes>
+      </station>
+      <station number="44" name="U.C. Riverside">
+        <city>Riverside</city>
+        <region>Los Angeles Basin</region>
+        <county>Riverside</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>33D57'54"N</ascii-lat>
+        <ascii-lng>117D20'08"W</ascii-lng>
+        <decimal-lat>33.9650</decimal-lat>
+        <decimal-lng>117.3360</decimal-lng>
+        <connect-date>6/2/1985</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>1020</elevation>
+        <zip-codes>
+          <zip-code>92501</zip-code>
+          <zip-code>92502</zip-code>
+          <zip-code>92503</zip-code>
+          <zip-code>92504</zip-code>
+          <zip-code>92505</zip-code>
+          <zip-code>92506</zip-code>
+          <zip-code>92507</zip-code>
+          <zip-code>92509</zip-code>
+          <zip-code>92513</zip-code>
+          <zip-code>92514</zip-code>
+          <zip-code>92515</zip-code>
+          <zip-code>92516</zip-code>
+          <zip-code>92517</zip-code>
+          <zip-code>92518</zip-code>
+          <zip-code>92519</zip-code>
+          <zip-code>92521</zip-code>
+          <zip-code>92522</zip-code>
+        </zip-codes>
+      </station>
+      <station number="45" name="San Diego">
+        <city>San Diego</city>
+        <region>South Coast Valleys</region>
+        <county>San Diego</county>
+        <district>Southern</district>
+        <type>CR21</type>
+        <ascii-lat>32D47'12"N</ascii-lat>
+        <ascii-lng>117D08'07"W</ascii-lng>
+        <decimal-lat>32.7870</decimal-lat>
+        <decimal-lng>117.1350</decimal-lng>
+        <connect-date>6/9/1985</connect-date>
+        <disconnect-date>4/27/1989</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>370</elevation>
+        <zip-codes>
+          <zip-code>92101</zip-code>
+          <zip-code>92102</zip-code>
+          <zip-code>92103</zip-code>
+          <zip-code>92104</zip-code>
+          <zip-code>92105</zip-code>
+          <zip-code>92106</zip-code>
+          <zip-code>92107</zip-code>
+          <zip-code>92108</zip-code>
+          <zip-code>92109</zip-code>
+          <zip-code>92110</zip-code>
+          <zip-code>92111</zip-code>
+          <zip-code>92112</zip-code>
+          <zip-code>92113</zip-code>
+          <zip-code>92114</zip-code>
+          <zip-code>92115</zip-code>
+          <zip-code>92116</zip-code>
+          <zip-code>92117</zip-code>
+          <zip-code>92118</zip-code>
+          <zip-code>92119</zip-code>
+          <zip-code>92120</zip-code>
+          <zip-code>92121</zip-code>
+          <zip-code>92122</zip-code>
+          <zip-code>92123</zip-code>
+          <zip-code>92124</zip-code>
+          <zip-code>92125</zip-code>
+          <zip-code>92126</zip-code>
+          <zip-code>92127</zip-code>
+          <zip-code>92128</zip-code>
+          <zip-code>92129</zip-code>
+          <zip-code>92130</zip-code>
+          <zip-code>92131</zip-code>
+          <zip-code>92132</zip-code>
+          <zip-code>92133</zip-code>
+          <zip-code>92134</zip-code>
+          <zip-code>92135</zip-code>
+          <zip-code>92136</zip-code>
+          <zip-code>92137</zip-code>
+          <zip-code>92138</zip-code>
+          <zip-code>92139</zip-code>
+          <zip-code>92140</zip-code>
+          <zip-code>92142</zip-code>
+          <zip-code>92143</zip-code>
+          <zip-code>92145</zip-code>
+          <zip-code>92147</zip-code>
+          <zip-code>92149</zip-code>
+          <zip-code>92150</zip-code>
+          <zip-code>92152</zip-code>
+          <zip-code>92153</zip-code>
+          <zip-code>92154</zip-code>
+          <zip-code>92155</zip-code>
+          <zip-code>92158</zip-code>
+          <zip-code>92159</zip-code>
+          <zip-code>92160</zip-code>
+          <zip-code>92160</zip-code>
+          <zip-code>92161</zip-code>
+          <zip-code>92162</zip-code>
+          <zip-code>92163</zip-code>
+          <zip-code>92164</zip-code>
+          <zip-code>92165</zip-code>
+          <zip-code>92166</zip-code>
+          <zip-code>92167</zip-code>
+          <zip-code>92168</zip-code>
+          <zip-code>92169</zip-code>
+          <zip-code>92170</zip-code>
+          <zip-code>92171</zip-code>
+          <zip-code>92172</zip-code>
+          <zip-code>92173</zip-code>
+          <zip-code>92174</zip-code>
+          <zip-code>92175</zip-code>
+          <zip-code>92176</zip-code>
+          <zip-code>92177</zip-code>
+          <zip-code>92178</zip-code>
+          <zip-code>92179</zip-code>
+          <zip-code>92182</zip-code>
+          <zip-code>92184</zip-code>
+          <zip-code>92186</zip-code>
+          <zip-code>92187</zip-code>
+          <zip-code>92191</zip-code>
+          <zip-code>92192</zip-code>
+          <zip-code>92193</zip-code>
+          <zip-code>92194</zip-code>
+          <zip-code>92195</zip-code>
+          <zip-code>92196</zip-code>
+          <zip-code>92197</zip-code>
+          <zip-code>92198</zip-code>
+          <zip-code>92199</zip-code>
+        </zip-codes>
+      </station>
+      <station number="46" name="MacDoel">
+        <city>MacDoel</city>
+        <region>Northeast Plateau</region>
+        <county>Siskiyou</county>
+        <district>Northern</district>
+        <type>CR21</type>
+        <ascii-lat>41D47'32"N</ascii-lat>
+        <ascii-lng>122D03'49"W</ascii-lng>
+        <decimal-lat>41.7920</decimal-lat>
+        <decimal-lng>122.0640</decimal-lng>
+        <connect-date>11/11/1985</connect-date>
+        <disconnect-date>6/11/1986</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>4254</elevation>
+        <zip-codes>
+          <zip-code>96058</zip-code>
+        </zip-codes>
+      </station>
+      <station number="47" name="Brentwood">
+        <city>Brentwood</city>
+        <region>San Francisco Bay</region>
+        <county>Contra Costa</county>
+        <district>Central</district>
+        <type>CR10</type>
+        <ascii-lat>37D55'43"N</ascii-lat>
+        <ascii-lng>121D39'31"W</ascii-lng>
+        <decimal-lat>37.9290</decimal-lat>
+        <decimal-lng>121.6590</decimal-lng>
+        <connect-date>11/18/1985</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>45</elevation>
+        <zip-codes>
+          <zip-code>94513</zip-code>
+          <zip-code>94514</zip-code>
+          <zip-code>94548</zip-code>
+        </zip-codes>
+      </station>
+      <station number="48" name="Tulelake">
+        <city>Tulelake</city>
+        <region>Northeast Plateau</region>
+        <county>Siskiyou</county>
+        <district>Northern</district>
+        <type>CR21</type>
+        <ascii-lat>42D00'12"N</ascii-lat>
+        <ascii-lng>121D25'36"W</ascii-lng>
+        <decimal-lat>42.0030</decimal-lat>
+        <decimal-lng>121.4270</decimal-lng>
+        <connect-date>2/3/1986</connect-date>
+        <disconnect-date>9/30/1993</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>4042</elevation>
+        <zip-codes>
+          <zip-code>96134</zip-code>
+        </zip-codes>
+      </station>
+      <station number="49" name="Oceanside">
+        <city>Oceanside</city>
+        <region>South Coast Valleys</region>
+        <county>San Diego</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>33D15'21"N</ascii-lat>
+        <ascii-lng>117D19'11"W</ascii-lng>
+        <decimal-lat>33.2560</decimal-lat>
+        <decimal-lng>117.32</decimal-lng>
+        <connect-date>3/11/1986</connect-date>
+        <disconnect-date>10/29/2003</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>N</eto-switch>
+        <elevation>50</elevation>
+        <zip-codes>
+          <zip-code>92049</zip-code>
+          <zip-code>92051</zip-code>
+          <zip-code>92052</zip-code>
+          <zip-code>92054</zip-code>
+          <zip-code>92068</zip-code>
+          <zip-code>92056</zip-code>
+          <zip-code>92057</zip-code>
+          <zip-code>92058</zip-code>
+        </zip-codes>
+      </station>
+      <station number="50" name="Thermal">
+        <city>Thermal</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Riverside</county>
+        <district>Southern</district>
+        <type>CR21</type>
+        <ascii-lat>33D38'47"N</ascii-lat>
+        <ascii-lng>116D14'30"W</ascii-lng>
+        <decimal-lat>33.6460</decimal-lat>
+        <decimal-lng>116.2420</decimal-lng>
+        <connect-date>7/22/1986</connect-date>
+        <disconnect-date>1/11/1999</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>-30</elevation>
+        <zip-codes>
+          <zip-code>92274</zip-code>
+        </zip-codes>
+      </station>
+      <station number="51" name="Healdsburg">
+        <city>Healdsburg</city>
+        <region>North Coast Valleys</region>
+        <county>Sonoma</county>
+        <district>Central</district>
+        <type>CR21</type>
+        <ascii-lat>38D39'43"N</ascii-lat>
+        <ascii-lng>122D51'59"W</ascii-lng>
+        <decimal-lat>38.6620</decimal-lat>
+        <decimal-lng>122.8660</decimal-lng>
+        <connect-date>8/24/1986</connect-date>
+        <disconnect-date>3/28/1994</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>180</elevation>
+        <zip-codes>
+          <zip-code>95448</zip-code>
+        </zip-codes>
+      </station>
+      <station number="52" name="San Luis Obispo">
+        <city>San Luis Obispo</city>
+        <region>Central Coast Valleys</region>
+        <county>San Luis Obispo</county>
+        <district>Southern</district>
+        <type>CR10x</type>
+        <ascii-lat>35D18'22"N</ascii-lat>
+        <ascii-lng>120D39'37"W</ascii-lng>
+        <decimal-lat>35.3060</decimal-lat>
+        <decimal-lng>120.66</decimal-lng>
+        <connect-date>4/2/1986</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>330</elevation>
+        <zip-codes>
+          <zip-code>93401</zip-code>
+          <zip-code>93403</zip-code>
+          <zip-code>93405</zip-code>
+          <zip-code>93406</zip-code>
+          <zip-code>93407</zip-code>
+          <zip-code>93408</zip-code>
+          <zip-code>93409</zip-code>
+          <zip-code>93410</zip-code>
+        </zip-codes>
+      </station>
+      <station number="53" name="Greenfield">
+        <city>Greenfield</city>
+        <region>Monterey Bay</region>
+        <county>Monterey</county>
+        <district>San Joaquin</district>
+        <type>CR21</type>
+        <ascii-lat>36D20'28"N</ascii-lat>
+        <ascii-lng>121D15'25"W</ascii-lng>
+        <decimal-lat>36.3410</decimal-lat>
+        <decimal-lng>121.2570</decimal-lng>
+        <connect-date>10/10/1986</connect-date>
+        <disconnect-date>10/23/1991</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>270</elevation>
+        <zip-codes>
+          <zip-code>93927</zip-code>
+        </zip-codes>
+      </station>
+      <station number="54" name="Blackwells Corner">
+        <city>Blackwells Corner</city>
+        <region>San Joaquin Valley</region>
+        <county>Kern</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>35D38'59"N</ascii-lat>
+        <ascii-lng>119D57'30"W</ascii-lng>
+        <decimal-lat>35.65</decimal-lat>
+        <decimal-lng>119.9580</decimal-lng>
+        <connect-date>10/19/1986</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>705</elevation>
+        <zip-codes>
+          <zip-code>93249</zip-code>
+        </zip-codes>
+      </station>
+      <station number="55" name="Palm Desert">
+        <city>Palm Desert</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Riverside</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>33D43'50"N</ascii-lat>
+        <ascii-lng>116D22'57"W</ascii-lng>
+        <decimal-lat>33.73</decimal-lat>
+        <decimal-lng>116.3820</decimal-lng>
+        <connect-date>5/26/1987</connect-date>
+        <disconnect-date>4/11/1994</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>200</elevation>
+        <zip-codes>
+          <zip-code>92210</zip-code>
+          <zip-code>92211</zip-code>
+          <zip-code>92255</zip-code>
+          <zip-code>92260</zip-code>
+          <zip-code>92261</zip-code>
+        </zip-codes>
+      </station>
+      <station number="56" name="Los Banos">
+        <city>Los Banos</city>
+        <region>San Joaquin Valley</region>
+        <county>Merced</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>37D05'36"N</ascii-lat>
+        <ascii-lng>120D45'39"W</ascii-lng>
+        <decimal-lat>37.0930</decimal-lat>
+        <decimal-lng>120.7610</decimal-lng>
+        <connect-date>6/28/1988</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>95</elevation>
+        <zip-codes>
+          <zip-code>93635</zip-code>
+        </zip-codes>
+      </station>
+      <station number="57" name="Buntingville">
+        <city>Susanville</city>
+        <region>Northeast Plateau</region>
+        <county>Lassen</county>
+        <district>Northern</district>
+        <type>CR10</type>
+        <ascii-lat>40D17'24"N</ascii-lat>
+        <ascii-lng>120D26'04"W</ascii-lng>
+        <decimal-lat>40.29</decimal-lat>
+        <decimal-lng>120.4340</decimal-lng>
+        <connect-date>6/22/1986</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>4005</elevation>
+        <zip-codes>
+          <zip-code>96114</zip-code>
+          <zip-code>96117</zip-code>
+          <zip-code>96128</zip-code>
+          <zip-code>96136</zip-code>
+        </zip-codes>
+      </station>
+      <station number="58" name="Santa Paula">
+        <city>Santa Paula</city>
+        <region>Central Coast Valleys</region>
+        <county>Ventura</county>
+        <district>Southern</district>
+        <type>CR21</type>
+        <ascii-lat>34D18'06"N</ascii-lat>
+        <ascii-lng>119D07'08"W</ascii-lng>
+        <decimal-lat>34.3020</decimal-lat>
+        <decimal-lng>119.1190</decimal-lng>
+        <connect-date>7/30/1987</connect-date>
+        <disconnect-date>2/15/1991</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>175</elevation>
+        <zip-codes>
+          <zip-code>93060</zip-code>
+          <zip-code>93061</zip-code>
+        </zip-codes>
+      </station>
+      <station number="59" name="Tehachapi">
+        <city>Tehachapi</city>
+        <region>San Joaquin Valley</region>
+        <county>Kern</county>
+        <district>San Joaquin</district>
+        <type>CR21</type>
+        <ascii-lat>35D06'51"N</ascii-lat>
+        <ascii-lng>118D26'19"W</ascii-lng>
+        <decimal-lat>35.1140</decimal-lat>
+        <decimal-lng>118.4390</decimal-lng>
+        <connect-date>7/29/1986</connect-date>
+        <disconnect-date>8/23/1990</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>4110</elevation>
+        <zip-codes>
+          <zip-code>93561</zip-code>
+          <zip-code>93581</zip-code>
+        </zip-codes>
+      </station>
+      <station number="60" name="Barstow">
+        <city>Barstow</city>
+        <region>San Bernardino</region>
+        <county>San Bernardino</county>
+        <district>Southern</district>
+        <type>CR21</type>
+        <ascii-lat>34D54'12"N</ascii-lat>
+        <ascii-lng>117D06'54"W</ascii-lng>
+        <decimal-lat>34.9030</decimal-lat>
+        <decimal-lng>117.1150</decimal-lng>
+        <connect-date>11/20/1986</connect-date>
+        <disconnect-date>2/20/1992</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>2180</elevation>
+        <zip-codes>
+          <zip-code>92310</zip-code>
+          <zip-code>92311</zip-code>
+          <zip-code>92312</zip-code>
+        </zip-codes>
+      </station>
+      <station number="61" name="Orland">
+        <city>Orland</city>
+        <region>Sacramento Valley</region>
+        <county>Glenn</county>
+        <district>Northern</district>
+        <type>CR10</type>
+        <ascii-lat>39D41'31"N</ascii-lat>
+        <ascii-lng>122D09'07"W</ascii-lng>
+        <decimal-lat>39.6920</decimal-lat>
+        <decimal-lng>122.1520</decimal-lng>
+        <connect-date>5/13/1987</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>N</eto-switch>
+        <elevation>198</elevation>
+        <zip-codes>
+          <zip-code>95963</zip-code>
+        </zip-codes>
+      </station>
+      <station number="62" name="Temecula">
+        <city>Rancho California</city>
+        <region>South Coast Valleys</region>
+        <county>Riverside</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>33D29'25"N</ascii-lat>
+        <ascii-lng>117D13'20"W</ascii-lng>
+        <decimal-lat>33.49</decimal-lat>
+        <decimal-lng>117.2220</decimal-lng>
+        <connect-date>11/25/1986</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>1420</elevation>
+        <zip-codes>
+          <zip-code>96593</zip-code>
+          <zip-code>92589</zip-code>
+          <zip-code>92590</zip-code>
+          <zip-code>92591</zip-code>
+          <zip-code>92592</zip-code>
+        </zip-codes>
+      </station>
+      <station number="63" name="Novato">
+        <city>Novato</city>
+        <region>San Francisco Bay</region>
+        <county>Marin</county>
+        <district>Central</district>
+        <type>CR21x</type>
+        <ascii-lat>38D07'17"N</ascii-lat>
+        <ascii-lng>122D32'34"W</ascii-lng>
+        <decimal-lat>38.1210</decimal-lat>
+        <decimal-lng>122.5430</decimal-lng>
+        <connect-date>7/1/1986</connect-date>
+        <disconnect-date>1/18/2002</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>25</elevation>
+        <zip-codes>
+          <zip-code>94945</zip-code>
+          <zip-code>94947</zip-code>
+          <zip-code>94948</zip-code>
+          <zip-code>94949</zip-code>
+          <zip-code>94998</zip-code>
+        </zip-codes>
+      </station>
+      <station number="64" name="Santa Ynez">
+        <city>Santa Ynez</city>
+        <region>Central Coast Valleys</region>
+        <county>Santa Barbara</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>34D34'59"N</ascii-lat>
+        <ascii-lng>120D04'41"W</ascii-lng>
+        <decimal-lat>34.5830</decimal-lat>
+        <decimal-lng>120.0780</decimal-lng>
+        <connect-date>11/21/1986</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>490</elevation>
+        <zip-codes>
+          <zip-code>93460</zip-code>
+        </zip-codes>
+      </station>
+      <station number="65" name="Walnut Creek">
+        <city>Walnut Creek</city>
+        <region>San Francisco Bay</region>
+        <county>Contra Costa</county>
+        <district>Central</district>
+        <type>CR10</type>
+        <ascii-lat>37D54'49"N</ascii-lat>
+        <ascii-lng>122D04'54"W</ascii-lng>
+        <decimal-lat>37.9140</decimal-lat>
+        <decimal-lng>122.0820</decimal-lng>
+        <connect-date>7/22/1987</connect-date>
+        <disconnect-date>3/8/2002</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>440</elevation>
+        <zip-codes>
+          <zip-code>94595</zip-code>
+          <zip-code>94596</zip-code>
+          <zip-code>94597</zip-code>
+          <zip-code>94598</zip-code>
+        </zip-codes>
+      </station>
+      <station number="66" name="San Diego">
+        <city>San Diego</city>
+        <region>South Coast Valleys</region>
+        <county>San Diego</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>32D43'59"N</ascii-lat>
+        <ascii-lng>117D08'05"W</ascii-lng>
+        <decimal-lat>32.7330</decimal-lat>
+        <decimal-lng>117.1350</decimal-lng>
+        <connect-date>4/27/1989</connect-date>
+        <disconnect-date>12/19/2001</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>370</elevation>
+        <zip-codes>
+          <zip-code>92101</zip-code>
+          <zip-code>92102</zip-code>
+          <zip-code>92103</zip-code>
+          <zip-code>92104</zip-code>
+          <zip-code>92105</zip-code>
+          <zip-code>92106</zip-code>
+          <zip-code>92107</zip-code>
+          <zip-code>92108</zip-code>
+          <zip-code>92109</zip-code>
+          <zip-code>92110</zip-code>
+          <zip-code>92111</zip-code>
+          <zip-code>92112</zip-code>
+          <zip-code>92113</zip-code>
+          <zip-code>92114</zip-code>
+          <zip-code>92115</zip-code>
+          <zip-code>92116</zip-code>
+          <zip-code>92117</zip-code>
+          <zip-code>92118</zip-code>
+          <zip-code>92119</zip-code>
+          <zip-code>92120</zip-code>
+          <zip-code>92121</zip-code>
+          <zip-code>92122</zip-code>
+          <zip-code>92123</zip-code>
+          <zip-code>92124</zip-code>
+          <zip-code>92125</zip-code>
+          <zip-code>92126</zip-code>
+          <zip-code>92127</zip-code>
+          <zip-code>92128</zip-code>
+          <zip-code>92129</zip-code>
+          <zip-code>92130</zip-code>
+          <zip-code>92131</zip-code>
+          <zip-code>92132</zip-code>
+          <zip-code>92133</zip-code>
+          <zip-code>92134</zip-code>
+          <zip-code>92135</zip-code>
+          <zip-code>92136</zip-code>
+          <zip-code>92137</zip-code>
+          <zip-code>92138</zip-code>
+          <zip-code>92139</zip-code>
+          <zip-code>92140</zip-code>
+          <zip-code>92142</zip-code>
+          <zip-code>92143</zip-code>
+          <zip-code>92144</zip-code>
+          <zip-code>92145</zip-code>
+          <zip-code>92147</zip-code>
+          <zip-code>92149</zip-code>
+          <zip-code>92150</zip-code>
+          <zip-code>92152</zip-code>
+          <zip-code>92153</zip-code>
+          <zip-code>92154</zip-code>
+          <zip-code>92155</zip-code>
+          <zip-code>92158</zip-code>
+          <zip-code>92159</zip-code>
+          <zip-code>92160</zip-code>
+          <zip-code>92160</zip-code>
+          <zip-code>92161</zip-code>
+          <zip-code>92162</zip-code>
+          <zip-code>92163</zip-code>
+          <zip-code>92164</zip-code>
+          <zip-code>92165</zip-code>
+          <zip-code>92166</zip-code>
+          <zip-code>92167</zip-code>
+          <zip-code>92168</zip-code>
+          <zip-code>92169</zip-code>
+          <zip-code>92170</zip-code>
+          <zip-code>92171</zip-code>
+          <zip-code>92172</zip-code>
+          <zip-code>92173</zip-code>
+          <zip-code>92174</zip-code>
+          <zip-code>92175</zip-code>
+          <zip-code>92176</zip-code>
+          <zip-code>92177</zip-code>
+          <zip-code>92178</zip-code>
+          <zip-code>92179</zip-code>
+          <zip-code>92182</zip-code>
+          <zip-code>92184</zip-code>
+          <zip-code>92186</zip-code>
+          <zip-code>92187</zip-code>
+          <zip-code>92191</zip-code>
+          <zip-code>92192</zip-code>
+          <zip-code>92193</zip-code>
+          <zip-code>92194</zip-code>
+          <zip-code>92195</zip-code>
+          <zip-code>92196</zip-code>
+          <zip-code>92197</zip-code>
+          <zip-code>92198</zip-code>
+          <zip-code>92199</zip-code>
+        </zip-codes>
+      </station>
+      <station number="67" name="Goleta">
+        <city>Santa Barbara</city>
+        <region>Central Coast Valleys</region>
+        <county>Santa Barbara</county>
+        <district>Southern</district>
+        <type>CR21</type>
+        <ascii-lat>34D25'56"N</ascii-lat>
+        <ascii-lng>119D50'20"W</ascii-lng>
+        <decimal-lat>34.4320</decimal-lat>
+        <decimal-lng>119.8390</decimal-lng>
+        <connect-date>2/17/1988</connect-date>
+        <disconnect-date>4/7/1993</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>30</elevation>
+        <zip-codes>
+          <zip-code>93101</zip-code>
+          <zip-code>93102</zip-code>
+          <zip-code>93103</zip-code>
+          <zip-code>93105</zip-code>
+          <zip-code>93106</zip-code>
+          <zip-code>93107</zip-code>
+          <zip-code>93106</zip-code>
+          <zip-code>93109</zip-code>
+          <zip-code>93110</zip-code>
+          <zip-code>93111</zip-code>
+          <zip-code>93116</zip-code>
+          <zip-code>93117</zip-code>
+          <zip-code>93118</zip-code>
+          <zip-code>93120</zip-code>
+          <zip-code>93121</zip-code>
+          <zip-code>93122</zip-code>
+          <zip-code>93123</zip-code>
+          <zip-code>93124</zip-code>
+          <zip-code>93125</zip-code>
+          <zip-code>93126</zip-code>
+          <zip-code>93127</zip-code>
+          <zip-code>93128</zip-code>
+          <zip-code>93129</zip-code>
+          <zip-code>93130</zip-code>
+          <zip-code>93140</zip-code>
+          <zip-code>93150</zip-code>
+          <zip-code>93160</zip-code>
+          <zip-code>93190</zip-code>
+          <zip-code>93199</zip-code>
+        </zip-codes>
+      </station>
+      <station number="68" name="Seeley">
+        <city>Seeley</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Imperial</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>32D45'34"N</ascii-lat>
+        <ascii-lng>115D43'54"W</ascii-lng>
+        <decimal-lat>32.7590</decimal-lat>
+        <decimal-lng>115.7320</decimal-lng>
+        <connect-date>5/29/1987</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>40</elevation>
+        <zip-codes>
+          <zip-code>92273</zip-code>
+        </zip-codes>
+      </station>
+      <station number="69" name="San Jose">
+        <city>San Jose</city>
+        <region>San Francisco Bay</region>
+        <county>Santa Clara</county>
+        <district>Central</district>
+        <type>CR21x</type>
+        <ascii-lat>37D19'33"N</ascii-lat>
+        <ascii-lng>121D57'00"W</ascii-lng>
+        <decimal-lat>37.3260</decimal-lat>
+        <decimal-lng>121.95</decimal-lng>
+        <connect-date>6/8/1987</connect-date>
+        <disconnect-date>11/22/2002</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>125</elevation>
+        <zip-codes>
+          <zip-code>95101</zip-code>
+          <zip-code>95102</zip-code>
+          <zip-code>95103</zip-code>
+          <zip-code>95106</zip-code>
+          <zip-code>95107</zip-code>
+          <zip-code>95108</zip-code>
+          <zip-code>95109</zip-code>
+          <zip-code>95110</zip-code>
+          <zip-code>95111</zip-code>
+          <zip-code>95112</zip-code>
+          <zip-code>95113</zip-code>
+          <zip-code>95114</zip-code>
+          <zip-code>95115</zip-code>
+          <zip-code>95116</zip-code>
+          <zip-code>95117</zip-code>
+          <zip-code>95118</zip-code>
+          <zip-code>95119</zip-code>
+          <zip-code>95120</zip-code>
+          <zip-code>95121</zip-code>
+          <zip-code>95122</zip-code>
+          <zip-code>95123</zip-code>
+          <zip-code>95124</zip-code>
+          <zip-code>95125</zip-code>
+          <zip-code>95126</zip-code>
+          <zip-code>95127</zip-code>
+          <zip-code>95128</zip-code>
+          <zip-code>95129</zip-code>
+          <zip-code>95130</zip-code>
+          <zip-code>95131</zip-code>
+          <zip-code>95132</zip-code>
+          <zip-code>95133</zip-code>
+          <zip-code>95134</zip-code>
+          <zip-code>95135</zip-code>
+          <zip-code>95136</zip-code>
+          <zip-code>95137</zip-code>
+          <zip-code>95138</zip-code>
+          <zip-code>95139</zip-code>
+          <zip-code>95140</zip-code>
+          <zip-code>95141</zip-code>
+          <zip-code>95142</zip-code>
+          <zip-code>95148</zip-code>
+          <zip-code>95150</zip-code>
+          <zip-code>95152</zip-code>
+          <zip-code>95153</zip-code>
+          <zip-code>95154</zip-code>
+          <zip-code>95155</zip-code>
+          <zip-code>95156</zip-code>
+          <zip-code>95157</zip-code>
+          <zip-code>95158</zip-code>
+          <zip-code>95159</zip-code>
+          <zip-code>95160</zip-code>
+          <zip-code>95161</zip-code>
+          <zip-code>95164</zip-code>
+          <zip-code>95170</zip-code>
+          <zip-code>95171</zip-code>
+          <zip-code>95172</zip-code>
+          <zip-code>95173</zip-code>
+          <zip-code>95190</zip-code>
+          <zip-code>95191</zip-code>
+          <zip-code>95192</zip-code>
+          <zip-code>95193</zip-code>
+          <zip-code>95194</zip-code>
+          <zip-code>95196</zip-code>
+        </zip-codes>
+      </station>
+      <station number="70" name="Manteca">
+        <city>Manteca</city>
+        <region>San Joaquin Valley</region>
+        <county>San Joaquin</county>
+        <district>Central</district>
+        <type>CR10</type>
+        <ascii-lat>37D50'05"N</ascii-lat>
+        <ascii-lng>121D13'22"W</ascii-lng>
+        <decimal-lat>37.8350</decimal-lat>
+        <decimal-lng>121.2230</decimal-lng>
+        <connect-date>11/12/1987</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>33</elevation>
+        <zip-codes>
+          <zip-code>95231</zip-code>
+          <zip-code>95320</zip-code>
+          <zip-code>95365</zip-code>
+          <zip-code>95336</zip-code>
+          <zip-code>95337</zip-code>
+        </zip-codes>
+      </station>
+      <station number="71" name="Modesto">
+        <city>Modesto</city>
+        <region>San Joaquin Valley</region>
+        <county>Stanislaus</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>37D38'43"N</ascii-lat>
+        <ascii-lng>121D11'16"W</ascii-lng>
+        <decimal-lat>37.6450</decimal-lat>
+        <decimal-lng>121.1880</decimal-lng>
+        <connect-date>6/25/1987</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>35</elevation>
+        <zip-codes>
+          <zip-code>95350</zip-code>
+          <zip-code>95351</zip-code>
+          <zip-code>95352</zip-code>
+          <zip-code>95353</zip-code>
+          <zip-code>95354</zip-code>
+          <zip-code>95355</zip-code>
+          <zip-code>95356</zip-code>
+          <zip-code>95357</zip-code>
+          <zip-code>95358</zip-code>
+          <zip-code>95397</zip-code>
+        </zip-codes>
+      </station>
+      <station number="72" name="Palo Verde">
+        <city>Palo Verde</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Imperial</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>33D23'15"N</ascii-lat>
+        <ascii-lng>114D43'21"W</ascii-lng>
+        <decimal-lat>33.3880</decimal-lat>
+        <decimal-lng>114.7230</decimal-lng>
+        <connect-date>9/8/1987</connect-date>
+        <disconnect-date>12/20/2000</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>230</elevation>
+        <zip-codes>
+          <zip-code>92266</zip-code>
+        </zip-codes>
+      </station>
+      <station number="73" name="Hollywood Hills">
+        <city>Burbank</city>
+        <region>Los Angeles Basin</region>
+        <county>Los Angeles</county>
+        <district>Southern</district>
+        <type>CR21x</type>
+        <ascii-lat>34D08'50"N</ascii-lat>
+        <ascii-lng>118D19'04"W</ascii-lng>
+        <decimal-lat>34.1470</decimal-lat>
+        <decimal-lng>118.3180</decimal-lng>
+        <connect-date>3/4/1988</connect-date>
+        <disconnect-date>9/14/1993</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>560</elevation>
+        <zip-codes>
+          <zip-code>91501</zip-code>
+          <zip-code>91502</zip-code>
+          <zip-code>91503</zip-code>
+          <zip-code>91504</zip-code>
+          <zip-code>91505</zip-code>
+          <zip-code>91506</zip-code>
+          <zip-code>91507</zip-code>
+          <zip-code>91508</zip-code>
+          <zip-code>91509</zip-code>
+          <zip-code>91510</zip-code>
+          <zip-code>91521</zip-code>
+          <zip-code>91522</zip-code>
+          <zip-code>91523</zip-code>
+          <zip-code>91526</zip-code>
+        </zip-codes>
+      </station>
+      <station number="74" name="Escondido">
+        <city>Escondido</city>
+        <region>South Coast Valleys</region>
+        <county>San Diego</county>
+        <district>Southern</district>
+        <type>CR21</type>
+        <ascii-lat>33D05'24"N</ascii-lat>
+        <ascii-lng>116D58'52"W</ascii-lng>
+        <decimal-lat>33.09</decimal-lat>
+        <decimal-lng>116.9730</decimal-lng>
+        <connect-date>4/26/1988</connect-date>
+        <disconnect-date>12/24/1998</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>450</elevation>
+        <zip-codes>
+          <zip-code>92025</zip-code>
+          <zip-code>92026</zip-code>
+          <zip-code>92027</zip-code>
+          <zip-code>92029</zip-code>
+          <zip-code>92030</zip-code>
+          <zip-code>92033</zip-code>
+          <zip-code>92046</zip-code>
+        </zip-codes>
+      </station>
+      <station number="75" name="Irvine">
+        <city>Irvine</city>
+        <region>South Coast Valleys</region>
+        <county>Orange</county>
+        <district>Southern</district>
+        <type>CR10x</type>
+        <ascii-lat>33D41'19"N</ascii-lat>
+        <ascii-lng>117D43'14"W</ascii-lng>
+        <decimal-lat>33.6890</decimal-lat>
+        <decimal-lng>117.7210</decimal-lng>
+        <connect-date>10/7/1987</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>410</elevation>
+        <zip-codes>
+          <zip-code>92602</zip-code>
+          <zip-code>92603</zip-code>
+          <zip-code>92604</zip-code>
+          <zip-code>92606</zip-code>
+          <zip-code>92612</zip-code>
+          <zip-code>92614</zip-code>
+          <zip-code>92616</zip-code>
+          <zip-code>92618</zip-code>
+          <zip-code>92619</zip-code>
+          <zip-code>92620</zip-code>
+          <zip-code>92623</zip-code>
+          <zip-code>92630</zip-code>
+          <zip-code>92650</zip-code>
+          <zip-code>92667</zip-code>
+          <zip-code>92707</zip-code>
+          <zip-code>92710</zip-code>
+        </zip-codes>
+      </station>
+      <station number="76" name="Betteravia">
+        <city>Guadalupe</city>
+        <region>Central Coast Valleys</region>
+        <county>Santa Barbara</county>
+        <district>Southern</district>
+        <type>CR21</type>
+        <ascii-lat>34D55'26"N</ascii-lat>
+        <ascii-lng>120D30'42"W</ascii-lng>
+        <decimal-lat>34.9240</decimal-lat>
+        <decimal-lng>120.5120</decimal-lng>
+        <connect-date>12/18/1987</connect-date>
+        <disconnect-date>7/1/1993</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>160</elevation>
+        <zip-codes>
+          <zip-code>93454</zip-code>
+          <zip-code>93455</zip-code>
+          <zip-code>93456</zip-code>
+          <zip-code>93457</zip-code>
+          <zip-code>93458</zip-code>
+        </zip-codes>
+      </station>
+      <station number="77" name="Oakville">
+        <city>Napa</city>
+        <region>North Coast Valleys</region>
+        <county>Napa</county>
+        <district>Central</district>
+        <type>CR10x</type>
+        <ascii-lat>38D26'02"N</ascii-lat>
+        <ascii-lng>122D24'35"W</ascii-lng>
+        <decimal-lat>38.4340</decimal-lat>
+        <decimal-lng>122.41</decimal-lng>
+        <connect-date>3/1/1989</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>190</elevation>
+        <zip-codes>
+          <zip-code>94562</zip-code>
+          <zip-code>94574</zip-code>
+          <zip-code>94573</zip-code>
+        </zip-codes>
+      </station>
+      <station number="78" name="Pomona">
+        <city>Pomona</city>
+        <region>Los Angeles Basin</region>
+        <county>Los Angeles</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>34D03'30"N</ascii-lat>
+        <ascii-lng>117D48'42"W</ascii-lng>
+        <decimal-lat>34.0580</decimal-lat>
+        <decimal-lng>117.8120</decimal-lng>
+        <connect-date>3/14/1989</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>730</elevation>
+        <zip-codes>
+          <zip-code>91765</zip-code>
+          <zip-code>91766</zip-code>
+          <zip-code>91767</zip-code>
+          <zip-code>91768</zip-code>
+          <zip-code>91769</zip-code>
+          <zip-code>91797</zip-code>
+          <zip-code>91799</zip-code>
+        </zip-codes>
+      </station>
+      <station number="79" name="Angwin">
+        <city>St. Helena</city>
+        <region>North Coast Valleys</region>
+        <county>Napa</county>
+        <district>Central</district>
+        <type>CR21x</type>
+        <ascii-lat>38D32'55"N</ascii-lat>
+        <ascii-lng>122D25'15"W</ascii-lng>
+        <decimal-lat>38.5490</decimal-lat>
+        <decimal-lng>122.4210</decimal-lng>
+        <connect-date>5/11/1989</connect-date>
+        <disconnect-date>12/27/1996</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>1720</elevation>
+        <zip-codes>
+          <zip-code>94508</zip-code>
+          <zip-code>94576</zip-code>
+          <zip-code>95708</zip-code>
+        </zip-codes>
+      </station>
+      <station number="80" name="Fresno State">
+        <city>Fresno</city>
+        <region>San Joaquin Valley</region>
+        <county>Fresno</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>36D49'15"N</ascii-lat>
+        <ascii-lng>119D44'31"W</ascii-lng>
+        <decimal-lat>36.8210</decimal-lat>
+        <decimal-lng>119.7420</decimal-lng>
+        <connect-date>10/3/1988</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>339</elevation>
+        <zip-codes>
+          <zip-code>93650</zip-code>
+          <zip-code>93701</zip-code>
+          <zip-code>93702</zip-code>
+          <zip-code>93703</zip-code>
+          <zip-code>93704</zip-code>
+          <zip-code>93705</zip-code>
+          <zip-code>93706</zip-code>
+          <zip-code>93707</zip-code>
+          <zip-code>93708</zip-code>
+          <zip-code>93709</zip-code>
+          <zip-code>93710</zip-code>
+          <zip-code>93711</zip-code>
+          <zip-code>93714</zip-code>
+          <zip-code>93715</zip-code>
+          <zip-code>93716</zip-code>
+          <zip-code>93717</zip-code>
+          <zip-code>93718</zip-code>
+          <zip-code>93720</zip-code>
+          <zip-code>93721</zip-code>
+          <zip-code>93722</zip-code>
+          <zip-code>93724</zip-code>
+          <zip-code>93725</zip-code>
+          <zip-code>93726</zip-code>
+          <zip-code>93727</zip-code>
+          <zip-code>93728</zip-code>
+          <zip-code>93729</zip-code>
+          <zip-code>93740</zip-code>
+          <zip-code>93741</zip-code>
+          <zip-code>93744</zip-code>
+          <zip-code>93745</zip-code>
+          <zip-code>93747</zip-code>
+          <zip-code>93750</zip-code>
+          <zip-code>93755</zip-code>
+          <zip-code>93759</zip-code>
+          <zip-code>93760</zip-code>
+          <zip-code>93761</zip-code>
+          <zip-code>93762</zip-code>
+          <zip-code>93766</zip-code>
+        </zip-codes>
+      </station>
+      <station number="81" name="Shenandoah Valley">
+        <city>Plymouth</city>
+        <region>Sierra Foothill</region>
+        <county>Amador</county>
+        <district>Central</district>
+        <type>CR10</type>
+        <ascii-lat>38D31'22"N</ascii-lat>
+        <ascii-lng>120D48'13"W</ascii-lng>
+        <decimal-lat>38.5230</decimal-lat>
+        <decimal-lng>120.8040</decimal-lng>
+        <connect-date>5/11/1990</connect-date>
+        <disconnect-date>5/17/2000</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>1550</elevation>
+        <zip-codes>
+          <zip-code>95669</zip-code>
+        </zip-codes>
+      </station>
+      <station number="82" name="Claremont">
+        <city>Claremont</city>
+        <region>Los Angeles Basin</region>
+        <county>Los Angeles</county>
+        <district>Southern</district>
+        <type>CR21x</type>
+        <ascii-lat>34D07'48"N</ascii-lat>
+        <ascii-lng>117D41'46"W</ascii-lng>
+        <decimal-lat>34.13</decimal-lat>
+        <decimal-lng>117.6960</decimal-lng>
+        <connect-date>4/13/1989</connect-date>
+        <disconnect-date>9/26/2007</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>1620</elevation>
+        <zip-codes>
+          <zip-code>91750</zip-code>
+          <zip-code>91773</zip-code>
+          <zip-code>91784.91785</zip-code>
+          <zip-code>91786</zip-code>
+          <zip-code>91711</zip-code>
+        </zip-codes>
+      </station>
+      <station number="83" name="Santa Rosa">
+        <city>Santa Rosa</city>
+        <region>North Coast Valleys</region>
+        <county>Sonoma</county>
+        <district>Central</district>
+        <type>CR10x</type>
+        <ascii-lat>38D24'04"N</ascii-lat>
+        <ascii-lng>122D47'56"W</ascii-lng>
+        <decimal-lat>38.4010</decimal-lat>
+        <decimal-lng>122.7960</decimal-lng>
+        <connect-date>1/1/1990</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>80</elevation>
+        <zip-codes>
+          <zip-code>95401</zip-code>
+          <zip-code>95402</zip-code>
+          <zip-code>95403</zip-code>
+          <zip-code>95404</zip-code>
+          <zip-code>95405</zip-code>
+          <zip-code>95406</zip-code>
+          <zip-code>95407</zip-code>
+          <zip-code>95408</zip-code>
+          <zip-code>95409</zip-code>
+        </zip-codes>
+      </station>
+      <station number="84" name="Browns Valley">
+        <city>Marysville</city>
+        <region>Sierra Foothill</region>
+        <county>Yuba</county>
+        <district>Central</district>
+        <type>CR10</type>
+        <ascii-lat>39D16'17"N</ascii-lat>
+        <ascii-lng>121D18'19"W</ascii-lng>
+        <decimal-lat>39.2710</decimal-lat>
+        <decimal-lng>121.3110</decimal-lng>
+        <connect-date>4/13/1989</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>940</elevation>
+        <zip-codes>
+          <zip-code>95918</zip-code>
+        </zip-codes>
+      </station>
+      <station number="85" name="Hopland FS">
+        <city>Hopland</city>
+        <region>North Coast Valleys</region>
+        <county>Mendocino</county>
+        <district>Central</district>
+        <type>CR21x</type>
+        <ascii-lat>39D00'25"N</ascii-lat>
+        <ascii-lng>123D04'45"W</ascii-lng>
+        <decimal-lat>39.0070</decimal-lat>
+        <decimal-lng>123.0790</decimal-lng>
+        <connect-date>9/23/1989</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>N</eto-switch>
+        <elevation>1160</elevation>
+        <zip-codes>
+          <zip-code>95449</zip-code>
+        </zip-codes>
+      </station>
+      <station number="86" name="Lindcove">
+        <city>Lindcove</city>
+        <region>San Joaquin Valley</region>
+        <county>Tulare</county>
+        <district>San Joaquin</district>
+        <type>CR21x</type>
+        <ascii-lat>36D21'26"N</ascii-lat>
+        <ascii-lng>119D03'31"W</ascii-lng>
+        <decimal-lat>36.3570</decimal-lat>
+        <decimal-lng>119.0590</decimal-lng>
+        <connect-date>5/31/1989</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>480</elevation>
+        <zip-codes>
+          <zip-code>93221</zip-code>
+          <zip-code>93286</zip-code>
+        </zip-codes>
+      </station>
+      <station number="87" name="Meloland">
+        <city>El Centro</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Imperial</county>
+        <district>Southern</district>
+        <type>CR21x</type>
+        <ascii-lat>32D48'24"N</ascii-lat>
+        <ascii-lng>115D26'46"W</ascii-lng>
+        <decimal-lat>32.8070</decimal-lat>
+        <decimal-lng>115.4460</decimal-lng>
+        <connect-date>12/12/1989</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>-50</elevation>
+        <zip-codes>
+          <zip-code>92243</zip-code>
+          <zip-code>92244</zip-code>
+          <zip-code>92250</zip-code>
+          <zip-code>92251</zip-code>
+        </zip-codes>
+      </station>
+      <station number="88" name="Cuyama">
+        <city>Cuyama</city>
+        <region>Central Coast Valleys</region>
+        <county>Santa Barbara</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>34D55'54"N</ascii-lat>
+        <ascii-lng>119D36'17"W</ascii-lng>
+        <decimal-lat>34.9320</decimal-lat>
+        <decimal-lng>119.6050</decimal-lng>
+        <connect-date>5/20/1989</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>2290</elevation>
+        <zip-codes>
+          <zip-code>93254</zip-code>
+        </zip-codes>
+      </station>
+      <station number="89" name="Salinas South">
+        <city>Salinas</city>
+        <region>Monterey Bay</region>
+        <county>Monterey</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>36D36'36"N</ascii-lat>
+        <ascii-lng>121D31'46"W</ascii-lng>
+        <decimal-lat>36.61</decimal-lat>
+        <decimal-lng>121.5290</decimal-lng>
+        <connect-date>9/5/1992</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>120</elevation>
+        <zip-codes>
+          <zip-code>93901</zip-code>
+          <zip-code>93902</zip-code>
+          <zip-code>93905</zip-code>
+          <zip-code>93906</zip-code>
+          <zip-code>93907</zip-code>
+          <zip-code>93908</zip-code>
+          <zip-code>93912</zip-code>
+          <zip-code>93915</zip-code>
+          <zip-code>93962</zip-code>
+        </zip-codes>
+      </station>
+      <station number="90" name="Alturas">
+        <city>Alturas</city>
+        <region>Northeast Plateau</region>
+        <county>Modoc</county>
+        <district>Northern</district>
+        <type>CR10</type>
+        <ascii-lat>41D26'18"N</ascii-lat>
+        <ascii-lng>120D28'45"W</ascii-lng>
+        <decimal-lat>41.4330</decimal-lat>
+        <decimal-lng>120.4790</decimal-lng>
+        <connect-date>4/23/1989</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>4405</elevation>
+        <zip-codes>
+          <zip-code>96101</zip-code>
+        </zip-codes>
+      </station>
+      <station number="91" name="Tulelake FS">
+        <city>Tulelake</city>
+        <region>Northeast Plateau</region>
+        <county>Siskiyou</county>
+        <district>Northern</district>
+        <type>CR21x</type>
+        <ascii-lat>41D57'33"N</ascii-lat>
+        <ascii-lng>121D28'16"W</ascii-lng>
+        <decimal-lat>41.9590</decimal-lat>
+        <decimal-lng>121.4710</decimal-lng>
+        <connect-date>4/12/1989</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>4035</elevation>
+        <zip-codes>
+          <zip-code>96134</zip-code>
+        </zip-codes>
+      </station>
+      <station number="92" name="Kesterson">
+        <city>Gustine</city>
+        <region>San Joaquin Valley</region>
+        <county>Merced</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>37D13'55"N</ascii-lat>
+        <ascii-lng>120D52'51"W</ascii-lng>
+        <decimal-lat>37.2320</decimal-lat>
+        <decimal-lng>120.8810</decimal-lng>
+        <connect-date>10/13/1989</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>N</eto-switch>
+        <elevation>75</elevation>
+        <zip-codes>
+          <zip-code>93620</zip-code>
+        </zip-codes>
+      </station>
+      <station number="93" name="Lamont">
+        <city>Lamont</city>
+        <region>San Joaquin Valley</region>
+        <county>Kern</county>
+        <district>San Joaquin</district>
+        <type>CR21</type>
+        <ascii-lat>35D17'12"N</ascii-lat>
+        <ascii-lng>118D55'43"W</ascii-lng>
+        <decimal-lat>35.2860</decimal-lat>
+        <decimal-lng>118.9290</decimal-lng>
+        <connect-date>2/4/1990</connect-date>
+        <disconnect-date>10/3/1994</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>382</elevation>
+        <zip-codes>
+          <zip-code>93241</zip-code>
+        </zip-codes>
+      </station>
+      <station number="94" name="Goleta Foothills">
+        <city>Goleta</city>
+        <region>Central Coast Valleys</region>
+        <county>Santa Barbara</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>34D28'18"N</ascii-lat>
+        <ascii-lng>119D52'04"W</ascii-lng>
+        <decimal-lat>34.4720</decimal-lat>
+        <decimal-lng>119.8680</decimal-lng>
+        <connect-date>7/7/1990</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>640</elevation>
+        <zip-codes>
+          <zip-code>93101</zip-code>
+          <zip-code>93102</zip-code>
+          <zip-code>93103</zip-code>
+          <zip-code>93105</zip-code>
+          <zip-code>93106</zip-code>
+          <zip-code>93107</zip-code>
+          <zip-code>93106</zip-code>
+          <zip-code>93109</zip-code>
+          <zip-code>93110</zip-code>
+          <zip-code>93111</zip-code>
+          <zip-code>93116</zip-code>
+          <zip-code>93117</zip-code>
+          <zip-code>93118</zip-code>
+          <zip-code>93120</zip-code>
+          <zip-code>93121</zip-code>
+          <zip-code>93122</zip-code>
+          <zip-code>93123</zip-code>
+          <zip-code>93124</zip-code>
+          <zip-code>93125</zip-code>
+          <zip-code>93126</zip-code>
+          <zip-code>93127</zip-code>
+          <zip-code>93128</zip-code>
+          <zip-code>93129</zip-code>
+          <zip-code>93130</zip-code>
+          <zip-code>93140</zip-code>
+          <zip-code>93150</zip-code>
+          <zip-code>93160</zip-code>
+          <zip-code>93190</zip-code>
+          <zip-code>93199</zip-code>
+        </zip-codes>
+      </station>
+      <station number="95" name="Watsonville">
+        <city>Watsonville</city>
+        <region>Monterey Bay</region>
+        <county>Santa Cruz</county>
+        <district>San Joaquin</district>
+        <type>CR21</type>
+        <ascii-lat>36D53'10"N</ascii-lat>
+        <ascii-lng>121D48'32"W</ascii-lng>
+        <decimal-lat>36.8860</decimal-lat>
+        <decimal-lng>121.8090</decimal-lng>
+        <connect-date>9/13/1989</connect-date>
+        <disconnect-date>7/24/1995</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>100</elevation>
+        <zip-codes>
+          <zip-code>95018</zip-code>
+          <zip-code>95019</zip-code>
+          <zip-code>95075</zip-code>
+          <zip-code>95076</zip-code>
+          <zip-code>95077</zip-code>
+        </zip-codes>
+      </station>
+      <station number="96" name="Woodside">
+        <city>Woodside</city>
+        <region>San Francisco Bay</region>
+        <county>San Mateo</county>
+        <district>Central</district>
+        <type>CR21</type>
+        <ascii-lat>37D27'11"N</ascii-lat>
+        <ascii-lng>122D16'49"W</ascii-lng>
+        <decimal-lat>37.4530</decimal-lat>
+        <decimal-lng>122.28</decimal-lng>
+        <connect-date>10/31/1990</connect-date>
+        <disconnect-date>1/24/1994</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>560</elevation>
+        <zip-codes>
+          <zip-code>94062</zip-code>
+        </zip-codes>
+      </station>
+      <station number="97" name="Port Hueneme">
+        <city>Port Hueneme</city>
+        <region>Central Coast Valleys</region>
+        <county>Ventura</county>
+        <district>Southern</district>
+        <type>CR21</type>
+        <ascii-lat>34D10'24"N</ascii-lat>
+        <ascii-lng>119D12'00"W</ascii-lng>
+        <decimal-lat>34.1730</decimal-lat>
+        <decimal-lng>119.20</decimal-lng>
+        <connect-date>2/16/1991</connect-date>
+        <disconnect-date>7/31/2000</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>18</elevation>
+        <zip-codes>
+          <zip-code>93041</zip-code>
+          <zip-code>93042</zip-code>
+          <zip-code>93043</zip-code>
+          <zip-code>93044</zip-code>
+        </zip-codes>
+      </station>
+      <station number="98" name="Ramona">
+        <city>Ramona</city>
+        <region>South Coast Valleys</region>
+        <county>San Diego</county>
+        <district>Southern</district>
+        <type>CR21</type>
+        <ascii-lat>33D02'58"N</ascii-lat>
+        <ascii-lng>116D56'18"W</ascii-lng>
+        <decimal-lat>33.0490</decimal-lat>
+        <decimal-lng>116.9380</decimal-lng>
+        <connect-date>4/20/1991</connect-date>
+        <disconnect-date>5/28/1998</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>1340</elevation>
+        <zip-codes>
+          <zip-code>92065</zip-code>
+        </zip-codes>
+      </station>
+      <station number="99" name="Santa Monica">
+        <city>Santa Monica</city>
+        <region>Los Angeles Basin</region>
+        <county>Los Angeles</county>
+        <district>Southern</district>
+        <type>CR10x</type>
+        <ascii-lat>34D02'28"N</ascii-lat>
+        <ascii-lng>118D28'34"W</ascii-lng>
+        <decimal-lat>34.0440</decimal-lat>
+        <decimal-lng>118.4760</decimal-lng>
+        <connect-date>12/11/1992</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>340</elevation>
+        <zip-codes>
+          <zip-code>90401</zip-code>
+          <zip-code>90402</zip-code>
+          <zip-code>90403</zip-code>
+          <zip-code>90404</zip-code>
+          <zip-code>90405</zip-code>
+          <zip-code>90406</zip-code>
+          <zip-code>90407</zip-code>
+          <zip-code>90408</zip-code>
+          <zip-code>90409</zip-code>
+          <zip-code>90410</zip-code>
+          <zip-code>90411</zip-code>
+        </zip-codes>
+      </station>
+      <station number="100" name="Fremont">
+        <city>Fremont</city>
+        <region>San Francisco Bay</region>
+        <county>Alameda</county>
+        <district>Central</district>
+        <type>CR10</type>
+        <ascii-lat>37D31'30"N</ascii-lat>
+        <ascii-lng>121D58'03"W</ascii-lng>
+        <decimal-lat>37.5250</decimal-lat>
+        <decimal-lng>121.9680</decimal-lng>
+        <connect-date>8/29/1991</connect-date>
+        <disconnect-date>6/19/2000</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>40</elevation>
+        <zip-codes>
+          <zip-code>94536</zip-code>
+          <zip-code>94537</zip-code>
+          <zip-code>94538</zip-code>
+          <zip-code>94539</zip-code>
+          <zip-code>94555</zip-code>
+        </zip-codes>
+      </station>
+      <station number="101" name="Piru">
+        <city>Piru</city>
+        <region>Central Coast Valleys</region>
+        <county>Ventura</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>34D22'30"N</ascii-lat>
+        <ascii-lng>118D47'20"W</ascii-lng>
+        <decimal-lat>34.3750</decimal-lat>
+        <decimal-lng>118.7890</decimal-lng>
+        <connect-date>8/27/1991</connect-date>
+        <disconnect-date>2/20/2005</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>640</elevation>
+        <zip-codes>
+          <zip-code>93040</zip-code>
+        </zip-codes>
+      </station>
+      <station number="102" name="El Dorado">
+        <city>Long Beach</city>
+        <region>Los Angeles Basin</region>
+        <county>Los Angeles</county>
+        <district>Southern</district>
+        <type>CR21</type>
+        <ascii-lat>33D47'50"N</ascii-lat>
+        <ascii-lng>118D05'38"W</ascii-lng>
+        <decimal-lat>33.7970</decimal-lat>
+        <decimal-lng>118.0940</decimal-lng>
+        <connect-date>10/24/1990</connect-date>
+        <disconnect-date>10/20/1999</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>17</elevation>
+        <zip-codes>
+          <zip-code>90745</zip-code>
+          <zip-code>90746</zip-code>
+          <zip-code>90747</zip-code>
+          <zip-code>90749</zip-code>
+          <zip-code>90801</zip-code>
+          <zip-code>90802</zip-code>
+          <zip-code>90803</zip-code>
+          <zip-code>90804</zip-code>
+          <zip-code>90805</zip-code>
+          <zip-code>90806</zip-code>
+          <zip-code>90807</zip-code>
+          <zip-code>90808</zip-code>
+          <zip-code>90809</zip-code>
+          <zip-code>90810</zip-code>
+          <zip-code>90813</zip-code>
+          <zip-code>90814</zip-code>
+          <zip-code>90822</zip-code>
+          <zip-code>90831</zip-code>
+          <zip-code>90832</zip-code>
+          <zip-code>90833</zip-code>
+          <zip-code>90834</zip-code>
+          <zip-code>90835</zip-code>
+          <zip-code>90840</zip-code>
+          <zip-code>90842</zip-code>
+          <zip-code>90845</zip-code>
+          <zip-code>90846</zip-code>
+          <zip-code>90847</zip-code>
+          <zip-code>90848</zip-code>
+          <zip-code>90853</zip-code>
+          <zip-code>90888</zip-code>
+          <zip-code>90899</zip-code>
+        </zip-codes>
+      </station>
+      <station number="103" name="Windsor">
+        <city>Windsor</city>
+        <region>North Coast Valleys</region>
+        <county>Sonoma</county>
+        <district>Central</district>
+        <type>CR10</type>
+        <ascii-lat>38D31'35"N</ascii-lat>
+        <ascii-lng>122D49'42"W</ascii-lng>
+        <decimal-lat>38.5260</decimal-lat>
+        <decimal-lng>122.8330</decimal-lng>
+        <connect-date>12/14/1990</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>85</elevation>
+        <zip-codes>
+          <zip-code>95492</zip-code>
+        </zip-codes>
+      </station>
+      <station number="104" name="De Laveaga">
+        <city>Santa Cruz</city>
+        <region>Monterey Bay</region>
+        <county>Santa Cruz</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>36D59'52"N</ascii-lat>
+        <ascii-lng>121D59'45"W</ascii-lng>
+        <decimal-lat>36.9980</decimal-lat>
+        <decimal-lng>121.9960</decimal-lng>
+        <connect-date>9/28/1990</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>300</elevation>
+        <zip-codes>
+          <zip-code>95065</zip-code>
+        </zip-codes>
+      </station>
+      <station number="105" name="Westlands">
+        <city>Tranquility</city>
+        <region>San Joaquin Valley</region>
+        <county>Fresno</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>36D38'00"N</ascii-lat>
+        <ascii-lng>120D22'55"W</ascii-lng>
+        <decimal-lat>36.63</decimal-lat>
+        <decimal-lng>120.38</decimal-lng>
+        <connect-date>4/17/1992</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>191</elevation>
+        <zip-codes>
+          <zip-code>93668</zip-code>
+        </zip-codes>
+      </station>
+      <station number="106" name="Sanel Valley">
+        <city>Hopland</city>
+        <region>North Coast Valleys</region>
+        <county>Mendocino</county>
+        <district>Central</district>
+        <type>CR10x</type>
+        <ascii-lat>38D59'00"N</ascii-lat>
+        <ascii-lng>123D05'30"W</ascii-lng>
+        <decimal-lat>38.9830</decimal-lat>
+        <decimal-lng>123.0920</decimal-lng>
+        <connect-date>2/1/1991</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>525</elevation>
+        <zip-codes>
+          <zip-code>95449</zip-code>
+        </zip-codes>
+      </station>
+      <station number="107" name="Santa Barbara">
+        <city>Santa Barbara</city>
+        <region>Central Coast Valleys</region>
+        <county>Santa Barbara</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>34D26'16"N</ascii-lat>
+        <ascii-lng>119D44'10"W</ascii-lng>
+        <decimal-lat>34.4380</decimal-lat>
+        <decimal-lng>119.7360</decimal-lng>
+        <connect-date>4/7/1993</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>250</elevation>
+        <zip-codes>
+          <zip-code>93101</zip-code>
+          <zip-code>93102</zip-code>
+          <zip-code>93103</zip-code>
+          <zip-code>93105</zip-code>
+          <zip-code>93106</zip-code>
+          <zip-code>93107</zip-code>
+          <zip-code>93106</zip-code>
+          <zip-code>93109</zip-code>
+          <zip-code>93110</zip-code>
+          <zip-code>93111</zip-code>
+          <zip-code>93116</zip-code>
+          <zip-code>93117</zip-code>
+          <zip-code>93118</zip-code>
+          <zip-code>93120</zip-code>
+          <zip-code>93121</zip-code>
+          <zip-code>93122</zip-code>
+          <zip-code>93123</zip-code>
+          <zip-code>93124</zip-code>
+          <zip-code>93125</zip-code>
+          <zip-code>93126</zip-code>
+          <zip-code>93127</zip-code>
+          <zip-code>93128</zip-code>
+          <zip-code>93129</zip-code>
+          <zip-code>93130</zip-code>
+          <zip-code>93140</zip-code>
+          <zip-code>93150</zip-code>
+          <zip-code>93160</zip-code>
+          <zip-code>93190</zip-code>
+          <zip-code>93199</zip-code>
+        </zip-codes>
+      </station>
+      <station number="108" name="Gerber Dryland">
+        <city>Gerber</city>
+        <region>Sacramento Valley</region>
+        <county>Tehama</county>
+        <district>Northern</district>
+        <type>CR21</type>
+        <ascii-lat>40D02'34"N</ascii-lat>
+        <ascii-lng>122D09'44"W</ascii-lng>
+        <decimal-lat>40.0430</decimal-lat>
+        <decimal-lng>122.1620</decimal-lng>
+        <connect-date>3/11/1991</connect-date>
+        <disconnect-date>5/12/1998</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>245</elevation>
+        <zip-codes>
+          <zip-code>96035</zip-code>
+        </zip-codes>
+      </station>
+      <station number="109" name="Carneros">
+        <city>Napa</city>
+        <region>San Francisco Bay</region>
+        <county>Napa</county>
+        <district>Central</district>
+        <type>CR10</type>
+        <ascii-lat>38D13'08"N</ascii-lat>
+        <ascii-lng>122D21'14"W</ascii-lng>
+        <decimal-lat>38.2190</decimal-lat>
+        <decimal-lng>122.3540</decimal-lng>
+        <connect-date>3/11/1993</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>5</elevation>
+        <zip-codes>
+          <zip-code>94503</zip-code>
+          <zip-code>94558</zip-code>
+          <zip-code>94559</zip-code>
+          <zip-code>94581</zip-code>
+          <zip-code>94589</zip-code>
+          <zip-code>94590</zip-code>
+          <zip-code>94591</zip-code>
+          <zip-code>94592</zip-code>
+        </zip-codes>
+      </station>
+      <station number="110" name="Newberry Springs">
+        <city>Dagget</city>
+        <region>San Bernardino</region>
+        <county>San Bernardino</county>
+        <district>Southern</district>
+        <type>CR21</type>
+        <ascii-lat>34D50'26"N</ascii-lat>
+        <ascii-lng>116D38'30"W</ascii-lng>
+        <decimal-lat>34.84</decimal-lat>
+        <decimal-lng>116.6420</decimal-lng>
+        <connect-date>2/21/1992</connect-date>
+        <disconnect-date>12/27/1996</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>1929</elevation>
+        <zip-codes>
+          <zip-code>92338</zip-code>
+          <zip-code>92365</zip-code>
+        </zip-codes>
+      </station>
+      <station number="111" name="Green Valley Road">
+        <city>Watsonville</city>
+        <region>Monterey Bay</region>
+        <county>Santa Cruz</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>36D56'28"N</ascii-lat>
+        <ascii-lng>121D46'00"W</ascii-lng>
+        <decimal-lat>36.9410</decimal-lat>
+        <decimal-lng>121.7670</decimal-lng>
+        <connect-date>5/29/1992</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>N</eto-switch>
+        <elevation>110</elevation>
+        <zip-codes>
+          <zip-code>95018</zip-code>
+          <zip-code>95019</zip-code>
+          <zip-code>95075</zip-code>
+          <zip-code>95076</zip-code>
+          <zip-code>95077</zip-code>
+        </zip-codes>
+      </station>
+      <station number="112" name="San Ardo">
+        <city>San Lucas</city>
+        <region>Monterey Bay</region>
+        <county>Monterey</county>
+        <district>San Joaquin</district>
+        <type>CR21</type>
+        <ascii-lat>36D04'44"N</ascii-lat>
+        <ascii-lng>120D57'28"W</ascii-lng>
+        <decimal-lat>36.0790</decimal-lat>
+        <decimal-lng>120.9580</decimal-lng>
+        <connect-date>6/18/1993</connect-date>
+        <disconnect-date>3/13/1995</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>374</elevation>
+        <zip-codes>
+          <zip-code>93450</zip-code>
+        </zip-codes>
+      </station>
+      <station number="113" name="King City-Oasis Rd.">
+        <city>King City</city>
+        <region>Monterey Bay</region>
+        <county>Monterey</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>36D07'17"N</ascii-lat>
+        <ascii-lng>121D05'02"W</ascii-lng>
+        <decimal-lat>36.1210</decimal-lat>
+        <decimal-lng>121.0840</decimal-lng>
+        <connect-date>6/12/1993</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>540</elevation>
+        <zip-codes>
+          <zip-code>93930</zip-code>
+        </zip-codes>
+      </station>
+      <station number="114" name="Arroyo Seco">
+        <city>Soledad</city>
+        <region>Monterey Bay</region>
+        <county>Monterey</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>36D21'32"N</ascii-lat>
+        <ascii-lng>121D17'25"W</ascii-lng>
+        <decimal-lat>36.3590</decimal-lat>
+        <decimal-lng>121.29</decimal-lng>
+        <connect-date>6/18/1993</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>235</elevation>
+        <zip-codes>
+          <zip-code>93927</zip-code>
+        </zip-codes>
+      </station>
+      <station number="115" name="Gonzales">
+        <city>Salinas</city>
+        <region>Monterey Bay</region>
+        <county>Monterey</county>
+        <district>San Joaquin</district>
+        <type>CR21</type>
+        <ascii-lat>36D30'53"N</ascii-lat>
+        <ascii-lng>121D30'35"W</ascii-lng>
+        <decimal-lat>36.5150</decimal-lat>
+        <decimal-lng>121.51</decimal-lng>
+        <connect-date>6/12/1993</connect-date>
+        <disconnect-date>11/10/1998</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>146</elevation>
+        <zip-codes>
+          <zip-code>93026</zip-code>
+          <zip-code>93926</zip-code>
+        </zip-codes>
+      </station>
+      <station number="116" name="Salinas North">
+        <city>Salinas</city>
+        <region>Monterey Bay</region>
+        <county>Monterey</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>36D43'00"N</ascii-lat>
+        <ascii-lng>121D41'27"W</ascii-lng>
+        <decimal-lat>36.7170</decimal-lat>
+        <decimal-lng>121.6910</decimal-lng>
+        <connect-date>6/18/1993</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>61</elevation>
+        <zip-codes>
+          <zip-code>93901</zip-code>
+          <zip-code>93902</zip-code>
+          <zip-code>93905</zip-code>
+          <zip-code>93906</zip-code>
+          <zip-code>93907</zip-code>
+          <zip-code>93908</zip-code>
+          <zip-code>93912</zip-code>
+          <zip-code>93915</zip-code>
+          <zip-code>93962</zip-code>
+        </zip-codes>
+      </station>
+      <station number="117" name="Victorville">
+        <city>Victorville</city>
+        <region>San Bernardino</region>
+        <county>San Bernardino</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>34D28'42"N</ascii-lat>
+        <ascii-lng>117D15'40"W</ascii-lng>
+        <decimal-lat>34.4780</decimal-lat>
+        <decimal-lng>117.2610</decimal-lng>
+        <connect-date>2/1/1994</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>2890</elevation>
+        <zip-codes>
+          <zip-code>92392</zip-code>
+          <zip-code>92393</zip-code>
+          <zip-code>92394</zip-code>
+        </zip-codes>
+      </station>
+      <station number="118" name="Cathedral City">
+        <city>Cathedral City</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Riverside</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>33D50'33"N</ascii-lat>
+        <ascii-lng>116D28'44"W</ascii-lng>
+        <decimal-lat>33.8430</decimal-lat>
+        <decimal-lng>116.4790</decimal-lng>
+        <connect-date>12/7/1995</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>392</elevation>
+        <zip-codes>
+          <zip-code>92234</zip-code>
+          <zip-code>92235</zip-code>
+        </zip-codes>
+      </station>
+      <station number="119" name="Putah Creek">
+        <city>Winters</city>
+        <region>Sacramento Valley</region>
+        <county>Solano</county>
+        <district>Central</district>
+        <type>CR10</type>
+        <ascii-lat>38D29'45"N</ascii-lat>
+        <ascii-lng>122D00'15"W</ascii-lng>
+        <decimal-lat>38.4950</decimal-lat>
+        <decimal-lng>122.0040</decimal-lng>
+        <connect-date>8/21/1993</connect-date>
+        <disconnect-date>1/25/1995</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>180</elevation>
+        <zip-codes>
+          <zip-code>95694</zip-code>
+        </zip-codes>
+      </station>
+      <station number="120" name="Guadalupe">
+        <city>Guadalupe</city>
+        <region>Central Coast Valleys</region>
+        <county>Santa Barbara</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>34D57'46"N</ascii-lat>
+        <ascii-lng>120D32'55"W</ascii-lng>
+        <decimal-lat>34.9620</decimal-lat>
+        <decimal-lng>120.5480</decimal-lng>
+        <connect-date>12/24/1993</connect-date>
+        <disconnect-date>11/28/2000</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>N</eto-switch>
+        <elevation>110</elevation>
+        <zip-codes>
+          <zip-code>93434</zip-code>
+        </zip-codes>
+      </station>
+      <station number="121" name="Dixon">
+        <city>Dixon</city>
+        <region>Sacramento Valley</region>
+        <county>Solano</county>
+        <district>Central</district>
+        <type>CR10</type>
+        <ascii-lat>38D24'55"N</ascii-lat>
+        <ascii-lng>121D47'12"W</ascii-lng>
+        <decimal-lat>38.4150</decimal-lat>
+        <decimal-lng>121.7870</decimal-lng>
+        <connect-date>9/20/1994</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>37</elevation>
+        <zip-codes>
+          <zip-code>95620</zip-code>
+        </zip-codes>
+      </station>
+      <station number="122" name="Hastings Tract">
+        <city>Dixon</city>
+        <region>Sacramento Valley</region>
+        <county>Solano</county>
+        <district>Central</district>
+        <type>CR10</type>
+        <ascii-lat>38D16'57"N</ascii-lat>
+        <ascii-lng>121D47'24"W</ascii-lng>
+        <decimal-lat>38.2830</decimal-lat>
+        <decimal-lng>121.79</decimal-lng>
+        <connect-date>3/28/1995</connect-date>
+        <disconnect-date>6/10/2009</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>10</elevation>
+        <zip-codes>
+          <zip-code>94571</zip-code>
+          <zip-code>95687</zip-code>
+          <zip-code>95688</zip-code>
+          <zip-code>95689</zip-code>
+        </zip-codes>
+      </station>
+      <station number="123" name="Suisun Valley">
+        <city>Cordelia</city>
+        <region>Sacramento Valley</region>
+        <county>Solano</county>
+        <district>Central</district>
+        <type>CR10</type>
+        <ascii-lat>38D14'02"N</ascii-lat>
+        <ascii-lng>122D07'00"W</ascii-lng>
+        <decimal-lat>38.2340</decimal-lat>
+        <decimal-lng>122.1170</decimal-lng>
+        <connect-date>8/18/1994</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>35</elevation>
+        <zip-codes>
+          <zip-code>94585</zip-code>
+        </zip-codes>
+      </station>
+      <station number="124" name="Panoche">
+        <city>Firebaugh</city>
+        <region>San Joaquin Valley</region>
+        <county>Fresno</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>36D53'25"N</ascii-lat>
+        <ascii-lng>120D43'55"W</ascii-lng>
+        <decimal-lat>36.89</decimal-lat>
+        <decimal-lng>120.7320</decimal-lng>
+        <connect-date>7/27/1995</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>183</elevation>
+        <zip-codes>
+          <zip-code>93622</zip-code>
+          <zip-code>95043</zip-code>
+        </zip-codes>
+      </station>
+      <station number="125" name="Arvin-Edison">
+        <city>Arvin</city>
+        <region>San Joaquin Valley</region>
+        <county>Kern</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>35D12'22"N</ascii-lat>
+        <ascii-lng>118D46'40"W</ascii-lng>
+        <decimal-lat>35.2060</decimal-lat>
+        <decimal-lng>118.7780</decimal-lng>
+        <connect-date>3/22/1995</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>500</elevation>
+        <zip-codes>
+          <zip-code>93203</zip-code>
+        </zip-codes>
+      </station>
+      <station number="126" name="San Benito">
+        <city>Hollister</city>
+        <region>Monterey Bay</region>
+        <county>San Benito</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>36D51'15"N</ascii-lat>
+        <ascii-lng>121D21'42"W</ascii-lng>
+        <decimal-lat>36.8540</decimal-lat>
+        <decimal-lng>121.3620</decimal-lng>
+        <connect-date>6/9/1994</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>340</elevation>
+        <zip-codes>
+          <zip-code>95023</zip-code>
+          <zip-code>95024</zip-code>
+        </zip-codes>
+      </station>
+      <station number="127" name="Salton Sea West">
+        <city>Salton City</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Imperial</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>33D19'38"N</ascii-lat>
+        <ascii-lng>115D57'00"W</ascii-lng>
+        <decimal-lat>33.3270</decimal-lat>
+        <decimal-lng>115.95</decimal-lng>
+        <connect-date>11/21/1994</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>N</eto-switch>
+        <elevation>-225</elevation>
+        <zip-codes>
+          <zip-code>92275</zip-code>
+        </zip-codes>
+      </station>
+      <station number="128" name="Salton Sea East">
+        <city>Niland</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Imperial</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>33D13'12"N</ascii-lat>
+        <ascii-lng>115D34'48"W</ascii-lng>
+        <decimal-lat>33.22</decimal-lat>
+        <decimal-lng>115.58</decimal-lng>
+        <connect-date>11/17/1994</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>N</eto-switch>
+        <elevation>-226</elevation>
+        <zip-codes>
+          <zip-code>92257</zip-code>
+        </zip-codes>
+      </station>
+      <station number="129" name="Pajaro">
+        <city>Pajaro</city>
+        <region>Monterey Bay</region>
+        <county>Monterey</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>36D54'12"N</ascii-lat>
+        <ascii-lng>121D44'31"W</ascii-lng>
+        <decimal-lat>36.9030</decimal-lat>
+        <decimal-lng>121.7420</decimal-lng>
+        <connect-date>9/13/1995</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>65</elevation>
+        <zip-codes>
+          <zip-code>95018</zip-code>
+          <zip-code>95019</zip-code>
+          <zip-code>95075</zip-code>
+          <zip-code>95076</zip-code>
+          <zip-code>95077</zip-code>
+        </zip-codes>
+      </station>
+      <station number="130" name="Temecula East">
+        <city>Temecula</city>
+        <region>South Coast Valleys</region>
+        <county>Riverside</county>
+        <district>Southern</district>
+        <type>CR21</type>
+        <ascii-lat>33D33'23"N</ascii-lat>
+        <ascii-lng>117D02'13"W</ascii-lng>
+        <decimal-lat>33.5560</decimal-lat>
+        <decimal-lng>117.0370</decimal-lng>
+        <connect-date>7/1/1995</connect-date>
+        <disconnect-date>11/5/1996</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>1500</elevation>
+        <zip-codes>
+          <zip-code>92589</zip-code>
+          <zip-code>92590</zip-code>
+          <zip-code>92591</zip-code>
+          <zip-code>92593</zip-code>
+        </zip-codes>
+      </station>
+      <station number="131" name="Fair Oaks">
+        <city>Fair Oaks</city>
+        <region>Sacramento Valley</region>
+        <county>Sacramento</county>
+        <district>Central</district>
+        <type>CR10</type>
+        <ascii-lat>38D39'02"N</ascii-lat>
+        <ascii-lng>121D13'05"W</ascii-lng>
+        <decimal-lat>38.6510</decimal-lat>
+        <decimal-lng>121.2180</decimal-lng>
+        <connect-date>4/18/1997</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>265</elevation>
+        <zip-codes>
+          <zip-code>95037</zip-code>
+          <zip-code>95038</zip-code>
+          <zip-code>95628</zip-code>
+        </zip-codes>
+      </station>
+      <station number="132" name="Morgan Hill">
+        <city>Morgan Hill</city>
+        <region>San Francisco Bay</region>
+        <county>Santa Clara</county>
+        <district>Central</district>
+        <type>CR10</type>
+        <ascii-lat>37D09'05"N</ascii-lat>
+        <ascii-lng>121D38'05"W</ascii-lng>
+        <decimal-lat>37.1510</decimal-lat>
+        <decimal-lng>121.6350</decimal-lng>
+        <connect-date>4/28/1997</connect-date>
+        <disconnect-date>5/1/2008</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>385</elevation>
+        <zip-codes>
+          <zip-code>95037</zip-code>
+          <zip-code>95038</zip-code>
+        </zip-codes>
+      </station>
+      <station number="133" name="Glendale">
+        <city>Glendale</city>
+        <region>Los Angeles Basin</region>
+        <county>Los Angeles</county>
+        <district>Southern</district>
+        <type>CR21x</type>
+        <ascii-lat>34D11'59"N</ascii-lat>
+        <ascii-lng>118D13'56"W</ascii-lng>
+        <decimal-lat>34.20</decimal-lat>
+        <decimal-lng>118.2320</decimal-lng>
+        <connect-date>8/7/1996</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>1111</elevation>
+        <zip-codes>
+          <zip-code>91201</zip-code>
+          <zip-code>91202</zip-code>
+          <zip-code>91203</zip-code>
+          <zip-code>91204</zip-code>
+          <zip-code>91205</zip-code>
+          <zip-code>91206</zip-code>
+          <zip-code>91207</zip-code>
+          <zip-code>91208</zip-code>
+          <zip-code>91210</zip-code>
+          <zip-code>91214</zip-code>
+          <zip-code>91221</zip-code>
+          <zip-code>91222</zip-code>
+          <zip-code>91224</zip-code>
+          <zip-code>91225</zip-code>
+          <zip-code>91226</zip-code>
+        </zip-codes>
+      </station>
+      <station number="134" name="Barstow NE">
+        <city>Barstow</city>
+        <region>San Bernardino</region>
+        <county>San Bernardino</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>34D53'03"N</ascii-lat>
+        <ascii-lng>116D59'00"W</ascii-lng>
+        <decimal-lat>34.8840</decimal-lat>
+        <decimal-lng>116.9830</decimal-lng>
+        <connect-date>1/8/1997</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>2040</elevation>
+        <zip-codes>
+          <zip-code>92310</zip-code>
+          <zip-code>92311</zip-code>
+          <zip-code>92312</zip-code>
+        </zip-codes>
+      </station>
+      <station number="135" name="Blythe NE">
+        <city>Blythe</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Riverside</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>33D33'24"N</ascii-lat>
+        <ascii-lng>114D39'59"W</ascii-lng>
+        <decimal-lat>33.5570</decimal-lat>
+        <decimal-lng>114.6660</decimal-lng>
+        <connect-date>1/16/1997</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>275</elevation>
+        <zip-codes>
+          <zip-code>92225</zip-code>
+          <zip-code>92226</zip-code>
+          <zip-code>92227</zip-code>
+          <zip-code>92228</zip-code>
+        </zip-codes>
+      </station>
+      <station number="136" name="Oasis">
+        <city>Oasis/Indio</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Riverside</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>33D31'32"N</ascii-lat>
+        <ascii-lng>116D09'15"W</ascii-lng>
+        <decimal-lat>33.5160</decimal-lat>
+        <decimal-lng>116.1540</decimal-lng>
+        <connect-date>1/7/1997</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>12</elevation>
+        <zip-codes>
+          <zip-code>92274</zip-code>
+        </zip-codes>
+      </station>
+      <station number="137" name="Temecula East II">
+        <city>Temecula</city>
+        <region>South Coast Valleys</region>
+        <county>Riverside</county>
+        <district>Southern</district>
+        <type>CR21x</type>
+        <ascii-lat>33D33'24"N</ascii-lat>
+        <ascii-lng>117D01'49"W</ascii-lng>
+        <decimal-lat>33.5570</decimal-lat>
+        <decimal-lng>117.03</decimal-lng>
+        <connect-date>2/20/1997</connect-date>
+        <disconnect-date>9/20/2011</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>1536</elevation>
+        <zip-codes>
+          <zip-code>92589</zip-code>
+          <zip-code>92590</zip-code>
+          <zip-code>92591</zip-code>
+          <zip-code>92592</zip-code>
+        </zip-codes>
+      </station>
+      <station number="138" name="Famoso">
+        <city>Macfarland</city>
+        <region>San Joaquin Valley</region>
+        <county>Kern</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>35D36'14"N</ascii-lat>
+        <ascii-lng>119D12'45"W</ascii-lng>
+        <decimal-lat>35.6040</decimal-lat>
+        <decimal-lng>119.2130</decimal-lng>
+        <connect-date>4/9/1997</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>415</elevation>
+        <zip-codes>
+          <zip-code>93250</zip-code>
+        </zip-codes>
+      </station>
+      <station number="139" name="Winters">
+        <city>Winters</city>
+        <region>Sacramento Valley</region>
+        <county>Solano</county>
+        <district>Central</district>
+        <type>CR10</type>
+        <ascii-lat>38D30'05"N</ascii-lat>
+        <ascii-lng>121D58'39"W</ascii-lng>
+        <decimal-lat>38.5010</decimal-lat>
+        <decimal-lng>121.9730</decimal-lng>
+        <connect-date>6/15/1998</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>N</eto-switch>
+        <elevation>136</elevation>
+        <zip-codes>
+          <zip-code>95694</zip-code>
+        </zip-codes>
+      </station>
+      <station number="140" name="Twitchell Island">
+        <city>Rio Vista</city>
+        <region>San Francisco Bay</region>
+        <county>Sacramento</county>
+        <district>Central</district>
+        <type>CR10</type>
+        <ascii-lat>38D07'00"N</ascii-lat>
+        <ascii-lng>121D39'29"W</ascii-lng>
+        <decimal-lat>38.1170</decimal-lat>
+        <decimal-lng>121.6580</decimal-lng>
+        <connect-date>10/8/1997</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>-1</elevation>
+        <zip-codes>
+          <zip-code>94571</zip-code>
+        </zip-codes>
+      </station>
+      <station number="141" name="Mecca">
+        <city>Mecca</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Riverside</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>33D32'17"N</ascii-lat>
+        <ascii-lng>115D59'30"W</ascii-lng>
+        <decimal-lat>33.5380</decimal-lat>
+        <decimal-lng>115.9920</decimal-lng>
+        <connect-date>5/5/1998</connect-date>
+        <disconnect-date>3/11/2010</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>-180</elevation>
+        <zip-codes>
+          <zip-code>92254</zip-code>
+        </zip-codes>
+      </station>
+      <station number="142" name="Orange Cove">
+        <city>Orange Cove</city>
+        <region>San Joaquin Valley</region>
+        <county>Fresno</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>36D43'15"N</ascii-lat>
+        <ascii-lng>119D23'16"W</ascii-lng>
+        <decimal-lat>36.7210</decimal-lat>
+        <decimal-lng>119.3880</decimal-lng>
+        <connect-date>1/1/1999</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>450</elevation>
+        <zip-codes>
+          <zip-code>93646</zip-code>
+          <zip-code>93654</zip-code>
+          <zip-code>93615</zip-code>
+          <zip-code>93618</zip-code>
+          <zip-code>93647</zip-code>
+          <zip-code>93666</zip-code>
+          <zip-code />
+        </zip-codes>
+      </station>
+      <station number="143" name="San Juan Valley">
+        <city>Hollister</city>
+        <region>Monterey Bay</region>
+        <county>San Benito</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>36D49'23"N</ascii-lat>
+        <ascii-lng>121D28'03"W</ascii-lng>
+        <decimal-lat>36.8230</decimal-lat>
+        <decimal-lng>121.4680</decimal-lng>
+        <connect-date>1/1/1998</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>245</elevation>
+        <zip-codes>
+          <zip-code>93257</zip-code>
+          <zip-code>95045</zip-code>
+        </zip-codes>
+      </station>
+      <station number="144" name="Petaluma East">
+        <city>Petaluma</city>
+        <region>North Coast Valleys</region>
+        <county>Sonoma</county>
+        <district>Central</district>
+        <type>CR10</type>
+        <ascii-lat>38D16'02"N</ascii-lat>
+        <ascii-lng>122D36'58"W</ascii-lng>
+        <decimal-lat>38.2670</decimal-lat>
+        <decimal-lng>122.6160</decimal-lng>
+        <connect-date>8/25/1999</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>97</elevation>
+        <zip-codes>
+          <zip-code>94952</zip-code>
+          <zip-code>94953</zip-code>
+          <zip-code>94954</zip-code>
+          <zip-code>94955</zip-code>
+          <zip-code>94975</zip-code>
+          <zip-code>94999</zip-code>
+        </zip-codes>
+      </station>
+      <station number="145" name="Madera">
+        <city>Madera</city>
+        <region>San Joaquin Valley</region>
+        <county>Madera</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>37D01'04"N</ascii-lat>
+        <ascii-lng>120D11'12"W</ascii-lng>
+        <decimal-lat>37.0180</decimal-lat>
+        <decimal-lng>120.1870</decimal-lng>
+        <connect-date>5/13/1998</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>230</elevation>
+        <zip-codes>
+          <zip-code>93637</zip-code>
+          <zip-code>93638</zip-code>
+          <zip-code>93639</zip-code>
+          <zip-code>93657</zip-code>
+        </zip-codes>
+      </station>
+      <station number="146" name="Belridge">
+        <city>Lost Hills</city>
+        <region>San Joaquin Valley</region>
+        <county>Kern</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>35D30'19"N</ascii-lat>
+        <ascii-lng>119D41'23"W</ascii-lng>
+        <decimal-lat>35.5050</decimal-lat>
+        <decimal-lng>119.69</decimal-lng>
+        <connect-date>10/9/1998</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>410</elevation>
+        <zip-codes>
+          <zip-code>93206</zip-code>
+        </zip-codes>
+      </station>
+      <station number="147" name="Otay Lake">
+        <city>Chula Vista</city>
+        <region>South Coast Valleys</region>
+        <county>San Diego</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>32D37'48"N</ascii-lat>
+        <ascii-lng>116D56'18"W</ascii-lng>
+        <decimal-lat>32.63</decimal-lat>
+        <decimal-lng>116.9380</decimal-lng>
+        <connect-date>4/15/1999</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>580</elevation>
+        <zip-codes>
+          <zip-code>90910</zip-code>
+          <zip-code>91909</zip-code>
+          <zip-code>91910</zip-code>
+          <zip-code>91911</zip-code>
+          <zip-code>91912</zip-code>
+          <zip-code>91913</zip-code>
+          <zip-code>91914</zip-code>
+          <zip-code>91915</zip-code>
+          <zip-code>91921</zip-code>
+        </zip-codes>
+      </station>
+      <station number="148" name="Merced">
+        <city>Merced</city>
+        <region>San Joaquin Valley</region>
+        <county>Merced</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>37D18'49"N</ascii-lat>
+        <ascii-lng>120D23'11"W</ascii-lng>
+        <decimal-lat>37.3140</decimal-lat>
+        <decimal-lng>120.3860</decimal-lng>
+        <connect-date>1/4/1999</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>200</elevation>
+        <zip-codes>
+          <zip-code>95340</zip-code>
+        </zip-codes>
+      </station>
+      <station number="149" name="Oakland Foothills">
+        <city>Oakland</city>
+        <region>San Francisco Bay</region>
+        <county>Alameda</county>
+        <district>Central</district>
+        <type>CR10</type>
+        <ascii-lat>37D46'51"N</ascii-lat>
+        <ascii-lng>122D10'44"W</ascii-lng>
+        <decimal-lat>37.7810</decimal-lat>
+        <decimal-lng>122.1790</decimal-lng>
+        <connect-date>3/25/1999</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>N</eto-switch>
+        <elevation>145</elevation>
+        <zip-codes>
+          <zip-code>94613</zip-code>
+        </zip-codes>
+      </station>
+      <station number="150" name="Miramar">
+        <city>La Jolla</city>
+        <region>South Coast Valleys</region>
+        <county>San Diego</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>32D53'09"N</ascii-lat>
+        <ascii-lng>117D08'31"W</ascii-lng>
+        <decimal-lat>32.8860</decimal-lat>
+        <decimal-lng>117.1420</decimal-lng>
+        <connect-date>4/23/1999</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>445</elevation>
+        <zip-codes>
+          <zip-code>92037</zip-code>
+          <zip-code>92038</zip-code>
+          <zip-code>92039</zip-code>
+          <zip-code>92092</zip-code>
+          <zip-code>92093</zip-code>
+        </zip-codes>
+      </station>
+      <station number="151" name="Ripley">
+        <city>Blythe</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Riverside</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>33D31'56"N</ascii-lat>
+        <ascii-lng>114D38'02"W</ascii-lng>
+        <decimal-lat>33.5320</decimal-lat>
+        <decimal-lng>114.6340</decimal-lng>
+        <connect-date>12/19/1998</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>251</elevation>
+        <zip-codes>
+          <zip-code>92225</zip-code>
+          <zip-code>92226</zip-code>
+          <zip-code>92227</zip-code>
+          <zip-code>92228</zip-code>
+        </zip-codes>
+      </station>
+      <station number="152" name="Camarillo">
+        <city>Camarillo</city>
+        <region>Central Coast Valleys</region>
+        <county>Ventura</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>34D13'55"N</ascii-lat>
+        <ascii-lng>118D58'40"W</ascii-lng>
+        <decimal-lat>34.2320</decimal-lat>
+        <decimal-lng>118.9940</decimal-lng>
+        <connect-date>1/21/2000</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>130</elevation>
+        <zip-codes>
+          <zip-code>93010</zip-code>
+          <zip-code>93011</zip-code>
+          <zip-code>93012</zip-code>
+        </zip-codes>
+      </station>
+      <station number="153" name="Escondido SPV">
+        <city>Escondido</city>
+        <region>South Coast Valleys</region>
+        <county>San Diego</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>33D04'52"N</ascii-lat>
+        <ascii-lng>116D58'33"W</ascii-lng>
+        <decimal-lat>33.0810</decimal-lat>
+        <decimal-lng>116.9760</decimal-lng>
+        <connect-date>2/1/1999</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>390</elevation>
+        <zip-codes>
+          <zip-code>92025</zip-code>
+          <zip-code>92026</zip-code>
+          <zip-code>92027</zip-code>
+          <zip-code>92029</zip-code>
+          <zip-code>92030</zip-code>
+          <zip-code>92033</zip-code>
+          <zip-code>92046</zip-code>
+        </zip-codes>
+      </station>
+      <station number="154" name="Salton Sea North">
+        <city>North Shore</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Riverside</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>33D30'14"N</ascii-lat>
+        <ascii-lng>115D54'56"W</ascii-lng>
+        <decimal-lat>33.5040</decimal-lat>
+        <decimal-lng>115.9160</decimal-lng>
+        <connect-date>10/15/1998</connect-date>
+        <disconnect-date>10/30/2003</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>N</eto-switch>
+        <elevation>-200</elevation>
+        <zip-codes>
+          <zip-code>92257</zip-code>
+        </zip-codes>
+      </station>
+      <station number="155" name="Bryte (experimental)">
+        <city>West Sacramento</city>
+        <region>Sacramento Valley</region>
+        <county>Yolo</county>
+        <district>Central</district>
+        <type>CR10</type>
+        <ascii-lat>38D35'58"N</ascii-lat>
+        <ascii-lng>121D32'25"W</ascii-lng>
+        <decimal-lat>38.5990</decimal-lat>
+        <decimal-lng>121.54</decimal-lng>
+        <connect-date>12/10/1998</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>N</eto-switch>
+        <elevation>40</elevation>
+        <zip-codes>
+          <zip-code>95605</zip-code>
+          <zip-code>95691</zip-code>
+          <zip-code>95798</zip-code>
+          <zip-code>95799</zip-code>
+        </zip-codes>
+      </station>
+      <station number="156" name="Oxnard">
+        <city>Oxnard</city>
+        <region>Central Coast Valleys</region>
+        <county>Ventura</county>
+        <district>Southern</district>
+        <type>CR10x</type>
+        <ascii-lat>34d14'01"n</ascii-lat>
+        <ascii-lng>119d11'49"w</ascii-lng>
+        <decimal-lat>34.2340</decimal-lat>
+        <decimal-lng>119.1970</decimal-lng>
+        <connect-date>10/12/2001</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>48</elevation>
+        <zip-codes>
+          <zip-code>93030</zip-code>
+          <zip-code>93031</zip-code>
+          <zip-code>93032</zip-code>
+          <zip-code>93034</zip-code>
+          <zip-code>93035</zip-code>
+          <zip-code>93041</zip-code>
+          <zip-code>93043</zip-code>
+          <zip-code>93044</zip-code>
+          <zip-code>93042</zip-code>
+        </zip-codes>
+      </station>
+      <station number="157" name="Point San Pedro">
+        <city>San Rafael</city>
+        <region>San Francisco Bay</region>
+        <county>Marin</county>
+        <district>Central</district>
+        <type>CR10x</type>
+        <ascii-lat>37D59'30"N</ascii-lat>
+        <ascii-lng>122D28'12"W</ascii-lng>
+        <decimal-lat>37.9920</decimal-lat>
+        <decimal-lng>122.47</decimal-lng>
+        <connect-date>10/11/2002</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>5</elevation>
+        <zip-codes>
+          <zip-code>94925</zip-code>
+        </zip-codes>
+      </station>
+      <station number="158" name="Bennett Valley">
+        <city>Santa Rosa</city>
+        <region>North Coast Valleys</region>
+        <county>Sonoma</county>
+        <district>Central</district>
+        <type>CR10x</type>
+        <ascii-lat>38D25'10"N</ascii-lat>
+        <ascii-lng>122D39'25"W</ascii-lng>
+        <decimal-lat>38.4190</decimal-lat>
+        <decimal-lng>122.6570</decimal-lng>
+        <connect-date>10/1/2000</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>270</elevation>
+        <zip-codes>
+          <zip-code>95401</zip-code>
+          <zip-code>95402</zip-code>
+          <zip-code>95403</zip-code>
+          <zip-code>95404</zip-code>
+          <zip-code>95405</zip-code>
+          <zip-code>95406</zip-code>
+          <zip-code>95407</zip-code>
+          <zip-code>95408</zip-code>
+          <zip-code>95409</zip-code>
+        </zip-codes>
+      </station>
+      <station number="159" name="Monrovia">
+        <city>Monrovia</city>
+        <region>Los Angeles Basin</region>
+        <county>Los Angeles</county>
+        <district>Central</district>
+        <type>CR10</type>
+        <ascii-lat>34D08'43"N</ascii-lat>
+        <ascii-lng>117D59'05"W</ascii-lng>
+        <decimal-lat>34.1450</decimal-lat>
+        <decimal-lng>117.9850</decimal-lng>
+        <connect-date>10/15/1999</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>595</elevation>
+        <zip-codes>
+          <zip-code>91016</zip-code>
+          <zip-code>91017</zip-code>
+        </zip-codes>
+      </station>
+      <station number="160" name="San Luis Obispo West">
+        <city>San Luis Obispo</city>
+        <region>Central Coast Valleys</region>
+        <county>San Luis Obispo</county>
+        <district>Southern</district>
+        <type>CR10x</type>
+        <ascii-lat>35D20'07"N</ascii-lat>
+        <ascii-lng>120D44'04"W</ascii-lng>
+        <decimal-lat>35.3350</decimal-lat>
+        <decimal-lng>120.7340</decimal-lng>
+        <connect-date>11/1/2000</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>285</elevation>
+        <zip-codes>
+          <zip-code>93401</zip-code>
+          <zip-code>93402</zip-code>
+          <zip-code>93403</zip-code>
+          <zip-code>93405</zip-code>
+          <zip-code>93406</zip-code>
+          <zip-code>93407</zip-code>
+          <zip-code>93408</zip-code>
+          <zip-code>93409</zip-code>
+          <zip-code>93410</zip-code>
+        </zip-codes>
+      </station>
+      <station number="161" name="Patterson">
+        <city>Patterson</city>
+        <region>San Joaquin Valley</region>
+        <county>Stanislaus</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>37D26'24"N</ascii-lat>
+        <ascii-lng>121D08'20"W</ascii-lng>
+        <decimal-lat>37.44</decimal-lat>
+        <decimal-lng>121.1390</decimal-lng>
+        <connect-date>8/23/1999</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>183</elevation>
+        <zip-codes>
+          <zip-code>95363</zip-code>
+          <zip-code>95313</zip-code>
+          <zip-code>95387</zip-code>
+        </zip-codes>
+      </station>
+      <station number="162" name="Indio">
+        <city>Indio</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Riverside</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>33D44'46"N</ascii-lat>
+        <ascii-lng>116D15'28"W</ascii-lng>
+        <decimal-lat>33.7460</decimal-lat>
+        <decimal-lng>116.2580</decimal-lng>
+        <connect-date>12/24/1999</connect-date>
+        <disconnect-date>2/26/2006</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>40</elevation>
+        <zip-codes>
+          <zip-code>92201</zip-code>
+          <zip-code>92202</zip-code>
+          <zip-code>92203</zip-code>
+        </zip-codes>
+      </station>
+      <station number="163" name="Atascadero">
+        <city>Atascadero</city>
+        <region>Central Coast Valleys</region>
+        <county>San Luis Obispo</county>
+        <district>Southern</district>
+        <type>CR10x</type>
+        <ascii-lat>35D28'21"N</ascii-lat>
+        <ascii-lng>120D38'47"W</ascii-lng>
+        <decimal-lat>35.4720</decimal-lat>
+        <decimal-lng>120.6460</decimal-lng>
+        <connect-date>11/21/2000</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>885</elevation>
+        <zip-codes>
+          <zip-code>93422</zip-code>
+          <zip-code>93423</zip-code>
+          <zip-code>93453</zip-code>
+          <zip-code>93465</zip-code>
+        </zip-codes>
+      </station>
+      <station number="164" name="Valley of the Moon">
+        <city>Sonoma</city>
+        <region>North Coast Valleys</region>
+        <county>Sonoma</county>
+        <district>Central</district>
+        <type>CR10</type>
+        <ascii-lat>38D18'42"N</ascii-lat>
+        <ascii-lng>122D29'58"W</ascii-lng>
+        <decimal-lat>38.3120</decimal-lat>
+        <decimal-lng>122.4990</decimal-lng>
+        <connect-date>4/1/2000</connect-date>
+        <disconnect-date>12/18/2001</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>155</elevation>
+        <zip-codes>
+          <zip-code>95416</zip-code>
+          <zip-code>95433</zip-code>
+          <zip-code>95676</zip-code>
+        </zip-codes>
+      </station>
+      <station number="165" name="Sisquoc">
+        <city>Santa Maria</city>
+        <region>Central Coast Valleys</region>
+        <county>Santa Barbara</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>34D50'29"N</ascii-lat>
+        <ascii-lng>120D12'44"W</ascii-lng>
+        <decimal-lat>34.8410</decimal-lat>
+        <decimal-lng>120.2120</decimal-lng>
+        <connect-date>4/26/2000</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>536</elevation>
+        <zip-codes>
+          <zip-code>93454</zip-code>
+          <zip-code>93455</zip-code>
+          <zip-code>93456</zip-code>
+          <zip-code>93457</zip-code>
+          <zip-code>93458</zip-code>
+        </zip-codes>
+      </station>
+      <station number="166" name="Lodi West">
+        <city>Lodi</city>
+        <region>San Joaquin Valley</region>
+        <county>San Joaquin</county>
+        <district>Central</district>
+        <type>CR10x</type>
+        <ascii-lat>38D07'48"N</ascii-lat>
+        <ascii-lng>121D22'57"W</ascii-lng>
+        <decimal-lat>38.13</decimal-lat>
+        <decimal-lng>121.3830</decimal-lng>
+        <connect-date>9/13/2000</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>25</elevation>
+        <zip-codes>
+          <zip-code>95240</zip-code>
+          <zip-code>95241</zip-code>
+          <zip-code>95242</zip-code>
+          <zip-code>95220</zip-code>
+          <zip-code>95256</zip-code>
+          <zip-code>95258</zip-code>
+          <zip-code>95632</zip-code>
+        </zip-codes>
+      </station>
+      <station number="167" name="Tracy">
+        <city>Tracy</city>
+        <region>San Joaquin Valley</region>
+        <county>San Joaquin</county>
+        <district>Central</district>
+        <type>CR10x</type>
+        <ascii-lat>37d43'34"N</ascii-lat>
+        <ascii-lng>121d28'26"W</ascii-lng>
+        <decimal-lat>37.7260</decimal-lat>
+        <decimal-lng>121.4740</decimal-lng>
+        <connect-date>9/1/2001</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>82</elevation>
+        <zip-codes>
+          <zip-code>95376</zip-code>
+          <zip-code> 95378</zip-code>
+        </zip-codes>
+      </station>
+      <station number="168" name="Denair">
+        <city>Denair</city>
+        <region>San Joaquin Valley</region>
+        <county>Stanislaus</county>
+        <district>San Joaquin</district>
+        <type>CR10x</type>
+        <ascii-lat>37D33'11"N</ascii-lat>
+        <ascii-lng>120D46'46"W</ascii-lng>
+        <decimal-lat>37.553056</decimal-lat>
+        <decimal-lng>120.779444</decimal-lng>
+        <connect-date>8/28/2002</connect-date>
+        <disconnect-date>4/9/2009</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>140</elevation>
+        <zip-codes>
+          <zip-code>95350</zip-code>
+        </zip-codes>
+      </station>
+      <station number="169" name="Porterville">
+        <city>Porterville</city>
+        <region>San Joaquin Valley</region>
+        <county>Tulare</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>36D04'52"N</ascii-lat>
+        <ascii-lng>119D05'33"W</ascii-lng>
+        <decimal-lat>36.0810</decimal-lat>
+        <decimal-lng>119.0920</decimal-lng>
+        <connect-date>8/2/2000</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>400</elevation>
+        <zip-codes>
+          <zip-code>93218</zip-code>
+          <zip-code>93247</zip-code>
+          <zip-code>93257</zip-code>
+          <zip-code>93258</zip-code>
+          <zip-code>93267</zip-code>
+          <zip-code>93270</zip-code>
+        </zip-codes>
+      </station>
+      <station number="170" name="Concord">
+        <city>Concord</city>
+        <region>San Francisco Bay</region>
+        <county>Contra Costa</county>
+        <district>Central</district>
+        <type>CR10x</type>
+        <ascii-lat>38D00'15"N</ascii-lat>
+        <ascii-lng>122D01'12"W</ascii-lng>
+        <decimal-lat>38.0040</decimal-lat>
+        <decimal-lng>122.02</decimal-lng>
+        <connect-date>4/6/2001</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>35</elevation>
+        <zip-codes>
+          <zip-code>94518</zip-code>
+          <zip-code>94519</zip-code>
+          <zip-code>94520</zip-code>
+          <zip-code>94521</zip-code>
+          <zip-code>94522</zip-code>
+          <zip-code>94523</zip-code>
+          <zip-code>94524</zip-code>
+          <zip-code>94527</zip-code>
+          <zip-code>94529</zip-code>
+        </zip-codes>
+      </station>
+      <station number="171" name="Union City">
+        <city>Union City</city>
+        <region>San Francisco Bay</region>
+        <county>Alameda</county>
+        <district>Central</district>
+        <type>CR10x</type>
+        <ascii-lat>37d35'56"N</ascii-lat>
+        <ascii-lng>122d03'07"W</ascii-lng>
+        <decimal-lat>37.5990</decimal-lat>
+        <decimal-lng>122.0520</decimal-lng>
+        <connect-date>2/5/2001</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>16</elevation>
+        <zip-codes>
+          <zip-code>94536</zip-code>
+          <zip-code>94537</zip-code>
+          <zip-code>94538</zip-code>
+          <zip-code>94539</zip-code>
+          <zip-code>94555</zip-code>
+        </zip-codes>
+      </station>
+      <station number="172" name="Lost Hills NW">
+        <city>Lost Hills</city>
+        <region>San Joaquin Valley</region>
+        <county>Kern</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>35D44'09"N</ascii-lat>
+        <ascii-lng>119D45'21"W</ascii-lng>
+        <decimal-lat>35.735833</decimal-lat>
+        <decimal-lng>119.755833</decimal-lng>
+        <connect-date>7/26/2000</connect-date>
+        <disconnect-date>7/1/2003</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>N</eto-switch>
+        <elevation>225</elevation>
+        <zip-codes>
+          <zip-code>93249</zip-code>
+        </zip-codes>
+      </station>
+      <station number="173" name="Torrey Pines">
+        <city>La Jolla</city>
+        <region>South Coast Valleys</region>
+        <county>San Diego</county>
+        <district>Southern</district>
+        <type>CR10x</type>
+        <ascii-lat>32D54'04"N</ascii-lat>
+        <ascii-lng>117D15'00"W</ascii-lng>
+        <decimal-lat>32.9010</decimal-lat>
+        <decimal-lng>117.25</decimal-lng>
+        <connect-date>11/29/2000</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>335</elevation>
+        <zip-codes>
+          <zip-code>92037</zip-code>
+          <zip-code>92038</zip-code>
+          <zip-code>92039</zip-code>
+          <zip-code>92092</zip-code>
+          <zip-code>92093</zip-code>
+        </zip-codes>
+      </station>
+      <station number="174" name="Long Beach">
+        <city>Long Beach</city>
+        <region>Los Angeles Basin</region>
+        <county>Los Angeles</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>33D47'50"N</ascii-lat>
+        <ascii-lng>118D05'38"W</ascii-lng>
+        <decimal-lat>33.7970</decimal-lat>
+        <decimal-lng>118.0940</decimal-lng>
+        <connect-date>9/22/2000</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>17</elevation>
+        <zip-codes>
+          <zip-code>90745</zip-code>
+          <zip-code>90746</zip-code>
+          <zip-code>90747</zip-code>
+          <zip-code>90749</zip-code>
+          <zip-code>90801</zip-code>
+          <zip-code>90802</zip-code>
+          <zip-code>90803</zip-code>
+          <zip-code>90804</zip-code>
+          <zip-code>90805</zip-code>
+          <zip-code>90806</zip-code>
+          <zip-code>90807</zip-code>
+          <zip-code>90808</zip-code>
+          <zip-code>90809</zip-code>
+          <zip-code>90810</zip-code>
+          <zip-code>90813</zip-code>
+          <zip-code>90814</zip-code>
+          <zip-code>90822</zip-code>
+          <zip-code>90831</zip-code>
+          <zip-code>90832</zip-code>
+          <zip-code>90833</zip-code>
+          <zip-code>90834</zip-code>
+          <zip-code>90835</zip-code>
+          <zip-code>90840</zip-code>
+          <zip-code>90842</zip-code>
+          <zip-code>90845</zip-code>
+          <zip-code>90846</zip-code>
+          <zip-code>90847</zip-code>
+          <zip-code>90848</zip-code>
+          <zip-code>90853</zip-code>
+          <zip-code>90888</zip-code>
+          <zip-code>90899</zip-code>
+        </zip-codes>
+      </station>
+      <station number="175" name="Palo Verde II">
+        <city>Palo Verde</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Imperial</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>33D23'20"W</ascii-lat>
+        <ascii-lng>114D43'32"N</ascii-lng>
+        <decimal-lat>33.3890</decimal-lat>
+        <decimal-lng>114.7260</decimal-lng>
+        <connect-date>1/11/2001</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>230</elevation>
+        <zip-codes>
+          <zip-code>92266</zip-code>
+        </zip-codes>
+      </station>
+      <station number="176" name="La Quinta">
+        <city>Indio</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Riverside</county>
+        <district>Southern</district>
+        <type>CR10x</type>
+        <ascii-lat>33D41'08"N</ascii-lat>
+        <ascii-lng>116D18'20"W</ascii-lng>
+        <decimal-lat>33.6860</decimal-lat>
+        <decimal-lng>116.3060</decimal-lng>
+        <connect-date>11/10/2000</connect-date>
+        <disconnect-date>9/26/2006</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>42</elevation>
+        <zip-codes>
+          <zip-code>92201</zip-code>
+          <zip-code>92202</zip-code>
+          <zip-code>92203</zip-code>
+          <zip-code>92210</zip-code>
+          <zip-code>92211</zip-code>
+          <zip-code>92253</zip-code>
+        </zip-codes>
+      </station>
+      <station number="177" name="Watsonville West">
+        <city>Watsonville</city>
+        <region>Monterey Bay</region>
+        <county>Santa Cruz</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>36D54'01"N</ascii-lat>
+        <ascii-lng>121D48'47"W</ascii-lng>
+        <decimal-lat>36.90</decimal-lat>
+        <decimal-lng>121.8130</decimal-lng>
+        <connect-date>11/30/2000</connect-date>
+        <disconnect-date>3/22/2006</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>212</elevation>
+        <zip-codes>
+          <zip-code>95018</zip-code>
+          <zip-code>95019</zip-code>
+          <zip-code>95075</zip-code>
+          <zip-code>95076</zip-code>
+          <zip-code>95077</zip-code>
+        </zip-codes>
+      </station>
+      <station number="178" name="Moraga">
+        <city>Moraga</city>
+        <region>San Francisco Bay</region>
+        <county>Contra Costa</county>
+        <district>Central</district>
+        <type>CR10x</type>
+        <ascii-lat>37D50'16"N</ascii-lat>
+        <ascii-lng>122D08'22"W</ascii-lng>
+        <decimal-lat>37.8380</decimal-lat>
+        <decimal-lng>122.1390</decimal-lng>
+        <connect-date>2/27/2002</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>510</elevation>
+        <zip-codes>
+          <zip-code>94595</zip-code>
+          <zip-code> 94596</zip-code>
+          <zip-code> 94597</zip-code>
+          <zip-code> 94598</zip-code>
+        </zip-codes>
+      </station>
+      <station number="179" name="Winchester">
+        <city>Winchester</city>
+        <region>South Coast Valleys</region>
+        <county>Riverside</county>
+        <district>Southern</district>
+        <type>CR10x</type>
+        <ascii-lat>33D39'48"N</ascii-lat>
+        <ascii-lng>117D05'36"W</ascii-lng>
+        <decimal-lat>33.6630</decimal-lat>
+        <decimal-lng>117.0930</decimal-lng>
+        <connect-date>2/7/2002</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>1626</elevation>
+        <zip-codes>
+          <zip-code>92548</zip-code>
+          <zip-code>92584</zip-code>
+          <zip-code>92596</zip-code>
+        </zip-codes>
+      </station>
+      <station number="180" name="Westmorland West">
+        <city>Westmorland</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Imperial</county>
+        <district>Southern</district>
+        <type>CR10x</type>
+        <ascii-lat>33D07'27"N</ascii-lat>
+        <ascii-lng>115D48'12"w</ascii-lng>
+        <decimal-lat>33.1240</decimal-lat>
+        <decimal-lng>115.8030</decimal-lng>
+        <connect-date>11/8/2001</connect-date>
+        <disconnect-date>7/21/2003</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>-218</elevation>
+        <zip-codes>
+          <zip-code>92281</zip-code>
+        </zip-codes>
+      </station>
+      <station number="181" name="Westmorland North">
+        <city>Imperial</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Imperial</county>
+        <district>Southern</district>
+        <type>CR10x</type>
+        <ascii-lat>33D04'43"N</ascii-lat>
+        <ascii-lng>115D39'38"W</ascii-lng>
+        <decimal-lat>33.0790</decimal-lat>
+        <decimal-lng>115.6610</decimal-lng>
+        <connect-date>4/1/2004</connect-date>
+        <disconnect-date>6/17/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>-200</elevation>
+        <zip-codes>
+          <zip-code>92251</zip-code>
+        </zip-codes>
+      </station>
+      <station number="182" name="Delano">
+        <city>Delano</city>
+        <region>San Joaquin Valley</region>
+        <county>Tulare</county>
+        <district>San Joaquin</district>
+        <type>CR10x</type>
+        <ascii-lat>35d49'59"n</ascii-lat>
+        <ascii-lng>119d15'21"w</ascii-lng>
+        <decimal-lat>35.8330</decimal-lat>
+        <decimal-lng>119.2560</decimal-lng>
+        <connect-date>3/21/2002</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>300</elevation>
+        <zip-codes>
+          <zip-code>93201</zip-code>
+          <zip-code>93215</zip-code>
+          <zip-code>93216</zip-code>
+          <zip-code>93219</zip-code>
+          <zip-code>93250</zip-code>
+          <zip-code>93261</zip-code>
+        </zip-codes>
+      </station>
+      <station number="183" name="Owens Lake North">
+        <city>Keeler</city>
+        <region>Bishop</region>
+        <county>Inyo</county>
+        <district>Southern</district>
+        <type>CR10x</type>
+        <ascii-lat>36D29'19"N</ascii-lat>
+        <ascii-lng>117D55'10"W</ascii-lng>
+        <decimal-lat>36.4890</decimal-lat>
+        <decimal-lng>117.9190</decimal-lng>
+        <connect-date>12/16/2002</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>N</eto-switch>
+        <elevation>3684</elevation>
+        <zip-codes>
+          <zip-code>93512</zip-code>
+          <zip-code> 93513</zip-code>
+          <zip-code> 93514</zip-code>
+          <zip-code> 93515</zip-code>
+          <zip-code> 93526</zip-code>
+          <zip-code> 93530</zip-code>
+          <zip-code> 93545</zip-code>
+          <zip-code> 93555</zip-code>
+        </zip-codes>
+      </station>
+      <station number="184" name="San Diego II">
+        <city>San Diego</city>
+        <region>South Coast Valleys</region>
+        <county>San Diego</county>
+        <district>Southern</district>
+        <type>CR10x</type>
+        <ascii-lat>32D43'47"N</ascii-lat>
+        <ascii-lng>117D08'22"W</ascii-lng>
+        <decimal-lat>32.73</decimal-lat>
+        <decimal-lng>117.1390</decimal-lng>
+        <connect-date>3/1/2002</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>377</elevation>
+        <zip-codes>
+          <zip-code>92101</zip-code>
+          <zip-code>92102</zip-code>
+          <zip-code>92103</zip-code>
+          <zip-code>92104</zip-code>
+          <zip-code>92105</zip-code>
+          <zip-code>92106</zip-code>
+          <zip-code>92107</zip-code>
+          <zip-code>92108</zip-code>
+          <zip-code>92109</zip-code>
+          <zip-code>92110</zip-code>
+          <zip-code>92111</zip-code>
+          <zip-code>92112</zip-code>
+          <zip-code>92113</zip-code>
+          <zip-code>92114</zip-code>
+          <zip-code>92115</zip-code>
+          <zip-code>92116</zip-code>
+          <zip-code>92117</zip-code>
+          <zip-code>92118</zip-code>
+          <zip-code>92119</zip-code>
+          <zip-code>92120</zip-code>
+          <zip-code>92121</zip-code>
+          <zip-code>92122</zip-code>
+          <zip-code>92123</zip-code>
+          <zip-code>92124</zip-code>
+          <zip-code>92125</zip-code>
+          <zip-code>92126</zip-code>
+          <zip-code>92127</zip-code>
+          <zip-code>92128</zip-code>
+          <zip-code>92129</zip-code>
+          <zip-code>92130</zip-code>
+          <zip-code>92131</zip-code>
+          <zip-code>92132</zip-code>
+          <zip-code>92133</zip-code>
+          <zip-code>92134</zip-code>
+          <zip-code>92135</zip-code>
+          <zip-code>92136</zip-code>
+          <zip-code>92137</zip-code>
+          <zip-code>92138</zip-code>
+          <zip-code>92139</zip-code>
+          <zip-code>92140</zip-code>
+          <zip-code>92142</zip-code>
+          <zip-code>92143</zip-code>
+          <zip-code>92144</zip-code>
+          <zip-code>92145</zip-code>
+          <zip-code>92147</zip-code>
+          <zip-code>92149</zip-code>
+          <zip-code>92150</zip-code>
+          <zip-code>92152</zip-code>
+          <zip-code>92153</zip-code>
+          <zip-code>92154</zip-code>
+          <zip-code>92155</zip-code>
+          <zip-code>92158</zip-code>
+          <zip-code>92159</zip-code>
+          <zip-code>92160</zip-code>
+          <zip-code>92160</zip-code>
+          <zip-code>92161</zip-code>
+          <zip-code>92162</zip-code>
+          <zip-code>92163</zip-code>
+          <zip-code>92164</zip-code>
+          <zip-code>92165</zip-code>
+          <zip-code>92166</zip-code>
+          <zip-code>92167</zip-code>
+          <zip-code>92168</zip-code>
+          <zip-code>92169</zip-code>
+          <zip-code>92170</zip-code>
+          <zip-code>92171</zip-code>
+          <zip-code>92172</zip-code>
+          <zip-code>92173</zip-code>
+          <zip-code>92174</zip-code>
+          <zip-code>92175</zip-code>
+          <zip-code>92176</zip-code>
+          <zip-code>92177</zip-code>
+          <zip-code>92178</zip-code>
+          <zip-code>92179</zip-code>
+          <zip-code>92182</zip-code>
+          <zip-code>92184</zip-code>
+          <zip-code>92186</zip-code>
+          <zip-code>92187</zip-code>
+          <zip-code>92191</zip-code>
+          <zip-code>92192</zip-code>
+          <zip-code>92193</zip-code>
+          <zip-code>92194</zip-code>
+          <zip-code>92195</zip-code>
+          <zip-code>92196</zip-code>
+          <zip-code>92197</zip-code>
+          <zip-code>92198</zip-code>
+          <zip-code>92199</zip-code>
+        </zip-codes>
+      </station>
+      <station number="185" name="UC-Mex">
+        <city>Calexico</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Imperial</county>
+        <district>Southern</district>
+        <type>CR10x</type>
+        <ascii-lat>32D24'40"N</ascii-lat>
+        <ascii-lng>115D11'50"W</ascii-lng>
+        <decimal-lat>32.4110</decimal-lat>
+        <decimal-lng>115.1970</decimal-lng>
+        <connect-date>1/18/2002</connect-date>
+        <disconnect-date>8/28/2002</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>39</elevation>
+        <zip-codes>
+          <zip-code>92243</zip-code>
+          <zip-code> 92244</zip-code>
+          <zip-code> 92250</zip-code>
+          <zip-code> 92251</zip-code>
+        </zip-codes>
+      </station>
+      <station number="186" name="UC-San Luis">
+        <city>Calexico</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Imperial</county>
+        <district>Southern</district>
+        <type>CR10x</type>
+        <ascii-lat>32D29'34"N</ascii-lat>
+        <ascii-lng>114D49'34"W</ascii-lng>
+        <decimal-lat>32.4930</decimal-lat>
+        <decimal-lng>114.8260</decimal-lng>
+        <connect-date>4/16/2002</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>48</elevation>
+        <zip-codes>
+          <zip-code>92243</zip-code>
+          <zip-code> 92244</zip-code>
+          <zip-code> 92250</zip-code>
+          <zip-code> 92251</zip-code>
+        </zip-codes>
+      </station>
+      <station number="187" name="Black Point">
+        <city>Novato</city>
+        <region>North Coast Valleys</region>
+        <county>Marin</county>
+        <district>Central</district>
+        <type>CR10x</type>
+        <ascii-lat>38D05'28"N</ascii-lat>
+        <ascii-lng>122D31'36"W</ascii-lng>
+        <decimal-lat>38.0910</decimal-lat>
+        <decimal-lng>122.5270</decimal-lng>
+        <connect-date>6/1/2003</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>1</elevation>
+        <zip-codes>
+          <zip-code />
+        </zip-codes>
+      </station>
+      <station number="189" name="Owens Lake South">
+        <city>Cartago</city>
+        <region>Bishop</region>
+        <county>Inyo</county>
+        <district>Southern</district>
+        <type>CR21x</type>
+        <ascii-lat>36D21'34"N</ascii-lat>
+        <ascii-lng>117D56'44"W</ascii-lng>
+        <decimal-lat>36.3590</decimal-lat>
+        <decimal-lng>117.9460</decimal-lng>
+        <connect-date>4/1/2003</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>N</eto-switch>
+        <elevation>3682</elevation>
+        <zip-codes>
+          <zip-code>93512</zip-code>
+          <zip-code> 93513</zip-code>
+          <zip-code> 93514</zip-code>
+          <zip-code> 93515</zip-code>
+          <zip-code> 93526</zip-code>
+          <zip-code> 93530</zip-code>
+          <zip-code> 93545</zip-code>
+          <zip-code> 93555</zip-code>
+        </zip-codes>
+      </station>
+      <station number="190" name="Five Points South West">
+        <city>Five Points</city>
+        <region>San Joaquin Valley</region>
+        <county>Fresno</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>36D23'09"N</ascii-lat>
+        <ascii-lng>120D13'74"W</ascii-lng>
+        <decimal-lat>36.3860</decimal-lat>
+        <decimal-lng>120.2370</decimal-lng>
+        <connect-date>7/2/2003</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>N</eto-switch>
+        <elevation>270</elevation>
+        <zip-codes>
+          <zip-code>93624</zip-code>
+        </zip-codes>
+      </station>
+      <station number="191" name="Pleasanton">
+        <city>Pleasanton</city>
+        <region>San Francisco Bay</region>
+        <county>Alameda</county>
+        <district>Central</district>
+        <type>CR10x</type>
+        <ascii-lat>37D39'50"N</ascii-lat>
+        <ascii-lng>121D53'06"W</ascii-lng>
+        <decimal-lat>37.6640</decimal-lat>
+        <decimal-lng>121.8850</decimal-lng>
+        <connect-date>5/1/2004</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>335</elevation>
+        <zip-codes>
+          <zip-code>94588</zip-code>
+        </zip-codes>
+      </station>
+      <station number="192" name="Lake Arrowhead">
+        <city>Lake Arrowhead</city>
+        <region>San Bernardino</region>
+        <county>San Bernardino</county>
+        <district>Southern</district>
+        <type>CR10x</type>
+        <ascii-lat>34D15'28"N</ascii-lat>
+        <ascii-lng>117D13'08"W</ascii-lng>
+        <decimal-lat>34.2580</decimal-lat>
+        <decimal-lng>117.2190</decimal-lng>
+        <connect-date>3/20/2004</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>5148</elevation>
+        <zip-codes>
+          <zip-code>92352</zip-code>
+        </zip-codes>
+      </station>
+      <station number="193" name="Pacific Grove ">
+        <city>Pacific Grove </city>
+        <region>Monterey Bay</region>
+        <county>Monterey</county>
+        <district>San Joaquin</district>
+        <type>CR1000</type>
+        <ascii-lat>36D37'60"N</ascii-lat>
+        <ascii-lng>121D56'06"W</ascii-lng>
+        <decimal-lat>36.633333</decimal-lat>
+        <decimal-lng>121.9350</decimal-lng>
+        <connect-date>10/26/2011</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>50</elevation>
+        <zip-codes>
+          <zip-code>93950</zip-code>
+        </zip-codes>
+      </station>
+      <station number="194" name="Oakdale">
+        <city>Oakdale</city>
+        <region>San Joaquin Valley</region>
+        <county>Stanislaus</county>
+        <district>San Joaquin</district>
+        <type>CR10x</type>
+        <ascii-lat>37D43'07"N</ascii-lat>
+        <ascii-lng>120D51'03"W</ascii-lng>
+        <decimal-lat>37.7190</decimal-lat>
+        <decimal-lng>120.8510</decimal-lng>
+        <connect-date>11/2/2004</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>165</elevation>
+        <zip-codes>
+          <zip-code>95361</zip-code>
+        </zip-codes>
+      </station>
+      <station number="195" name="Auburn">
+        <city>Auburn</city>
+        <region>Sierra Foothill</region>
+        <county>Placer</county>
+        <district>Central</district>
+        <type>CR10x</type>
+        <ascii-lat>38D53'15"N</ascii-lat>
+        <ascii-lng>121D06'11"W</ascii-lng>
+        <decimal-lat>38.8880</decimal-lat>
+        <decimal-lng>121.1030</decimal-lng>
+        <connect-date>2/16/2005</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>935</elevation>
+        <zip-codes>
+          <zip-code />
+        </zip-codes>
+      </station>
+      <station number="196" name="Esparto">
+        <city>Esparto</city>
+        <region>Sacramento Valley</region>
+        <county>Yolo</county>
+        <district>Central</district>
+        <type>CR10x</type>
+        <ascii-lat>38D41'05"N</ascii-lat>
+        <ascii-lng>122D08'40"W</ascii-lng>
+        <decimal-lat>38.6850</decimal-lat>
+        <decimal-lng>122.1440</decimal-lng>
+        <connect-date>4/15/2005</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>174</elevation>
+        <zip-codes>
+          <zip-code>95627</zip-code>
+        </zip-codes>
+      </station>
+      <station number="197" name="Palmdale">
+        <city>Palmdale</city>
+        <region>Los Angeles Basin</region>
+        <county>Los Angeles</county>
+        <district>Southern</district>
+        <type>CR10x</type>
+        <ascii-lat>34D36'54"N</ascii-lat>
+        <ascii-lng>118D01'57"W</ascii-lng>
+        <decimal-lat>34.6150</decimal-lat>
+        <decimal-lng>118.0330</decimal-lng>
+        <connect-date>4/6/2005</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>2550</elevation>
+        <zip-codes>
+          <zip-code>93534</zip-code>
+        </zip-codes>
+      </station>
+      <station number="198" name="Santa Paula">
+        <city>Santa Paula</city>
+        <region>Central Coast Valleys</region>
+        <county>Ventura</county>
+        <district>Southern</district>
+        <type>CR10x</type>
+        <ascii-lat>34D19'30"N</ascii-lat>
+        <ascii-lng>119D06'15"W</ascii-lng>
+        <decimal-lat>34.3250</decimal-lat>
+        <decimal-lng>119.1040</decimal-lng>
+        <connect-date>3/30/2005</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>218</elevation>
+        <zip-codes>
+          <zip-code>93060</zip-code>
+        </zip-codes>
+      </station>
+      <station number="199" name="Big Bear Lake">
+        <city>Big Bear Lake</city>
+        <region>San Bernardino</region>
+        <county>San Bernardino</county>
+        <district>Southern</district>
+        <type>CR10x</type>
+        <ascii-lat>34D14'17"N</ascii-lat>
+        <ascii-lng>116D51'55"W</ascii-lng>
+        <decimal-lat>34.2380</decimal-lat>
+        <decimal-lng>116.8650</decimal-lng>
+        <connect-date>7/19/2005</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>6910</elevation>
+        <zip-codes>
+          <zip-code>92315</zip-code>
+        </zip-codes>
+      </station>
+      <station number="200" name="Indio 2">
+        <city>Indio</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Riverside</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>33D44'46"N</ascii-lat>
+        <ascii-lng>116D15'28"W</ascii-lng>
+        <decimal-lat>33.7460</decimal-lat>
+        <decimal-lng>116.2580</decimal-lng>
+        <connect-date>5/16/2006</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>40</elevation>
+        <zip-codes>
+          <zip-code>92201</zip-code>
+          <zip-code> 92202</zip-code>
+          <zip-code> 92203</zip-code>
+        </zip-codes>
+      </station>
+      <station number="201" name="UC-Andrade">
+        <city>Calexico</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Imperial</county>
+        <district>Southern</district>
+        <type>CR10x</type>
+        <ascii-lat>32D29'34"N</ascii-lat>
+        <ascii-lng>115D02'28"W</ascii-lng>
+        <decimal-lat>32.4930</decimal-lat>
+        <decimal-lng>115.0410</decimal-lng>
+        <connect-date>1/1/2006</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>120</elevation>
+        <zip-codes>
+          <zip-code>92243</zip-code>
+          <zip-code> 92244</zip-code>
+          <zip-code> 92250</zip-code>
+          <zip-code> 92251</zip-code>
+        </zip-codes>
+      </station>
+      <station number="202" name="Nipomo">
+        <city>Nipomo</city>
+        <region>Central Coast Valleys</region>
+        <county>San Luis Obispo</county>
+        <district>Southern</district>
+        <type>CR10x</type>
+        <ascii-lat>35D01'42"N</ascii-lat>
+        <ascii-lng>120D33'36"W</ascii-lng>
+        <decimal-lat>35.0280</decimal-lat>
+        <decimal-lng>120.56</decimal-lng>
+        <connect-date>6/27/2006</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>255</elevation>
+        <zip-codes>
+          <zip-code />
+        </zip-codes>
+      </station>
+      <station number="203" name="Alpaugh">
+        <city>Alpaugh</city>
+        <region>San Joaquin Valley</region>
+        <county>Tulare</county>
+        <district>San Joaquin</district>
+        <type>CR10x</type>
+        <ascii-lat>35D51'45"N</ascii-lat>
+        <ascii-lng>119D30'13"W</ascii-lng>
+        <decimal-lat>35.8620</decimal-lat>
+        <decimal-lng>119.5040</decimal-lng>
+        <connect-date>7/11/2006</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>210</elevation>
+        <zip-codes>
+          <zip-code />
+        </zip-codes>
+      </station>
+      <station number="204" name="Santa Clarita">
+        <city>Santa Clarita</city>
+        <region>Los Angeles Basin</region>
+        <county>Los Angeles</county>
+        <district>Southern</district>
+        <type>CR10x</type>
+        <ascii-lat>34D25'37"N</ascii-lat>
+        <ascii-lng>118D31'02"W</ascii-lng>
+        <decimal-lat>34.4270</decimal-lat>
+        <decimal-lng>118.5170</decimal-lng>
+        <connect-date>12/4/2006</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>1410</elevation>
+        <zip-codes>
+          <zip-code>91350</zip-code>
+        </zip-codes>
+      </station>
+      <station number="205" name="Coalinga">
+        <city>Coalinga</city>
+        <region>San Joaquin Valley</region>
+        <county>Fresno</county>
+        <district>San Joaquin</district>
+        <type>CR10x</type>
+        <ascii-lat>36D10'33"N</ascii-lat>
+        <ascii-lng>120D21'37"W</ascii-lng>
+        <decimal-lat>36.1760</decimal-lat>
+        <decimal-lng>120.36</decimal-lng>
+        <connect-date>3/25/2010</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>730</elevation>
+        <zip-codes>
+          <zip-code />
+        </zip-codes>
+      </station>
+      <station number="206" name="Denair II">
+        <city>Denair</city>
+        <region>San Joaquin Valley</region>
+        <county>Stanislaus</county>
+        <district>San Joaquin</district>
+        <type>CR10x</type>
+        <ascii-lat>37D32'45"N</ascii-lat>
+        <ascii-lng>120D45'16"W</ascii-lng>
+        <decimal-lat>37.5460</decimal-lat>
+        <decimal-lng>120.7540</decimal-lng>
+        <connect-date>4/9/2009</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>150</elevation>
+        <zip-codes>
+          <zip-code>95350</zip-code>
+        </zip-codes>
+      </station>
+      <station number="207" name="Borrego Springs">
+        <city>Borrego Springs</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>San Diego</county>
+        <district>Southern</district>
+        <type>CR10</type>
+        <ascii-lat>33D16'06"N</ascii-lat>
+        <ascii-lng>116D21'54"W</ascii-lng>
+        <decimal-lat>33.2680</decimal-lat>
+        <decimal-lng>116.3650</decimal-lng>
+        <connect-date>1/4/2008</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>578</elevation>
+        <zip-codes>
+          <zip-code />
+        </zip-codes>
+      </station>
+      <station number="208" name="La Quinta II">
+        <city>La Quinta</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Riverside</county>
+        <district>Southern</district>
+        <type>CR10x</type>
+        <ascii-lat>33D40'41"N</ascii-lat>
+        <ascii-lng>116D16'23"W</ascii-lng>
+        <decimal-lat>33.6780</decimal-lat>
+        <decimal-lng>116.2730</decimal-lng>
+        <connect-date>2/6/2007</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>36</elevation>
+        <zip-codes>
+          <zip-code>92201</zip-code>
+          <zip-code>92202</zip-code>
+          <zip-code>92203</zip-code>
+          <zip-code>92210</zip-code>
+          <zip-code>92211</zip-code>
+          <zip-code>92253</zip-code>
+        </zip-codes>
+      </station>
+      <station number="209" name="Watsonville West II">
+        <city>Watsonville</city>
+        <region>Monterey Bay</region>
+        <county>Santa Cruz</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>36D54'44"N</ascii-lat>
+        <ascii-lng>121D49'23"W</ascii-lng>
+        <decimal-lat>36.9120</decimal-lat>
+        <decimal-lng>121.8230</decimal-lng>
+        <connect-date>6/13/2007</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>240</elevation>
+        <zip-codes>
+          <zip-code>95018</zip-code>
+          <zip-code>95019</zip-code>
+          <zip-code>95075</zip-code>
+          <zip-code>95076</zip-code>
+          <zip-code>95077</zip-code>
+        </zip-codes>
+      </station>
+      <station number="210" name="Carmel">
+        <city>Carmel</city>
+        <region>Monterey Bay</region>
+        <county>Monterey</county>
+        <district>San Joaquin</district>
+        <type>CR10</type>
+        <ascii-lat>36D32'27"N</ascii-lat>
+        <ascii-lng>121D52'55"W</ascii-lng>
+        <decimal-lat>36.5410</decimal-lat>
+        <decimal-lng>121.8820</decimal-lng>
+        <connect-date>7/22/2008</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>75</elevation>
+        <zip-codes>
+          <zip-code />
+        </zip-codes>
+      </station>
+      <station number="211" name="Gilroy">
+        <city>Gilroy</city>
+        <region>San Francisco Bay</region>
+        <county>Santa Clara</county>
+        <district>San Joaquin</district>
+        <type>CR10x</type>
+        <ascii-lat>37D00'50"N</ascii-lat>
+        <ascii-lng>121D32'15"W</ascii-lng>
+        <decimal-lat>37.0140</decimal-lat>
+        <decimal-lng>121.5380</decimal-lng>
+        <connect-date>9/1/2009</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>185</elevation>
+        <zip-codes>
+          <zip-code />
+        </zip-codes>
+      </station>
+      <station number="212" name="Hastings Tract East">
+        <city>Dixon</city>
+        <region>Sacramento Valley</region>
+        <county>Solano</county>
+        <district>Central</district>
+        <type>CR10</type>
+        <ascii-lat>38D16'41"N</ascii-lat>
+        <ascii-lng>121D44'28"W</ascii-lng>
+        <decimal-lat>38.2780</decimal-lat>
+        <decimal-lng>121.7410</decimal-lng>
+        <connect-date>10/20/2009</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>7</elevation>
+        <zip-codes>
+          <zip-code />
+        </zip-codes>
+      </station>
+      <station number="215" name="Chatsworth">
+        <city>Chadsworth</city>
+        <region>Los Angeles Basin</region>
+        <county>Los Angeles</county>
+        <district>Southern</district>
+        <type>CR1000</type>
+        <ascii-lat>34D17'29"N</ascii-lat>
+        <ascii-lng>118D35'12"W</ascii-lng>
+        <decimal-lat>34.291389</decimal-lat>
+        <decimal-lng>118.586667</decimal-lng>
+        <connect-date>9/1/2011</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>1536</elevation>
+        <zip-codes>
+          <zip-code>91326</zip-code>
+        </zip-codes>
+      </station>
+      <station number="216" name="Arleta">
+        <city>Arleta</city>
+        <region>Los Angeles Basin</region>
+        <county>Los Angeles</county>
+        <district>Southern</district>
+        <type>CR1000</type>
+        <ascii-lat>34D15'22"N</ascii-lat>
+        <ascii-lng>118D22'58"W</ascii-lng>
+        <decimal-lat>34.256111</decimal-lat>
+        <decimal-lng>118.382778</decimal-lng>
+        <connect-date>9/8/2011</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>980</elevation>
+        <zip-codes>
+          <zip-code>91040</zip-code>
+          <zip-code>91331</zip-code>
+          <zip-code>91352</zip-code>
+        </zip-codes>
+      </station>
+      <station number="218" name="Thermal South">
+        <city>Thermal</city>
+        <region>Imperial/Coachella Valley</region>
+        <county>Riverside</county>
+        <district>Southern</district>
+        <type>CR10x</type>
+        <ascii-lat>33D35'45"N</ascii-lat>
+        <ascii-lng>116D09'29"W</ascii-lng>
+        <decimal-lat>33.595833</decimal-lat>
+        <decimal-lng>116.158056</decimal-lng>
+        <connect-date>1/30/2010</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>-150</elevation>
+        <zip-codes>
+          <zip-code />
+        </zip-codes>
+      </station>
+      <station number="219" name="West Hills">
+        <city>West Hills</city>
+        <region>Los Angeles Basin</region>
+        <county>Los Angeles</county>
+        <district>Southern</district>
+        <type>CR1000</type>
+        <ascii-lat>34D12'51"N</ascii-lat>
+        <ascii-lng>118D38'41"W</ascii-lng>
+        <decimal-lat>34.214167</decimal-lat>
+        <decimal-lng>118.644722</decimal-lng>
+        <connect-date>9/6/2011</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>N</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>926</elevation>
+        <zip-codes>
+          <zip-code>91303</zip-code>
+          <zip-code>91304</zip-code>
+          <zip-code>91306</zip-code>
+          <zip-code>91308</zip-code>
+          <zip-code>91311</zip-code>
+          <zip-code>91367</zip-code>
+        </zip-codes>
+      </station>
+      <station number="220" name="Palmdale Central">
+        <city>Palmdale</city>
+        <region>Los Angeles Basin</region>
+        <county>Los Angeles</county>
+        <district>Southern</district>
+        <type>CR1000</type>
+        <ascii-lat>34D35'32"N</ascii-lat>
+        <ascii-lng>118D07'39"W</ascii-lng>
+        <decimal-lat>34.592222</decimal-lat>
+        <decimal-lng>118.1275</decimal-lng>
+        <connect-date>3/23/2011</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>2630</elevation>
+        <zip-codes>
+          <zip-code>93550</zip-code>
+        </zip-codes>
+      </station>
+      <station number="221" name="Cadiz Valley">
+        <city>Chambless</city>
+        <region>San Bernardino</region>
+        <county>San Bernardino</county>
+        <district>Southern</district>
+        <type>CR1000</type>
+        <ascii-lat>34D30'49"N</ascii-lat>
+        <ascii-lng>115D30'38"W</ascii-lng>
+        <decimal-lat>34.513611</decimal-lat>
+        <decimal-lng>115.510556</decimal-lng>
+        <connect-date>11/1/2010</connect-date>
+        <disconnect-date>10/10/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>155</elevation>
+        <zip-codes>
+          <zip-code>92304</zip-code>
+        </zip-codes>
+      </station>
+      <station number="226" name="Woodland">
+        <city>Woodland</city>
+        <region>Sacramento Valley</region>
+        <county>Yolo</county>
+        <district>Central</district>
+        <type>CR1000</type>
+        <ascii-lat>38D40'22"N</ascii-lat>
+        <ascii-lng>121D48'42"W</ascii-lng>
+        <decimal-lat>38.672778</decimal-lat>
+        <decimal-lng>121.811667</decimal-lng>
+        <connect-date>5/12/2011</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>82</elevation>
+        <zip-codes>
+          <zip-code>95695</zip-code>
+        </zip-codes>
+      </station>
+      <station number="227" name="Plymouth">
+        <city>Plymouth</city>
+        <region>Sierra Foothill</region>
+        <county>Amador</county>
+        <district>Central</district>
+        <type>CR1000</type>
+        <ascii-lat>38D30'30"N</ascii-lat>
+        <ascii-lng>120D47'59"W</ascii-lng>
+        <decimal-lat>38.508333</decimal-lat>
+        <decimal-lng>120.799722</decimal-lng>
+        <connect-date>11/1/2010</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>1520</elevation>
+        <zip-codes>
+          <zip-code>95669</zip-code>
+        </zip-codes>
+      </station>
+      <station number="228" name="Diamond Springs">
+        <city>Diamond Springs</city>
+        <region>Sierra Foothill</region>
+        <county>El Dorado</county>
+        <district>Central</district>
+        <type>CR1000</type>
+        <ascii-lat>38D38'10"N</ascii-lat>
+        <ascii-lng>120D47'35"W</ascii-lng>
+        <decimal-lat>38.636111</decimal-lat>
+        <decimal-lng>120.793056</decimal-lng>
+        <connect-date>9/29/2010</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>2050</elevation>
+        <zip-codes>
+          <zip-code />
+        </zip-codes>
+      </station>
+      <station number="229" name="Laguna Seca">
+        <city>Monterey</city>
+        <region>Monterey Bay</region>
+        <county>Monterey</county>
+        <district>San Joaquin</district>
+        <type>CR1000</type>
+        <ascii-lat>36D34'12"N</ascii-lat>
+        <ascii-lng>121D47'11"W</ascii-lng>
+        <decimal-lat>36.57</decimal-lat>
+        <decimal-lng>121.786389</decimal-lng>
+        <connect-date>1/1/2011</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>320</elevation>
+        <zip-codes>
+          <zip-code>93940</zip-code>
+        </zip-codes>
+      </station>
+      <station number="230" name="Santa Barbara II">
+        <city>Santa Barbara</city>
+        <region>Central Coast Valleys</region>
+        <county>Santa Barbara</county>
+        <district>Southern</district>
+        <type>CR1000</type>
+        <ascii-lat>34D24'20"N</ascii-lat>
+        <ascii-lng>119D42'54"W</ascii-lng>
+        <decimal-lat>34.405556</decimal-lat>
+        <decimal-lng>119.7150</decimal-lng>
+        <connect-date>1/10/2011</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>440</elevation>
+        <zip-codes>
+          <zip-code />
+        </zip-codes>
+      </station>
+      <station number="231" name="Lompoc">
+        <city>Lompoc</city>
+        <region>Central Coast Valleys</region>
+        <county>Santa Barbara</county>
+        <district>Southern</district>
+        <type>CR1000</type>
+        <ascii-lat>34D40'20"N</ascii-lat>
+        <ascii-lng>120D30'47"W</ascii-lng>
+        <decimal-lat>34.672222</decimal-lat>
+        <decimal-lng>120.513056</decimal-lng>
+        <connect-date>7/14/2010</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>55</elevation>
+        <zip-codes>
+          <zip-code />
+        </zip-codes>
+      </station>
+      <station number="232" name="Santa Maria II">
+        <city>Santa Maria</city>
+        <region>Central Coast Valleys</region>
+        <county>Santa Barbara</county>
+        <district>Southern</district>
+        <type>CR1000</type>
+        <ascii-lat>34D54'49"N</ascii-lat>
+        <ascii-lng>120D27'53"W</ascii-lng>
+        <decimal-lat>34.913611</decimal-lat>
+        <decimal-lng>120.464722</decimal-lng>
+        <connect-date>4/1/2011</connect-date>
+        <disconnect-date>12/31/2030</disconnect-date>
+        <enabled>Y</enabled>
+        <eto-switch>Y</eto-switch>
+        <elevation>215</elevation>
+        <zip-codes>
+          <zip-code>93454</zip-code>
+        </zip-codes>
+      </station>
+    </data>
+  </station-list>
+</StationListDocument>

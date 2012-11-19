@@ -1,0 +1,87 @@
+#! /usr/bin/perl -w
+use strict qw (vars refs);
+use Getopt::Long qw[:config prefix_pattern=(--|-|) ];
+use Pod::Usage;
+
+our $int=30;
+our $date=undef;
+our $rastname=undef;
+our $filename='%hh%mm';
+our $delim=',';
+our $overlap=0;
+our $exists=0;
+our $mapset='';
+our $sretr=undef;
+our $ssetr=undef;
+
+GetOptions(
+	   'exists!'=>\$exists,
+	   'mapset=s'=>\$mapset,
+	   'overlap!'=>\$overlap,
+	   'sretr=s'=>\$sretr,
+	   'ssetr=s'=>\$ssetr,
+	   'date=s'=>\$date,
+	   "interval=s"=>\$int,
+	   "filename=s"=>\$filename,
+	   "delim=s"=>\$delim,
+	  );
+
+# Create the Sunrise and Sunset Angles if they don't exist.
+sub g_cmd {
+  my ($cmd,%p)=@_;
+  my @cmd = map("$_=$p{$_}",keys %p);
+#  print STDERR join(" ",$cmd,@cmd)."\n";
+  system $cmd,@cmd;
+}
+
+sub g_cmdq {
+  open my $oldout, ">&STDOUT"     or die "Can't dup STDOUT: $!";
+  open STDOUT, '>', "/dev/null" or die "Can't redirect STDOUT: $!";
+  select STDOUT; $| = 1;      # make unbuffered
+  my $rv=g_cmd(@_);
+  close STDOUT;
+  open STDOUT, ">&", $oldout or die "Can't dup \$oldout: $!";
+  $rv;
+}
+
+sub g_findfile {
+  my (%p)=@_;
+  return 1 unless $p{file};
+  $p{element}||='cellhd';
+  g_cmdq('g.findfile',%p);
+}
+
+pod2usage(msg=>"Specify sretr",exitval=>1) unless defined($sretr);
+
+unless (g_findfile(file=>$sretr)==0) {
+    system "r.solpos date=$date sretr=$sretr" || pod2usage(msg=>"Can't create sretr=$sretr",exitval=>1);
+}
+
+pod2usage(msg=>"Specify ssetr",exitval=>1) unless defined($ssetr);
+
+unless (g_findfile(file=>$ssetr)==0) {
+    system "r.solpos date=$date ssetr=$ssetr" || 
+	pod2usage(msg=>"Can't create ssetr=$ssetr",exitval=>1);
+}
+
+my ($sr)=grep(/Range of data:/,`r.info $sretr`);
+$sr=~ /min\s*=\s*([0-9.]+)/ and my $min=$1;
+my ($ss)=grep(/Range of data:/,`r.info $ssetr`);
+$ss=~ /max\s*=\s*([0-9.]+)/ and my $max=$1;
+
+$min+=$int unless $overlap;
+$max-=$int unless $overlap;
+
+my @ints;
+my %p;
+$p{mapset}=$mapset if $mapset;
+for (my $i=int($min/$int)*$int;$i<=$max;$i+=$int) {
+   my $hh= sprintf "%2.2d",int($i/60.0);
+   my $mm  = sprintf "%2.2d", $i % 60;
+   my $fn=$filename;
+   $fn =~ s/\%hh/$hh/g;
+   $fn =~ s/\%mm/$mm/g;
+   push @ints,$fn if !($exists) or 
+       (g_findfile(file=>$fn,%p) == 0)
+}
+print join($delim,@ints);

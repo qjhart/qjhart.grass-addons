@@ -1,0 +1,48 @@
+Unix Libraries
+proj4
+gdal
+libevent
+libevent-dev
+
+Perl Modules
+Geo::Proj4
+LWP::Simple
+
+export GH=/usr/lib/grass64
+export GRASS_ADDON=/home/quinn/grass6
+
+/home/quinn/cimis
+make GRASS_HOME=. MODULE_TOPDIR=${GH} DIST_DIR=${GRASS_ADDON} install
+
+$CIMIS_BASE/status?
+date={2012-10-10}&
+format={json,html}&
+callback=_callback_function_
+
+Example JSON Ouptut
+{
+"date":"2012-08-01",  // RFC-3339 Date
+"time":"2012-08-01 10:00:00-07:00", //RFC-3339 Seconds
+"et0":{"status":{ok,err,unk},...},
+...
+"ServiceComponent":{"status":"{ok|err|unk}",...},
+}
+
+Fail on Error:
+500: Internal Server Error
+--or--
+503: Service Unavailable
+
+
+In addition, we could also simply add the the existing function, a
+switch that will have it fail w/ a 500 if any date is requested that
+doesn't exist on the server.
+
+
+
+
+
+
+
+
+

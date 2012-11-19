@@ -1,0 +1,245 @@
+#! /usr/bin/perl -w
+use strict qw (vars refs);
+use Getopt::Long qw[:config prefix_pattern=(--|-|) ];
+use Pod::Usage;
+use Date::Parse;
+
+# Taken from heliosat code.
+#  /* Coefficients for the beam angular function, Fb */
+our @AP=( [ 2.6463e-01,-6.1581e-02, 3.1408e-03], 
+	  [ 2.0402    , 1.8945e-02,-1.1161e-02],
+	  [-1.3025    , 3.9231e-02, 8.5079e-03]);
+
+our @LE=
+  (
+   # y>30
+   [
+    [-1.7349e-2, -5.8985e-3,  6.8868e-4],
+    [ 1.0258   , -1.2196e-1,  1.9229e-3],
+    [-7.2178e-3,  1.3086e-1, -2.8405e-3,0],
+    
+   ],
+   # 15>y>30
+   [
+    [-8.2193e-3,  4.5643e-4,  6.7916e-5],
+    [ 8.9233e-1, -1.9991e-1,  9.9741e-3],
+    [ 2.5428e-1,  2.6140e-1, -1.7020e-2,0],
+   ],
+   # y<15
+   [
+    [-1.1656e-3,  1.8408e-4, -4.8754e-7],
+    [ 7.4095e-1, -2.2427e-1,  1.5314e-2],
+    [ 3.4959e-1,  7.2313e-1, -1.2305e-1,5.9194e-3],
+   ]
+  );
+my @L=@{$LE[0]};		# Right now use only Y>30
+
+
+our %isInstant;
+grep($isInstant{$_}++,(qw(hrang ha Fbi Fdi Bci Dci Gci)));
+
+our %Rname;
+#   (
+#     declin=>'',
+#     etrn=>'',
+# );
+
+our $pi=atan2(0,-1);
+
+
+our @R_mapcalc_common = 
+  (
+   elevin=> sub {pod2usage(msg=>"Specify elevin [meters]",exitval=>1);},
+   linkein=> sub {pod2usage(msg=>"Specify linke Turbidity (2AM)",exitval=>1);},
+   lat=>sub { system "r.solpos date=#date# latitude=#lat#"; },
+   ssha=>sub { system "r.solpos date=#date# ssha=#ssha#"; },
+   p_p0=>"exp(-#elevin#/8434.5)",
+   hclinke=>"\"#linkein#\"*#p_p0#",
+   ray=>"1/(6.6296+1.7513*#p_p0#-0.1202*#p_p0#^2+0.0065*#p_p0#^30.000013*#p_p0#^4)",
+   slsd=>"sin(#lat#)*sin(#declin#)",
+   clcd=>"cos(#lat#)*cos(#declin#)",
+   );
+
+ our @R_mapcalc_B =
+  (
+   # Beam Parameters
+   Trb=>"exp(-0.8662*#hclinke#*#ray#)",
+   Bcz=>"#etrn#*#Trb#",
+   C0=>sprintf("%f+%f*#hclinke#+%f*#hclinke#^2",$L[0][0],$L[0][1],$L[0][2]),
+   C1=>sprintf("%f+%f*#hclinke#+%f*#hclinke#^2",$L[1][0],$L[1][1],$L[1][2]),
+   C2=>sprintf("%f+%f*#hclinke#+%f*#hclinke#^2+%f*#hclinke#^3",$L[2][0],$L[2][1],$L[2][2],$L[2][3]),
+   B0=>"#C0#+#C1#*#slsd#+#C2#*#slsd#^2+0.5*#C2#*#clcd#^2",
+   B1=>"#C1#*#clcd#+2*#C2#*#slsd#*#clcd#",
+   B2=>"0.25*#C2#*#clcd#^2",
+   Fbiss=>"#B0#*#ssha#*$pi/180+#B1#*sin(#ssha#)+#B2#*sin(2*#ssha#)",
+   Bc=>"2*#Fbiss#*#Bcz#*(12/$pi)",
+  );
+
+our @R_mapcalc_Bi = 
+  (
+   hrang=>sub { system "r.solpos date=#date# hrang=#hrang#"; },
+   ha=>"min(#ssha#,max(-#ssha#,#hrang#))",
+   Fbi=>"#B0#*#ha#*$pi/180+#B1#*sin(#ha#)+#B2#*sin(2*#ha#)",
+   Bci=>"(12/$pi)*#Fbi#*#Bcz#",
+  );
+
+our @R_mapcalc_D =
+  (
+   # Get some Diffuse Parameters
+   Trd=>'-1.5834e-2+3.03543e-2*#hclinke#+3.797e-4*#hclinke#^2',
+   Dcz=>'#etrn#*#Trd#',
+   A0 => sprintf("%f+%f*#hclinke#+%f*#hclinke#^2",$AP[0][0],$AP[0][1],$AP[0][2]),
+   A1 => sprintf("%f+%f*#hclinke#+%f*#hclinke#^2",$AP[1][0],$AP[1][1],$AP[1][2]),
+   A2 => sprintf("%f+%f*#hclinke#+%f*#hclinke#^2",$AP[2][0],$AP[2][1],$AP[2][2]),
+   D0=>"#A0#+#A1#*#slsd#+#A2#*#slsd#^2+0.5*#A2#*#clcd#^2",
+   D1=>"#A1#*#clcd#+2*#A2#*#slsd#*#clcd#",
+   D2=>"0.25*#A2#*#clcd#^2",
+   Fdiss=>"#D0#*#ssha#*$pi/180+#D1#*sin(#ssha#)+#D2#*sin(2*#ssha#)",
+   Dc=>"2*#Fdiss#*#Dcz#*(12/$pi)",
+  );
+
+our @R_mapcalc_Di =
+  (
+   hrang=>sub { system "r.solpos date=#date# hrang=#hrang#"; },
+   ha=>"min(#ssha#,max(-#ssha#,#hrang#))",
+   Fdi=>"#D0#*#ha#*$pi/180+#D1#*sin(#ha#)+#D2#*sin(2*#ha#)",
+   Dci=>"(12/$pi)*#Fdi#*#Dcz#",
+  );
+
+our @R_mapcalc_G =
+  (
+   # Sum them up
+   Gc=>"#Bc#+#Dc#",
+  );
+
+our @R_mapcalc_Gi =
+  (
+   # Sum them up
+   Gci=>"#Bci#+#Dci#",
+  );
+
+
+our %Rgetopt;
+foreach (keys %Rname) {
+  $Rgetopt{"$_=s"}=\$Rname{$_};
+}
+{
+  my @R_mapcalc=(@R_mapcalc_common,@R_mapcalc_B,@R_mapcalc_D,@R_mapcalc_G);
+  while (my $n = shift @R_mapcalc) {
+    shift @R_mapcalc;
+    $Rgetopt{"$n=s"}=\$Rname{$n};
+  }
+}
+
+# These functions are nice and should be moved to GRASS.pm
+
+sub g_cmd {
+  my ($cmd,%p)=@_;
+  my @cmd = map("$_=$p{$_}",keys %p);
+#  print STDERR join(" ",$cmd,@cmd)."\n";
+  system $cmd,@cmd;
+}
+
+sub g_cmdq {
+  open my $oldout, ">&STDOUT"     or die "Can't dup STDOUT: $!";
+  open STDOUT, '>', "/dev/null" or die "Can't redirect STDOUT: $!";
+  select STDOUT; $| = 1;      # make unbuffered
+  my $rv=g_cmd(@_);
+  close STDOUT;
+  open STDOUT, ">&", $oldout or die "Can't dup \$oldout: $!";
+  $rv;
+}
+
+sub g_findfile {
+  my (%p)=@_;
+  return 1 unless $p{file};
+  $p{element}||='cellhd';
+  g_cmdq('g.findfile',%p);
+}
+
+sub r_mapcalc {
+  my (%p)=@_;
+  g_cmd('r.mapcalc',%p);
+}
+
+# Flag Options
+our $clean=undef;
+our $instant=undef;
+our $beam=1;
+our $diffuse=1;
+our $sum=1;
+our $prefix='_hel_';
+our $date;
+
+GetOptions(
+	   'clean!'=>\$clean,
+	   'instant!'=>\$instant,
+	   'beam!'=>\$beam,
+	   'diffuse!'=>\$diffuse,
+	   'sum!'=>\$sum,
+	   'date=s'=>\$date,
+	   'prefix=s'=>\$prefix,
+	   %Rgetopt,
+          );
+
+
+pod2usage(msg=>"Specify date [ISO8601]",exitval=>1) unless $date;
+#$date=`date --date=$date --iso-8601=seconds`;
+
+our (undef,$mm,$hh,undef,undef,$y,undef) = strptime($date);
+pod2usage(msg=>"Invalid date: $date",exitval=>1) unless $y;
+
+# Setup calculations
+my @R_mapcalc=@R_mapcalc_common;
+push @R_mapcalc,@R_mapcalc_B if $beam;
+push @R_mapcalc,@R_mapcalc_D if $diffuse;
+push @R_mapcalc,@R_mapcalc_G if $sum;
+push @R_mapcalc,@R_mapcalc_Bi if $beam and $instant;
+push @R_mapcalc,@R_mapcalc_Di if $diffuse and $instant;
+push @R_mapcalc,@R_mapcalc_Gi if $sum and $instant;
+
+# Get some Daily input Parameters
+{
+    # Get some r.solpos values;
+    my %rsol;
+    map ({chomp; my($n,$v)=split('=');$rsol{$n}=$v} `r.solpos -r date=$date`);
+    $Rname{declin}=$rsol{declin};
+    $Rname{etrn}=$rsol{etrn};
+}
+	   
+# Get Default Names
+for(my $i=0; $i<=$#R_mapcalc; $i+=2) {
+    my $n=$R_mapcalc[$i];
+    if ($isInstant{$n}) {
+	$Rname{$n}||=sprintf "${prefix}$n%2.2d%2.2d",$hh,$mm;
+    } else {
+	$Rname{$n}||="${prefix}$n";
+    }
+}
+
+if($clean) {
+  system sprintf "g.remove rast=%s",join(',',values %Rname);
+}
+
+if ($instant or g_findfile(file=>$Rname{ssha})!=0 
+    or g_findfile(file=>$Rname{lat})!=0) {
+  my %p;
+  $p{date}=$date;
+  $p{ssha}=$Rname{ssha} unless g_findfile(file=>$Rname{ssha})==0;
+  $p{lat}=$Rname{lat} unless g_findfile(file=>$Rname{lat})==0;
+  $p{hrang}=$Rname{hrang} if $instant;
+  g_cmd('r.solpos',%p);
+}
+
+while (my $name= shift @R_mapcalc) {
+  my $val=shift @R_mapcalc;
+  unless (g_findfile(file=>"$Rname{$name}")==0) {
+      if (ref($val) eq 'CODE') {
+	  &{$val}($name);
+      } else {
+	  # Re-write equation
+	  grep ($val=~ s/\#$_\#/$Rname{$_}/g,keys %Rname);
+	  r_mapcalc $Rname{$name}=>$val;
+      }
+  }
+}
