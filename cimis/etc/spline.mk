@@ -34,9 +34,14 @@ info::
 # a few around.  Mostly, they're used in combination of other rasters anyways
 ###############################################################
 define spline_template
+clean::
+	g.remove $(1)_t$(2)_z$(3)_s$(4)
+
+#...maskmap=${state}
 $(rast)/$(1)_t$(2)_z$(3)_s$(4): ${vect}/etxml
-	g.region -d b=-50 t=2500 tbres=1000; \
-	v.vol.rst --overwrite input=etxml wcolumn=${1} cellinp=${Z} maskmap=${state} \
+	g.region -d b=-100 t=2500 tbres=1000; \
+	v.vol.rst --overwrite input=etxml wcolumn=${1} cellinp=${Z} \
+	  maskmap=${state} \
 	  tension=$(2) zmult=$(3) smooth=$(4) \
 	  cellout=$(1)_t$(2)_z$(3)_s$(4) > /dev/null &>/dev/null; \
 	g.region -d
@@ -51,6 +56,9 @@ $(foreach p,day_rel_hum_max day_wind_spd_avg,$(eval $(call spline_template,$(p),
 # The output is a raster $(name)_ns to indicate normalized splines
 # intermediate files include: normalized site_list,normalized_spline
 #####################################################################
+clean::
+	g.remove vect=z_normal
+
 ${vect}/z_normal:${vect}/etxml
 	g.copy --o vect=etxml,z_normal
 	echo 'update z_normal set day_air_tmp_min=day_air_tmp_min+${lr-day_air_tmp_min}*z/1000,day_air_tmp_max=day_air_tmp_max+${lr-day_air_tmp_max}*z/1000,day_wind_spd_avg=day_wind_spd_avg+${lr-day_wind_spd_avg}*z/1000,day_rel_hum_max=day_rel_hum_max+${lr-day_rel_hum_max}*z/1000,day_dew_pnt=day_dew_pnt+${lr-day_dew_pnt}*z/1000' | ${SQLITE} ${db.connect.database} 
@@ -59,17 +67,21 @@ ${vect}/z_normal:${vect}/etxml
 define normalized_T
 #.PHONY: $(1)_ns
 #$(1)_ns: $(rast)/$(1)_ns
+clean::
+	g.remove rast=z_$(1)_lr$(2)_t$(3)_s$(4),$(1)_ns
 
+# ...  maskmap=MASK
 # Normalized Spline for Lapse Rate Calculation
 $(rast)/z_$(1)_lr$(2)_t$(3)_s$(4): ${vect}/z_normal
-	$(call MASK)
+	$(call NOMASK)
 	v.surf.rst --overwrite input=z_normal \
-	  maskmap=MASK zcolumn=${1} \
+	  zcolumn=${1} \
 	  tension=$(3) smooth=$(4) \
 	  elev=$$(notdir $$@) #> /dev/null &>/dev/null;
 
 # ReUnNormalized back to Elevation
 $(rast)/$(1)_ns: $(rast)/z_$(1)_lr$(2)_t$(3)_s$(4)
+	$(call NOMASK)
 	r.mapcalc $(1)_ns=z_$(1)_lr$(2)_t$(3)_s$(4)-$(2)*Z@2km/1000 #&> /dev/null
 
 endef

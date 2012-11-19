@@ -18,7 +18,6 @@ GISDBASE:=$(shell g.gisenv get=GISDBASE)
 LOCATION_NAME:=$(shell g.gisenv get=LOCATION_NAME)
 MAPSET:=$(shell g.gisenv get=MAPSET)
 
-
 # Check on whether the MAPSET is a day, month, or otherwise
 YYYY:=$(shell echo $(MAPSET) | perl -n -e '/^(20\d{2})(-([01]\d)(-([0123]\d))?)?$$/ and print $$1;')
 MM:=$(shell echo $(MAPSET) | perl -n -e '/^(20\d{2})(-([01]\d)(-([0123]\d))?)?$$/ and print $$3;')
@@ -27,13 +26,23 @@ DD:=$(shell echo $(MAPSET) | perl -n -e '/^(20\d{2})(-([01]\d)(-([0123]\d))?)?$$
 ###################################################
 # Check for YYYY / MM / DD
 ##################################################
+define hasYYYY
 ifndef YYYY
-$(error Don't know about this confusing MAPSET)
+$(error MAPSET  is not a YYYY*)
 endif
+endef
 
+define hasMM
 ifndef MM
-$(error Don't know how to handle YYYY mapsets)
+$(error MAPSET is not YYYY-MM*)
 endif
+endef
+
+define hasMM
+ifndef DD
+$(error MAPSET is not YYYY-MM-DD)
+endif
+endef
 
 # Shortcut Directories
 loc:=$(GISDBASE)/$(LOCATION_NAME)
@@ -91,11 +100,11 @@ endef
 # MASK defines
 ##############################################################################
 define MASK
-	@(g.findfile element=cellhd file=MASK || g.copy rast=state@2km,MASK) > /dev/null
+	@(g.findfile element=cellhd file=MASK || g.copy rast=state@2km,MASK) > /dev/null;
 endef
 
 define NOMASK
-	@if ( g.findfile element=cellhd file=MASK > /dev/null); then g.remove MASK &>/dev/null; fi
+	@if ( g.findfile element=cellhd file=MASK > /dev/null); then g.remove MASK &>/dev/null; fi;
 endef
 
 

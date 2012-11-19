@@ -19,6 +19,8 @@ $(foreach p,et0,$(eval $(call grass_raster_shorthand,$(p))))
 #######################################################################
 # Finally make the et0 calculation
 #######################################################################
+clean::
+	g.remove rast=et0
 
 $(rast)/et0: $(rast)/Rs $(rast)/Rnl $(rast)/ea $(rast)/Tx $(rast)/Tn $(rast)/U2 $(rast)/Tm $(rast)/es
 	DEL="(4098.17*0.6108*(exp(Tm*17.27/(Tm+237.3)))/(Tm+237.3)^2)"; \

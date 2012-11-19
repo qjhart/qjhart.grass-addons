@@ -4,7 +4,7 @@ MODULE_TOPDIR = ../..
 PGM = cg
 include $(MODULE_TOPDIR)/include/Make/Script.make
 
-scripts:=cg v.in.etxml r.heliosat cg.daily.k cg.daylight.intervals cg.previous.mapsets r.lowpass
+scripts:=cg v.in.etxml r.heliosat cg.daily.k cg.daylight.intervals cg.previous.mapsets r.lowpass cg.proximate.mapsets
 ETCDIR=${DIST_DIR}/etc/${PGM}
 
 default: install

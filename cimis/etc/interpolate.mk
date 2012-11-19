@@ -34,13 +34,18 @@ $(foreach p,U2 Tn Tx Tdew RHx ea es,$(eval $(call grass_raster_shorthand,$(p))))
 ###############################################################
 # U2 uses only the average wind speed spline fit.
 ##############################################################
+clean::
+	g.remove rast=U2
+
 $(rast)/U2: ${rast}/day_wind_spd_avg_${tzs}
-	g.copy --o rast=$(notdir $<),$(notdir $@) &> /dev/null
+	$(call MASK)
+	r.mapcalc U2=$(notdir $<) >/dev/null 2>/dev/null
 	r.support map=U2 title='U2' units='m/s' \
 	description='Daily average windspeed at 2m height' \
 	source1='3D spline from CIMIS data'
 	map=$(notdir $@);
 	$(call colorize,$(notdir $@))
+	$(call NOMASK)
 
 # Currently all Temperature estimations (Tn,Tx,Tdew)
 # use an average of the lapse rate (?_ns) and daymet (?_dme) interpolations.
@@ -70,20 +75,32 @@ $(rast)/RHx_err: $(rast)/RHx $(rast)/day_rel_hum_max_dme
 
 else
 define avg_T
+clean::
+	g.remove $(1);
 
 $(rast)/$(1): $(rast)/$(2)_ns
-	r.mapcalc '$(1)=$(2)_ns' &> /dev/null
-	@r.colors map=$(1) rast=at@default_colors >/dev/null
+	$(call MASK)
+	@r.mapcalc '$(1)=$(2)_ns' &> /dev/null; \
+	r.colors map=$(1) rast=at@default_colors >/dev/null;
+	$(call NOMASK)
 endef
 
+clean::
+	g.remove RHx
+
 $(rast)/RHx: $(rast)/day_rel_hum_max_$(tzs)
+	$(call MASK)
 	r.mapcalc 'RHx=day_rel_hum_max_$(tzs)' &> /dev/null
 	@r.colors map=RHx rast=rh@default_colors > /dev/null
+	$(call NOMASK)
 
 endif
 $(eval $(call avg_T,Tn,day_air_tmp_min))
 $(eval $(call avg_T,Tx,day_air_tmp_max))
 $(eval $(call avg_T,Tdew,day_dew_pnt))
+
+clean::
+	g.remove rast=Tm;
 
 $(rast)/Tm: $(rast)/Tx $(rast)/Tn
 	r.mapcalc 'Tm=(Tx+Tn)/2.0' &>/dev/null;
@@ -96,12 +113,18 @@ $(rast)/Tm: $(rast)/Tx $(rast)/Tn
 # Depending on settings, we either use the dewpt or no method.
 # Which is set with use_rh_for_ea
 ###########################################################################
+clean::
+	g.remove rast=es;
+
 $(rast)/es: $(rast)/Tx $(rast)/Tn
 	r.mapcalc '$(notdir $@)=0.6108 / 2 * (exp(Tn * 17.27/ (Tn + 237.3))+ exp(Tx * 17.27/ (Tx + 237.3)))' &> /dev/null;
 
 #use_rh_for_ea:=0  # Comment out to use only dewpt as estimator for ea
 
 ifdef use_rh_for_ea
+clean::
+	g.remove ea_rh,ea_Tdew,ea,ea_err
+
 
 $(rast)/ea_rh: $(rast)/RHx $(rast)/Tn
 	r.mapcalc 'ea_rh=0.6108*(exp(Tn * 17.27/ (Tn + 237.3))*RHx/100)' &> /dev/null; 
@@ -116,6 +139,8 @@ $(rast)/ea_err: $(rast)/ea
 	r.mapcalc 'ea_err=sqrt(2)*abs(ea-ea_Tdew)' &> /dev/null
 
 else
+clean::
+	g.remove rast=ea_dewp_ns;
 
 $(rast)/ea_dewp_ns: $(rast)/day_dew_pnt_ns
 	r.mapcalc '$(notdir $@)=0.6108*exp(($(notdir $<)*17.27/(($(notdir $<)+237.30))))' &> /dev/null;
@@ -133,6 +158,8 @@ $(rast)/ea_err: $(rast)/ea
 	r.mapcalc '$(notdir $@)=sqrt(2)*abs(ea-ea_dewp_ns) ' &> /dev/null
 
 else 
+clean::
+	g.remove ea;
 
 $(rast)/ea: $(rast)/ea_dewp_ns
 	r.mapcalc 'ea=ea_dewp_ns' &> /dev/null
