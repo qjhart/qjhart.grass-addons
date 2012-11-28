@@ -95,6 +95,12 @@ define grass_raster_shorthand
 $(1): $(rast)/$(1)
 endef
 
+define grass_vect_shorthand
+.PHONY: $(1)
+$(1): $(vect)/$(1)
+endef
+
+
 
 ##############################################################################
 # MASK defines

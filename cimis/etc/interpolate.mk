@@ -28,6 +28,14 @@ ${vect}/etxml:
 	db.connect driver=sqlite database='$$GISDBASE/$$LOCATION_NAME/$$MAPSET/sqlite.db'
 	v.in.etxml --overwrite output=etxml date=${MAPSET}
 
+# $(eval $(call grass_vect_shorthand,cimis))
+
+# ${vect}/cimis:${vect}/etxml
+# 	g.copy --o vect=etxml,cimis
+# 	echo "update cimis set day_air_tmp_min=null where day_air_tmp_min_qc not in ('K','Y');update cimis set day_air_tmp_max=null where day_air_tmp_max_qc not in ('K','Y'); update cimis set day_wind_spd_avg=null where day_wind_spd_avg_qc not in ('K','Y'); update cimis set day_rel_hum_max=null where day_rel_hum_max_qc not in ('K','Y'); update cimis set day_dew_pnt=null where day_dew_pnt_qc not in ('K','Y');" | ${SQLITE} ${db.connect.database} 
+# 	v.support map_name="Included CIMIS Station parameters" map=cimis
+
+
 # Define some .PHONY raster interpolation targets
 $(foreach p,U2 Tn Tx Tdew RHx ea es,$(eval $(call grass_raster_shorthand,$(p))))
 
