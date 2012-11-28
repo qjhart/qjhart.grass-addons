@@ -41,7 +41,7 @@ clean::
 $(rast)/$(1)_t$(2)_z$(3)_s$(4): ${vect}/etxml
 	g.region -d b=-100 t=2500 tbres=1000; \
 	v.vol.rst --overwrite input=etxml wcolumn=${1} cellinp=${Z} \
-	  maskmap=${state} \
+	  maskmap=${state} where="${1}_qc in ('K','Y','')" \
 	  tension=$(2) zmult=$(3) smooth=$(4) \
 	  cellout=$(1)_t$(2)_z$(3)_s$(4) > /dev/null &>/dev/null; \
 	g.region -d
@@ -59,9 +59,11 @@ $(foreach p,day_rel_hum_max day_wind_spd_avg,$(eval $(call spline_template,$(p),
 clean::
 	g.remove vect=z_normal
 
+$(eval $(call grass_vect_shorthand,z_normal))
+
 ${vect}/z_normal:${vect}/etxml
 	g.copy --o vect=etxml,z_normal
-	echo 'update z_normal set day_air_tmp_min=day_air_tmp_min+${lr-day_air_tmp_min}*z/1000,day_air_tmp_max=day_air_tmp_max+${lr-day_air_tmp_max}*z/1000,day_wind_spd_avg=day_wind_spd_avg+${lr-day_wind_spd_avg}*z/1000,day_rel_hum_max=day_rel_hum_max+${lr-day_rel_hum_max}*z/1000,day_dew_pnt=day_dew_pnt+${lr-day_dew_pnt}*z/1000' | ${SQLITE} ${db.connect.database} 
+	echo 'update z_normal set day_air_tmp_min=day_air_tmp_min+${lr-day_air_tmp_min}*z/1000,day_air_tmp_max=day_air_tmp_max+${lr-day_air_tmp_max}*z/1000,day_wind_spd_avg=day_wind_spd_avg+${lr-day_wind_spd_avg}*z/1000,day_rel_hum_max=day_rel_hum_max+${lr-day_rel_hum_max}*z/1000,day_dew_pnt=day_dew_pnt+${lr-day_dew_pnt}*z/1000;' | ${SQLITE} ${db.connect.database} 
 	v.support map_name="Normalized CIMIS Station parameters" map=z_normal
 
 define normalized_T
@@ -75,7 +77,7 @@ clean::
 $(rast)/z_$(1)_lr$(2)_t$(3)_s$(4): ${vect}/z_normal
 	$(call NOMASK)
 	v.surf.rst --overwrite input=z_normal \
-	  zcolumn=${1} \
+	  zcolumn=${1} where="${1}_qc in ('K','Y','')" \
 	  tension=$(3) smooth=$(4) \
 	  elev=$$(notdir $$@) #> /dev/null &>/dev/null;
 
