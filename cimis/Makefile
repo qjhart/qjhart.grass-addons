@@ -1,10 +1,15 @@
 #! /usr/bin/make
-# in Debian make ARCH_DISTDIR=/usr/lib/grass64 MODULE_TOPDIR=/usr/lib/grass64 DOCSDIR=docs MANDIR=man HTMLDIR=docs/html install
+# in Debian 
+#GH=$(pkg-config --variable=prefix grass) # /usr/lib/grass64
+#GRASS_ADDON=~/grass
+#mkdir -p ${GRASS_ADDON}/scripts 
+#make GRASS_HOME=. MODULE_TOPDIR=${GH} DIST_DIR=${GRASS_ADDON} install
+
 MODULE_TOPDIR = ../..
 PGM = cg
 include $(MODULE_TOPDIR)/include/Make/Script.make
 
-scripts:=cg v.in.etxml r.heliosat cg.daily.k cg.daylight.intervals cg.previous.mapsets r.lowpass cg.proximate.mapsets
+scripts:=cg v.in.etxml r.heliosat cg.daily.k cg.daylight.intervals cg.previous.mapsets r.lowpass cg.proximate.mapsets cg.cgi
 ETCDIR=${DIST_DIR}/etc/${PGM}
 
 default: install
