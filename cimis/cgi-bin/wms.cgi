@@ -23,19 +23,23 @@ $ENV{GISRC}="$dir/gisrc";
 my $q=new CGI;
 
 my $date=$q->param('TIME');
+my $zipcode=$q->param('ZIPCODE');
 my $item=$q->param('QUERY_LAYERS');
 my $BBOX=$q->param('BBOX');
 my $HEIGHT=$q->param('HEIGHT');
 my $WIDTH=$q->param('WIDTH');
 my $X=$q->param('X');
 my $Y=$q->param('Y');
+my $srid=$q->param('SRID');
 
 my $cmd;
 if (defined(param('REQUEST')) and (lc(param('REQUEST')) eq 'getfeatureinfo')) {
     $cmd=join(' ',
 	      ("cg.cgi",
 	       ($item)?"item=$item":'',
+	       ($zipcode)?"zipcode=$zipcode":'',
 	       ($date)?"date=$date":'',
+	       ($srid)?"srid=$srid":'',
 	       ($BBOX)?"BBOX=$BBOX":'',
 	       ($HEIGHT)?"HEIGHT=$HEIGHT":'',
 	       ($WIDTH)?"WIDTH=$WIDTH":'',
@@ -46,6 +50,7 @@ if (defined(param('REQUEST')) and (lc(param('REQUEST')) eq 'getfeatureinfo')) {
     
     my $xml=`$cmd`;
 
+    print STDERR "$cmd","\n";
     # Send XML document;
     print $q->header(-type=>'text/xml');
     print $xml;
