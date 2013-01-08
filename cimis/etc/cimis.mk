@@ -12,6 +12,14 @@ ifndef insolation.mk
 include insolation.mk
 endif
 
+ifndef zipcode.mk
+include zipcode.mk
+endif 
+
+ifndef png.mk
+include png.mk
+endif
+
 cimis.mk:=1
 
 $(foreach p,et0,$(eval $(call grass_raster_shorthand,$(p))))

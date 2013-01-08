@@ -1,0 +1,4 @@
+#! /bin/bash
+cg cmd=et0,html,zipcode,clean-tmp
+
+

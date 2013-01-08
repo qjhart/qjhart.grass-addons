@@ -7,7 +7,7 @@ my %units =
    ETo=>"[mm]",
    et0=>"[mm]",
    Rs=>"[W/m^2]",
-#   Rso=>"[W/m^2]",
+   Rso=>"[W/m^2]",
    K=>undef,
    Rnl=>"[W/m^2]",
    Tx=>"[C]",
@@ -44,13 +44,21 @@ my %units =
 #% type: string
 #% description: Items of interest from (et0,Rs,K,Rnl,Tx,Tn,U2)
 #% multiple: yes
-#% answer: et0
+#% answer: et0,et0,Rs,K,Rnl,Tx,Tn,U2,Rso
 #% required : yes
 #%end
 #%option
 #% key: point
 #% type: string
 #% description: Point(s) to access
+#% multiple: yes
+#% required : no
+#%end
+
+#%option
+#% key: zipcode
+#% type: string
+#% description: Zipcode(s) of interest
 #% multiple: yes
 #% required : no
 #%end
@@ -110,7 +118,7 @@ if (!defined($ARGV[0]) or ($ARGV[0] ne '@ARGS_PARSED@')) {
 my $yesterday=`date --date=yesterday --iso`;
 chomp $yesterday;
 
-# Dates hve special ':' processing
+# Dates have special ':' processing
 my $date=$ENV{GIS_OPT_DATE} || $yesterday;
 my @date=map { split /,/ } $date;
 @date = map {
@@ -128,8 +136,9 @@ my @date=map { split /,/ } $date;
 
 @date=sort {$a cmp $b} @date;
 
-
 my @item=split(/,/,$ENV{GIS_OPT_ITEM});
+
+my @zipcode;
 
 my $cmd.=sprintf("cg.cgi item='%s' date='%s'",join(',',@item),join(',',@date));
 
@@ -138,10 +147,15 @@ my $json = JSON->new->allow_nonref;
 my $points;
 my $in_points=[];
 
-if ($ENV{GIS_OPT_POINT}) {
+my $srid=$ENV{GIS_OPT_SRID};
+
+if ($ENV{GIS_OPT_ZIPCODE}) {
+    @zipcode=split(/,/,$ENV{GIS_OPT_ZIPCODE});
+    $cmd.=sprintf(" zipcode=%s",join(',',@zipcode));
+} elsif ($ENV{GIS_OPT_POINT}) {
     my $point=$ENV{GIS_OPT_POINT};
     $in_points=$json->decode(sprintf('[%s]',$ENV{GIS_OPT_POINT}));
-    $cmd.=sprintf(" point=%s",$point);
+    $cmd.=sprintf(" srid=%s,point=%s",$srid,$point);
 
 } else { #Old Style
     my $bbox=$ENV{GIS_OPT_BBOX};
@@ -159,11 +173,10 @@ if ($ENV{GIS_OPT_POINT}) {
     }
 
 
-    $cmd.=sprintf(" BBOX='%s' WIDTH=%d HEIGHT=%d X='%s' Y='%s'",
-		  $bbox,$width,$height,join(',',@X),join(',',@Y));
+    $cmd.=sprintf(" srid=%s BBOX='%s' WIDTH=%d HEIGHT=%d X='%s' Y='%s'",
+		  $srid,$bbox,$width,$height,join(',',@X),join(',',@Y));
 }
 
-my $srid=$ENV{GIS_OPT_SRID};
 
 my $in_points_3310=[];
 if ($srid ==3310) {
@@ -194,13 +207,80 @@ if ($srid==4269) {
 #exit 1;
 
 # Send XML document;
-#print $q->header(-type=>'text/xml');
 my $xml=new XML::Writer(NEWLINES=>0,DATA_MODE=>0);
 $xml->comment("Draft Spec for input");
 $xml->comment($cmd);
 $xml->startTag("data",dates=>join(',',@date),first_date=>$date[0],last_date=>$date[-1]);
 $xml->characters("\n");
 
+# Do zipcodes
+foreach my $zip (@zipcode) {
+    foreach my $date (@date) {
+	my @err;
+	# First check we have this date
+	my $ans=`g.findfile mapset=$date file=zipcode element=vector | grep ^name`;
+	chomp $ans;
+	if ("name='zipcode'" ne $ans) {
+	    $xml->emptyTag("DataPoint",zipcode=>$zip,date=>$date,err=>'date_not_found');
+	} else {
+	    my %item;
+	    foreach my $col (split /\n/,`v.info --q -c zipcode\@$date`) {
+		my ($t,$n) = split('\|',$col);
+		if ($n =~ s/_mean//) {
+		    $item{$n}++;
+		}
+	    }
+	    my @have;
+	    foreach(@item) {
+		push @have,$_ if ($item{$_});
+	    }
+	    my $ans;
+	    if ($#have > 0) {
+		my $c=join(',',map("${_}_mean",@have));
+		$ans=`v.db.select --q -c fs=, columns=$c map=zipcode\@$date where="zipcode='$zip'"`;
+	    } else {
+		$ans=`v.db.select --q -c fs=, columns=zipcode map=zipcode\@$date where="zipcode='$zip'"`;
+	    }
+	    chomp $ans;
+	    my $etoFlag;
+	    if ($ans) {
+		$xml->startTag("DataPoint",zipcode=>$zip,date=>$date,err=>'');
+		$xml->characters("\n");
+		my @a = split(',', $ans);
+		for (my $i=0; $i<=$#have;$i++) {
+		    $item{$have[$i]}=$a[$i];
+		}
+		for (my $i=0; $i<=$#item;$i++) {
+		    my %attr;
+		    my $val;
+		    if ($item{$item[$i]}) {
+			$val=$item{$item[$i]};
+		    } else {
+			$val='';
+			$attr{'err'}='not_found';
+		    }
+		    # Quick fix for Carlos
+		    my $name=$item[$i];
+		    if ($name eq 'et0' and ! $etoFlag ) {
+			$name = 'ETo';
+			$etoFlag++;
+		    }
+		    $attr{units}=$units{$name} if $units{$name};
+		    # Quick Fix for Radiance
+		    $val *= 11.574074 if ($val and 
+					  ($name eq 'Rn' or $name eq 'Rnl' or 
+					   $name eq 'Rs' or $name eq 'Rso'));
+		    $xml->dataElement($name,$val,%attr);
+		    $xml->characters("\n");
+		}
+		$xml->endTag;
+	    } else {
+		$xml->emptyTag("DataPoint",zipcode=>$zip,date=>$date,err=>'zipcode_not_found');
+	    }
+	    $xml->characters("\n");
+	}
+    }
+}
 # Do for each input point;
 for (my $k=0; $k<= $#$in_points_3310; $k++) {
     foreach my $date (@date) {
@@ -228,13 +308,17 @@ for (my $k=0; $k<= $#$in_points_3310; $k++) {
 	    $r_what=`echo $x $y | r.what $qlm`;
 	    chomp $r_what;
 	    my @r_what=split(/\|/,$r_what);
+	    my $etoFlag;
 	    for (my $i=0; $i<=$#qlm;$i++) {
 		my %attr;
 		my $val=$r_what[$i+3];
 		undef $val if $val eq '*';
 		# Quick fix for Carlos
 		my $name=$item[$i];
-		$name = 'ETo' if $name eq 'et0';
+		if ($name eq 'et0' and ! $etoFlag ) {
+		    $name = 'ETo';
+		    $etoFlag++;
+		}
 		$attr{units}=$units{$name} if $units{$name};
 		# Quick Fix for Radiance
 		$val *= 11.574074 if ($val and 

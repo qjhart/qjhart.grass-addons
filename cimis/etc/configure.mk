@@ -51,10 +51,6 @@ vect:=$(loc)/$(MAPSET)/vector
 site_lists:=$(loc)/$(MAPSET)/site_lists
 # etc is our special location for non-grass datafiles
 etc:=$(loc)/$(MAPSET)/etc
-#daily_dir:=$(MAPSET)
-# New one will be this
-daily_dir:=$(YYYY)/$(MM)/$(DD)
-html:=$(htdocs)/$(daily_dir)
 
 SQLITE:=sqlite3
 db.connect.database:=${loc}/${MAPSET}/sqlite.db
@@ -70,7 +66,6 @@ info::
 	@echo YYYY/MM/DD: $(YYYY)/$(MM)/$(DD)
 	@echo Times =$(HHMM)
 	@echo use_dme=$(use_dme)
-	@echo html files to = $(html)
 
 
 #########################################################################
@@ -106,11 +101,11 @@ endef
 # MASK defines
 ##############################################################################
 define MASK
-	@(g.findfile element=cellhd file=MASK || g.copy rast=state@2km,MASK) > /dev/null;
+	(g.findfile element=cellhd file=MASK || g.copy rast=state@2km,MASK) > /dev/null;
 endef
 
 define NOMASK
-	@if ( g.findfile element=cellhd file=MASK > /dev/null); then g.remove MASK &>/dev/null; fi;
+	if ( g.findfile element=cellhd file=MASK > /dev/null); then g.remove MASK &>/dev/null; fi;
 endef
 
 
