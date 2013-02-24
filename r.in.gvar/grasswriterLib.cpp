@@ -89,7 +89,6 @@ void grasswriterLib::write(Block* block) {
 
     m_block0 = new Block0 (block) ;
     Block0Doc* block0doc = m_block0->getBlock0Doc();
-    uchar8* data = block->getData () ;
     int newFrameId = block0doc->frame () ;
     framelinecnt = block0doc->nsln();
 
@@ -142,8 +141,6 @@ void grasswriterLib::write(Block* block) {
 
       char* strtmp = locationString;
       strtmp[10] = '\0'; 
-
-      char* timeString = curTime->getHM () ;
 
       char timeHH[3];
       char timeMM[3];
