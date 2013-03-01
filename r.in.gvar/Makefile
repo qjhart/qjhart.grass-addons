@@ -8,8 +8,10 @@ PGM = r.in.gvar
 GVAR_INCLUDEDIR=/usr/local/include/libgvar
 GVAR_LIBDIR=/usr/local/lib
 
-EXTRA_INC := -I$(GVAR_INCLUDEDIR) -I/usr/lib/grass64/include
-LIBES = $(GISLIB) -L$(GVAR_LIBDIR) -levent -lgvar -lpthread
+#EXTRA_INC := -I$(GVAR_INCLUDEDIR) -I/usr/lib/grass64/include
+#LIBES = $(GISLIB) -L$(GVAR_LIBDIR) -lgvar 
+EXTRA_INC := -I$(GVAR_INCLUDEDIR)
+LIBES = $(GISLIB) -lgvar 
 DEPENDENCIES = $(GISDEP)
 MOD_OBJS = $(subst .c,.o,$(wildcard *.c)) $(subst .cpp,.o,$(wildcard *.cpp))
 

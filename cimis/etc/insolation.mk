@@ -76,7 +76,19 @@ define r.cloud_cover
 
 $(rast)/vis$(1)_9:$(rast)/vis$(1)
 	$(call NOMASK)
-	r.lowpass size=9 input=vis$(1) output=vis$(1)_9 &> /dev/null
+	r.neighbors --q size=9 input=vis${1} output=vis${1}_9 method=average
+
+$(rast)/vis$(1)_m:$(rast)/vis$(1)
+	$(call NOMASK)
+	r.neighbors --q size=5 input=vis${1} output=vis${1}_m method=median
+
+# We should look at replacing this with a simpler method (like top 2%)
+$(etc)/maxmedian/vis$(1): $(rast)/vis$(1)_m
+	[[ -d $(etc)/maxmedian ]] || mkdir -p $(etc)/maxmedian
+	max=$$$$(for p in `cg.proximate.mapsets --past=14 rast=vis$(1)_m --delim=' '`; do \
+	  r.info -r $$$$p | sed -n -e 's/max=// p'; \
+	done | sort -n | tail -1); \
+	echo $$$$max > $$@
 
 # We should look at replacing this with a simpler method (like top 2%)
 $(etc)/max/vis$(1): $(rast)/vis$(1)_9

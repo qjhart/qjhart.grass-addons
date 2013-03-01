@@ -3,9 +3,6 @@
 
 #include "LineDoc.h"
 #include "Block.h"
-#include "Fifo.h"
-#include "ShmRowFifo.h"
-#include "ImgStream.h"
 
 #define GVNETBUFFSIZE 32768
 #define NUM_OF_CHANNELS 6
@@ -43,7 +40,6 @@ namespace Geostream {
   class GvarStream {
   private:
 	unsigned int seqnum;
-	struct event *event_p;
 	char *ipaddr;
 	int port;
 	int fd;
@@ -55,36 +51,14 @@ namespace Geostream {
 	FILE* blkFile;
 	bool workingOnFile;
 
-	FifoWriter<Gvar::LineDoc> *m_LineDocWriter ;
-	FifoWriter<Row>* m_allRowsWriter ;
-	FifoWriter<Row> *m_rowWriters[NUM_OF_CHANNELS] ;
-
-	Geostream::RowFifoWriter* m_shmRowsWriter ;
-
-	// the shared memory row fifo
-	Geostream::RowFifo *m_shmRowFifo ;
-
 	// store the last block0 we have seen
 	Gvar::Block0 *m_block0 ;
 
 	// store the last frame id we have seen
 	int m_prevFrameId ;
 
-	// store the last FrameDef we have seen
-	FrameDef *m_prevFrameDef ;
-
 	int connect(void);
 
-	void convertBlockToRows (Gvar::Block *block) ;
-	void convertBlock1or2ToRows (Gvar::Block0* block0,
-				     Gvar::Block1or2 *block1or2) ;
-	void convertBlock3to10ToRows (Gvar::Block0* block0,
-				      Gvar::Block3to10 *block3to10) ;
-
-	void writeRow (int frameId, int channelNo,
-		       int x, int y,
-		       uint16* data, int size) ;
-	
         Gvar::Block* readBlockSocket () ;
         Gvar::Block* readBlockFile (); 
 
@@ -96,38 +70,10 @@ namespace Geostream {
 	~GvarStream();
 	bool listen(void);
 	bool read(void);
-	static void readEventHandler (int fd,short event, void *arg) ;
-
 	void close () ;
-
-	FifoWriter<Gvar::LineDoc> *LineDocWriter
-	  (FifoWriter<Gvar::LineDoc> *p) ;
-	FifoWriter<Gvar::LineDoc> *LineDocWriter(void) ;
-
-	FifoWriter<Row> *allRowsWriter (FifoWriter<Row> *w) ;
-	FifoWriter<Row> *allRowsWriter () ;
-
-	FifoWriter<Row> *rowWriter (FifoWriter<Row> *w, int channelNo) ;
-	FifoWriter<Row> *rowWriter (int channelNo) ;
-
-	Geostream::RowFifoWriter* shmRowsWriter (Geostream::RowFifoWriter* w) ;
-	Geostream::RowFifoWriter* shmRowsWriter () ;
-
-	Geostream::RowFifo* shmRowFifo (Geostream::RowFifo* fifo) ;
-	Geostream::RowFifo* shmRowFifo () ;
-
-	inline FrameDef* getPrevFrameDef () {
-	  return m_prevFrameDef ;
-	}
-
-	void new_block(void) ;
 
         Gvar::Block* readBlock () ;
 
-	// carueda 9/6/07
-	Gvar::Block0 *getLastBlock0(void) {
-		return m_block0;
-	}
   };
 }
 

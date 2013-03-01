@@ -27,11 +27,7 @@
 extern "C" {
 #include <grass/gis.h>
 #include <grass/glocale.h>
-/* uncomment out following two lines if can't find make_mapset using GRASS v. 6.2 */
-// int G_make_mapset( char *gisdbase_name, char *location_name, char *mapset_name );
-// int G__make_mapset( char *gisdbase_name, char *location_name, char *mapset_name );
 }
-
 
 /* the header for prototypes and errors */
 #include "grasswriterLib.h"
@@ -89,7 +85,6 @@ void grasswriterLib::write(Block* block) {
 
     m_block0 = new Block0 (block) ;
     Block0Doc* block0doc = m_block0->getBlock0Doc();
-    uchar8* data = block->getData () ;
     int newFrameId = block0doc->frame () ;
     framelinecnt = block0doc->nsln();
 
@@ -143,7 +138,7 @@ void grasswriterLib::write(Block* block) {
       char* strtmp = locationString;
       strtmp[10] = '\0'; 
 
-      char* timeString = curTime->getHM () ;
+      //char* timeString = curTime->getHM () ;
 
       char timeHH[3];
       char timeMM[3];
@@ -295,7 +290,7 @@ void grasswriterLib::writeDataToChannel
     m_numOfColsPerChannel[channelNo] = dataLen ;
 
   CELL val;
-  RASTER_MAP_TYPE data_type = CELL_TYPE;
+  //RASTER_MAP_TYPE data_type = CELL_TYPE;
   for(int j=0; j<dataLen; j++) {
      val = (CELL) data[j];
      ((CELL*)m_outs[channelNo])[j] = val;
