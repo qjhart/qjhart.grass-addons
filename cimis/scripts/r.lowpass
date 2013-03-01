@@ -1,0 +1,27 @@
+#! /usr/bin/perl -w
+use strict qw (vars refs);
+use Getopt::Long qw[:config prefix_pattern=(--|-|) ];
+
+our $size=undef;
+our $input;
+our $output;
+
+GetOptions(
+	   "size=s"=>\$size,
+	   "input=s"=>\$input,
+	   "output=s"=>\$output,
+	  );
+
+my $half=int(($size-1)/2);
+my $cnt=0;
+my $win;
+
+for (my $r=-$half; $r<=$half; $r++) {
+  for (my $c=-$half; $c<=$half; $c++) {
+    $cnt++;
+    $win.="$input\[$r,$c\]+";
+  }
+}
+chop $win;
+system "g.message -d message=\"r.mapcalc $output='($win)/$cnt'\"";
+system "r.mapcalc $output='($win)/$cnt'";
