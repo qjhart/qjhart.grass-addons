@@ -1,0 +1,4 @@
+check process gvar_reader with pidfile /var/run/gvar_reader.pid
+  start program = "/sbin/service gvar_reader start"
+  stop program = "/sbin/service gvar_reader stop"
+  alert qjhart@ucdavis.edu

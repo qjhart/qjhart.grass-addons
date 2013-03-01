@@ -1,0 +1,23 @@
+#! /bin/shell 
+# The CIMIS GOES USER
+CG_USER=cimis
+CG_BASE=/home/cimis
+# This is a default file for running the cg system
+GRASS_ADDON_PATH=${CG_BASE}/grass/bin
+
+# GRASS Database Information
+GISDBASE=${CG_BASE}/gdb
+MAPSET=${CG_USER}
+
+# Gvar READER Information
+# Location of automated sciences GVAR server
+GVAR_READER_SERVER=10.28.200.5
+# Port on server
+GVAR_READER_PORT=21009
+# Location of the Batch job to run
+GVAR_READER_BATCH_JOB=${CG_BASE}/grass/scripts/cg.gvar_reader.rc
+# Log files:
+GVAR_READER_STDOUT=${CG_BASE}/gvar_reader.stdout
+GVAR_READER_STDERR=${CG_BASE}/gvar_reader.stderr
+GVAR_READER_LOCATION_NAME=GOES15
+
