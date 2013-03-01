@@ -69,7 +69,7 @@ namespace Geostream {
  
 	~GvarStream();
 	bool listen(void);
-	bool read(void);
+
 	void close () ;
 
         Gvar::Block* readBlock () ;

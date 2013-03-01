@@ -138,8 +138,6 @@ void grasswriterLib::write(Block* block) {
       char* strtmp = locationString;
       strtmp[10] = '\0'; 
 
-      //char* timeString = curTime->getHM () ;
-
       char timeHH[3];
       char timeMM[3];
 
