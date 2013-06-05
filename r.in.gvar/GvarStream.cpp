@@ -38,7 +38,7 @@ namespace Geostream {
     strcpy(this->ipaddr,ipaddr);
     this->port=port;
     this->seqnum=0;
-    this->bp = (char *)this->blkbuf;
+    this->bp = this->blkbuf;
 
     m_block0 = NULL ;
 
@@ -59,7 +59,7 @@ namespace Geostream {
     fd = fileno(blkFile);
 
     this->seqnum=0;
-    this->bp = (char *)this->blkbuf;
+    this->bp = this->blkbuf;
 
     m_block0 = NULL ;
     m_prevFrameId = -1 ;
