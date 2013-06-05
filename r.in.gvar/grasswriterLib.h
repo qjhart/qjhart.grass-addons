@@ -39,7 +39,7 @@ private:
    double m_west ;
 
    struct Cell_head window[grasswriterLib::m_numOfChannels];
-   void writeDataToChannel (int channelNo, uint16* data, int dataLen) ;
+   void writeDataToChannel (int channelNo, uint16_t* data, int dataLen) ;
 
 public:
    grasswriterLib () ;

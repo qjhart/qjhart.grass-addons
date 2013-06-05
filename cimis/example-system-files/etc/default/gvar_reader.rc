@@ -1,8 +1,0 @@
-#!/bin/sh
-
-echo "GISRC: $GISRC"
-
-# Read configuration variable file if it is present
-[ -r /etc/default/cg ] && . /etc/default/cg
-
-exec r.in.gvar server=$GVAR_READER_SERVER port=$GVAR_READER_PORT > $GVAR_READER_STDOUT 2> $GVAR_READER_STDERR

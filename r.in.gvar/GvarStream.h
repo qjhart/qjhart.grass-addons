@@ -44,9 +44,9 @@ namespace Geostream {
 	int port;
 	int fd;
 	int numread;
-	char *bp;
-	char *end;
-	char blkbuf[GVNETBUFFSIZE];
+	uint8_t *bp;
+	uint8_t *end;
+	uint8_t blkbuf[GVNETBUFFSIZE];
 
 	FILE* blkFile;
 	bool workingOnFile;

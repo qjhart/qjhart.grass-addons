@@ -215,7 +215,7 @@ void grasswriterLib::write(Block* block) {
 			ios::out | ios::binary) ;
 
       //write Block0 info into block0file... metadata info
-      m_block0Out.write (block->getRawData(), block->getRawDataLen ()) ;
+      m_block0Out.write ((const char *)block->getRawData(), block->getRawDataLen ()) ;
       m_block0Out.close () ;
 
     } // if newframe
@@ -235,7 +235,7 @@ void grasswriterLib::write(Block* block) {
     }
 
     Block1or2* block1or2 = new Block1or2 (block) ;
-    uint16* data;
+    uint16_t* data;
     LineDoc* lineDoc;
 
     for(int i=0; i<4; i++) {
@@ -258,7 +258,7 @@ void grasswriterLib::write(Block* block) {
     }
 
     Block3to10* block3to10 = new Block3to10 (block) ;
-    uint16* data;
+    uint16_t* data;
     LineDoc* lineDoc;
   
     data = block3to10->getData();
@@ -281,7 +281,7 @@ void grasswriterLib::write(Block* block) {
 }
 
 void grasswriterLib::writeDataToChannel
-(int channelNo, uint16* data, int dataLen) {
+(int channelNo, uint16_t* data, int dataLen) {
   m_numOfRowsPerChannel[channelNo] ++ ;
 
   if(m_numOfColsPerChannel[channelNo] == 0)
