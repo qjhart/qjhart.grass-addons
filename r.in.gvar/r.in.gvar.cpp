@@ -60,6 +60,8 @@ int main(int argc, char* argv[]) {
   struct Flag *quiet;
   int verbose;
 
+  struct Flag *vip;
+
   char *ipaddr; // server ip address
   char *cport;  // char point for server port
   int iport;  // port number
@@ -108,10 +110,14 @@ int main(int argc, char* argv[]) {
   quiet->key = 'q';
   quiet->description = strdup("Quiet");
 
+  /* Flags */
+  vip = G_define_flag();
+  vip->key = 'v';
+  vip->description = strdup("VIP File Format");
+
   if (G_parser(argc, argv))
     exit(EXIT_FAILURE);
-  
-  
+    
   /* flags */
   verbose = !quiet->answer;
 
@@ -129,50 +135,45 @@ int main(int argc, char* argv[]) {
     Block0* block0 = NULL;
     cout << "Server: "<< ipaddr << endl;
     cout << "Port: " << iport << endl;
-    
     gvar = new GvarStream(ipaddr, iport);
+
+    grasswriterLib* grasswriter = new grasswriterLib();
+    while (true) { 
+      bool succeed = gvar->listen();
+      while (succeed && 
+	 (num_of_rows == 0 || 
+	  (grasswriter->getNumOfRowsPerChannel(channelNo - 1) < num_of_rows)
+	  )
+	 ) {
+	Block *block = gvar->readBlock();
+	  
+	if (block == NULL) {
+	  succeed = false ;
+	} else {
+	    grasswriter->write(block);
+	  }
+	}
+      
+      if (num_of_rows != 0 &&
+	  (grasswriter->getNumOfRowsPerChannel(channelNo - 1) >= num_of_rows)
+	  ) {
+	  break ;
+	}
+      gvar->close () ;
+      sleep (10) ;
+    }    
+    gvar->close () ;
+
+    delete gvar ;
+    delete grasswriter ;
+    cout << "Done"<<endl;
   } else if (ninfile->answer) {
     infile = ninfile->answer;
-    cout << "File: "<< infile << endl;
-    gvar = new GvarStream(infile);
+    gvar = new GvarFile(infile);
+    grasswriterLib* grasswriter = new grasswriterLib();
+    
   } else {
     G_fatal_error("Either include a filename, or an address and port");
   }
-
-  grasswriterLib* grasswriter = new grasswriterLib();
-
-  
-  while (true) { 
-    bool succeed = gvar->listen();
-
-    while(succeed && 
-	  (num_of_rows == 0 || 
-	   (grasswriter->getNumOfRowsPerChannel(channelNo - 1) < num_of_rows))
-	  ) {
-      Block *block = gvar->readBlock ();
-
-      if (block == NULL) {
-	succeed = false ;
-      } else {
-    	grasswriter->write(block);
-      }
-    }
-
-    if (num_of_rows != 0 &&
-	(grasswriter->getNumOfRowsPerChannel(channelNo - 1) >= num_of_rows)) {
-      break ;
-    }
-
-    gvar->close () ;
-
-    sleep (10) ;
-  }
-
-  gvar->close () ;
-
-  delete gvar ;
-  delete grasswriter ;
-  cout << "Done"<<endl;
-
   exit(EXIT_SUCCESS);
 } 
