@@ -47,24 +47,6 @@ namespace Geostream {
 
   }
  
-  //constructor for read block from file 
-
-  GvarStream::GvarStream (char* filename) {
-    workingOnFile = true;
-
-    blkFile = fopen (filename, "rb") ;
-    
-    if (blkFile==NULL) exit(1);
-
-    fd = fileno(blkFile);
-
-    this->seqnum=0;
-    this->bp = this->blkbuf;
-
-    m_block0 = NULL ;
-    m_prevFrameId = -1 ;
-  }
-
   GvarStream::~GvarStream () {
 
     if (ipaddr != NULL) {
@@ -121,15 +103,6 @@ namespace Geostream {
   }
 
   Gvar::Block* GvarStream::readBlock () {
-	if ( workingOnFile ) {
-		return readBlockFile();
-	}
-	else {
-		return readBlockSocket();
-	}
-  }
-
-  Gvar::Block* GvarStream::readBlockSocket () {
     unsigned int seqnum;
 
     int datalen = 16 ;
@@ -174,56 +147,6 @@ namespace Geostream {
 
     return block ;
   }
-
-
-  /** read block from a file instead of a socket
-   *  the 16 start bytes and 8 end bytes are removed 
-   *  when being stored on GOES10 
-   */
-  Gvar::Block* GvarStream::readBlockFile() {
-    unsigned int seqnum;
-
-    int datalen = 16 ;
-    int bp = 0 ;
-
-    fseek (blkFile, 0, SEEK_END);
-    datalen = ftell (blkFile);
-    rewind (blkFile);
-      
-    while(1) {
-       numread=fread(blkbuf+bp, 1, datalen-bp, blkFile);
-
-       if (numread<=0) perror("Read error") ;
-       bp+=numread;
-      
-       /** unless the first 16 bytes and last 8 bytes 
-        *  are not removed, this if clause is not needed
-        */
-       if (bp==16) {
-         if (memcmp(blkbuf,startpatt,8)) perror("Bad Start") ;
-         datalen=ntohl(*((int*)(blkbuf+8)))+24;
-         seqnum=ntohl(*((int*)(blkbuf+12)));
-         if (seqnum!=this->seqnum+1) perror("Bad Sequence:") ;
-       }
-
-       if (datalen>GVNETBUFFSIZE) perror("Block Too Big") ;
-         this->seqnum=seqnum;
-         this->end=this->blkbuf+datalen;
-       
-       if (bp==datalen) {
-         break ;
-      }
-     
-    }
-
-    // debug("s:%d size:%d togo:%d total:%d\n",this->seqnum,datalen,this->end-this->bp,this->end-this->blkbuf);
-    Gvar::Block* block = 
-      new Gvar::Block (this->blkbuf,this->end-this->blkbuf);
-
-    return block ;
-  }
-
-
 
   void GvarStream::close () {
     if (fd != -1) {
