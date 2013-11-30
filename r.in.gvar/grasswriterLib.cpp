@@ -35,7 +35,6 @@ extern "C" {
 #include "Block0Doc.h"
 #include "LineDoc.h"
 #include "cdaTime.h"
-//#include "image/imageatt.h"
 
 #define DIRPERMS 0755
 #define BLOCK0_SIZE 8040
@@ -46,16 +45,13 @@ const int grasswriterLib::ns_res[grasswriterLib::m_numOfChannels] = {1,4,4,4,4,4
 extern char* gisloc;
 
 grasswriterLib::grasswriterLib () {
-
   m_prevFrameId = -1 ;
   m_block0 = NULL ;
-
   resetNumOfRowsAndColsPerChannel () ;
 }
 
 grasswriterLib::~grasswriterLib () {
   for (int channelNo=0; channelNo<grasswriterLib::m_numOfChannels; channelNo++) {
-
     if ( m_outs[channelNo] != NULL )
        m_outs[channelNo] = NULL;
 
@@ -63,7 +59,6 @@ grasswriterLib::~grasswriterLib () {
       G_close_cell(ch_fd[channelNo]);
      }
   }
-
   if (m_block0 != NULL) delete m_block0 ;
 }
 
@@ -81,7 +76,6 @@ void grasswriterLib::write(Block* block) {
     if (m_block0 != NULL) {
       delete m_block0 ;
     }
-//    cout << "read block 0"<<endl;
 
     m_block0 = new Block0 (block) ;
     Block0Doc* block0doc = m_block0->getBlock0Doc();
@@ -192,10 +186,6 @@ void grasswriterLib::write(Block* block) {
 
         if (G_put_cellhd(channel_name, &window[channelNo]) < 0 )
 	   G_fatal_error(_("Can't write cellhd for channel <%d>"), channelNo);
-
-	// cout<<"Channel: "<< channelNo << endl;
-	// cout<<"cols: " << window[channelNo].cols << endl;
-	// cout<<"rows: " << window[channelNo].rows << endl;
 
      	RASTER_MAP_TYPE data_type = CELL_TYPE;
 
