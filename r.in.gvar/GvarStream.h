@@ -48,9 +48,6 @@ namespace Geostream {
 	uint8_t *end;
 	uint8_t blkbuf[GVNETBUFFSIZE];
 
-	FILE* blkFile;
-	bool workingOnFile;
-
 	// store the last block0 we have seen
 	Gvar::Block0 *m_block0 ;
 
@@ -58,9 +55,6 @@ namespace Geostream {
 	int m_prevFrameId ;
 
 	int connect(void);
-
-        Gvar::Block* readBlockSocket () ;
-        Gvar::Block* readBlockFile (); 
 
   public:
 	GvarStream(char *ipaddr,int port);
