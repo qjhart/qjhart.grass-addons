@@ -39,8 +39,10 @@ extern "C" {
 #define DIRPERMS 0755
 #define BLOCK0_SIZE 8040
 
-const int grasswriterLib::ew_res[grasswriterLib::m_numOfChannels] = {1,4,4,4,4,4};
-const int grasswriterLib::ns_res[grasswriterLib::m_numOfChannels] = {1,4,4,4,4,4};
+static const int m_numOfChannels = 6;
+
+const int grasswriterLib::ew_res[m_numOfChannels] = {1,4,4,4,4,4};
+const int grasswriterLib::ns_res[m_numOfChannels] = {1,4,4,4,4,4};
 
 extern char* gisloc;
 
