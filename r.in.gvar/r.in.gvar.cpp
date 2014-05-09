@@ -30,7 +30,10 @@
 ===================================================================
 */
 
-#include "grasswriterLib.h"
+//#include "grasswriterLib.h"
+#include <Block.h>
+#include <fstream>
+#include <string>
 #include <Gvar.h>
 #include <unistd.h>      //  for sleep()
 #include <string.h>
@@ -39,7 +42,8 @@
 #include <stdarg.h>
 #include <ctype.h>
 #include <sys/types.h>
-
+#include <signal.h>
+#include <unistd.h>
 
 // Define Grass GIS header files
 extern "C" {
@@ -52,19 +56,19 @@ int ch_fd[NUM_OF_CHANNELS];
 
 void *m_outs[NUM_OF_CHANNELS] ;
 
-int m_numOfRowsPerChannel[NUM_OF_CHANNELS] ;
-int m_numOfColsPerChannel[NUM_OF_CHANNELS] ;
-
-double m_north ;
-double m_south ;
-double m_east ;
-double m_west ;
-
 struct Cell_head window[NUM_OF_CHANNELS];
+
+void sig_handler(int signo)
+{
+  if (signo == SIGINT)
+    G_fatal_error("received SIGINT\n");
+  else 
+    G_fatal_error(_("Received message %d"),signo);
+}
 
 using namespace std;
 
-void writeRawBlock(Block *block,string fn) {
+void writeRawBlock(Gvar::Block *block,string fn) {
   ofstream os;
   os.open (fn.c_str (), ios::out | ios::binary) ;  
   //write Block0 info into block0file... metadata info
@@ -74,53 +78,36 @@ void writeRawBlock(Block *block,string fn) {
 }
 
 void writeDataToChannel(int channelNo, uint16_t* data, int dataLen) {
-  m_numOfRowsPerChannel[channelNo] ++ ;
-
-  if(m_numOfColsPerChannel[channelNo] == 0)
-    m_numOfColsPerChannel[channelNo] = dataLen ;
-
   CELL val;
   //RASTER_MAP_TYPE data_type = CELL_TYPE;
   for(int j=0; j<dataLen; j++) {
      val = (CELL) data[j];
      ((CELL*)m_outs[channelNo])[j] = val;
   }
-
   if (G_put_map_row(ch_fd[channelNo], (CELL*) m_outs[channelNo]) < 0)
       G_fatal_error (_("Can't write map row for channel <%d>"), channelNo);
-
 }
 
 void closeFrame() {
   for (int channelNo=0; channelNo<NUM_OF_CHANNELS; channelNo++) {    
     if ( ch_fd[channelNo] != 0 ) {
       G_close_cell(ch_fd[channelNo]);
-      m_numOfRowsPerChannel[channelNo] = 0 ;
-      m_numOfColsPerChannel[channelNo] = 0;
+      ch_fd[channelNo] = 0;
     }
   }
 }
 
-void newFrame(Block *block,Block0Doc *block0doc) {
-  closeFrame();
+void newFrame(Gvar::Block *block,Gvar::Block0Doc *block0doc) {
   // reset north, south, east, west values
-  m_north =  block0doc->nsln(); 
-  m_south = (block0doc->sln() + 1.0);
-  m_east = (block0doc->epx()+ 1.0) ;
-  m_west = block0doc->wpx() ;
-  
-  cout<<"nsln = "<< m_north << endl;
-  cout<<"nln = "<< block0doc->nln() << endl;
-  cout<<"sln = " << block0doc->sln() << endl;
-  cout<<"epx = " << m_east << endl;
-  cout<<"wpx = " << m_west << endl;
-  
+  double m_north =  block0doc->nsln(); 
+  double m_south = (block0doc->sln() + 1.0);
+  double m_east = (block0doc->epx()+ 1.0) ;
+  double m_west = block0doc->wpx() ;
+
   CdaTime* curTime = block0doc->getCurrentTime();
   
-  if(curTime == NULL) {
-    cout << "Current time is NULL" << endl;
-    exit(1);
-  }
+  if(curTime == NULL)
+    G_fatal_error(_("Current time is NULL"));
   
   char imcIdentifier[5] ;
   block0doc->getImcIdentifier (imcIdentifier) ;
@@ -154,11 +141,13 @@ void newFrame(Block *block,Block0Doc *block0doc) {
   
   char* mapset_name = strmap;
   
-  if (G__make_mapset(NULL, NULL, mapset_name) != 0) {
-    cout<< "Cannot create a new mapset: " << mapset_name << endl; 
-  }
+  if (G__make_mapset(NULL, NULL, mapset_name) != 0)
+    G_message(_("Cannot create a new mapset: %s"),mapset_name);
 
   G_setenv(_("MAPSET"), mapset_name);
+
+  G_message(_("%s: n=%g s=%g, e=%g w=%g"),
+	    mapset_name,m_north,m_south,m_east,m_west);
   
   for (int channelNo=0; channelNo<NUM_OF_CHANNELS; 
        channelNo++) {
@@ -175,10 +164,10 @@ void newFrame(Block *block,Block0Doc *block0doc) {
     window[channelNo].west = m_west;
     window[channelNo].proj = 99;
     window[channelNo].zone = 0;
-    window[channelNo].cols = (int)(((float) (m_east - m_west ))/((float) ew_res[channelNo])+ 0.5);
-    window[channelNo].rows = (int) (((float) (m_south - m_north ))/((float) ns_res[channelNo]) + 0.5);
-    window[channelNo].ew_res = ew_res[channelNo];
-    window[channelNo].ns_res = ns_res[channelNo];
+    window[channelNo].cols = (int)(((float) (m_east - m_west ))/((float) Gvar::ew_res[channelNo])+ 0.5);
+    window[channelNo].rows = (int) (((float) (m_south - m_north ))/((float) Gvar::ns_res[channelNo]) + 0.5);
+    window[channelNo].ew_res = Gvar::ew_res[channelNo];
+    window[channelNo].ns_res = Gvar::ns_res[channelNo];
     window[channelNo].format = 1;
     window[channelNo].compressed = 0;
 
@@ -193,10 +182,6 @@ void newFrame(Block *block,Block0Doc *block0doc) {
       G_fatal_error(_("Could not open <%s>"), channel_name);
     
     m_outs[channelNo] = (CELL*) G_allocate_raster_buf(data_type);
-    
-    m_numOfColsPerChannel[channelNo] = window[channelNo].cols;
-    m_numOfRowsPerChannel[channelNo] = window[channelNo].rows;
-    
   } // for loop
 
   // open new files to write
@@ -204,15 +189,15 @@ void newFrame(Block *block,Block0Doc *block0doc) {
   writeRawBlock(block,block0File);
 }
 
-void write(Block* block) {
+void write(Gvar::Block* block) {
 
-  Header* header = block->getHeader () ;
+  Gvar::Header* header = block->getHeader () ;
 
   if (header->blockId () == 1 || 
            header->blockId () == 2) {
-    Block1or2* block1or2 = new Block1or2 (block) ;
+    Gvar::Block1or2* block1or2 = new Gvar::Block1or2 (block) ;
     uint16_t* data;
-    LineDoc* lineDoc;
+    Gvar::LineDoc* lineDoc;
 
     for(int i=0; i<4; i++) {
         lineDoc = block1or2->getLineDoc(i) ;
@@ -228,9 +213,9 @@ void write(Block* block) {
   else if (header->blockId () >= 3 && 
            header->blockId () <= 10) {
 
-    Block3to10* block3to10 = new Block3to10 (block) ;
+    Gvar::Block3to10* block3to10 = new Gvar::Block3to10 (block) ;
     uint16_t* data;
-    LineDoc* lineDoc;
+    Gvar::LineDoc* lineDoc;
   
     data = block3to10->getData();
     lineDoc = block3to10->getLineDoc() ;
@@ -262,15 +247,10 @@ int main(int argc, char* argv[]) {
 
   struct Flag *vip;
 
-  char *ipaddr; // server ip address
-  char *cport;  // char point for server port
-  int iport;  // port number
+  // Catch Signals for the daemon
+  if (signal(SIGINT, sig_handler) == SIG_ERR)
+    G_fatal_error("Can't catch SIGINT");
 
-  // following two are set to continue stream scanlines
-  int channelNo = 1; // default channel
-  int num_of_rows = 1000000; // default rows
-
- // G_debug(2,"Starting");
   G_gisinit(prog_name = argv[0]);
   module = G_define_module();
   module->keywords = strdup("raster, GOES, download");
@@ -311,7 +291,7 @@ int main(int argc, char* argv[]) {
 
   /* Flags */
   vip = G_define_flag();
-  vip->key = 'v';
+  vip->key = 'V';
   vip->description = strdup("VIP File Format");
 
   if (G_parser(argc, argv))
@@ -320,103 +300,83 @@ int main(int argc, char* argv[]) {
   /* flags */
   verbose = !quiet->answer;
 
-  if (nserver->answer && nport->answer ) {
-    Gvar::Stream* gvar;
+  Gvar::IO *gvar;
 
-    /* stores options and flags parser */
-    ipaddr = nserver->answer;
-    cport = nport->answer;
+  if (nserver->answer && nport->answer ) {
+    char *ipaddr = nserver->answer;
+    char *cport = nport->answer;
     
     // convert to int
-    iport = atoi(cport); 
+    int iport = atoi(cport); 
     
     // Start initial
     cout << "Server: "<< ipaddr << endl;
     cout << "Port: " << iport << endl;
-    gvar = new Gvar::Stream(ipaddr, iport);
+    Gvar::Stream* gvars = new Gvar::Stream(ipaddr, iport);
 
-    grasswriterLib* grasswriter = new grasswriterLib();
-    while (true) { 
-      bool succeed = gvar->listen();
-      while (succeed && 
-	 (num_of_rows == 0 || 
-	  (grasswriter->getNumOfRowsPerChannel(channelNo - 1) < num_of_rows)
-	  )
-	 ) {
-	Block *block = gvar->readBlock();
-	  
-	if (block == NULL) {
-	  succeed = false ;
-	} else {
-	    grasswriter->write(block);
-	  }
-	}
-      
-      if (num_of_rows != 0 &&
-	  (grasswriter->getNumOfRowsPerChannel(channelNo - 1) >= num_of_rows)
-	  ) {
-	  break ;
-	}
-      gvar->close () ;
-      sleep (10) ;
-    }    
-    gvar->close () ;
-
-    delete gvar ;
-    delete grasswriter ;
-    cout << "Done"<<endl;
+    bool succeed = gvars->listen();
+    if (! succeed) {
+	gvars->close();
+	G_fatal_error ("Can't open Socket");
+      }
+    gvar = gvars;
   } else if (ninfile->answer) {
-
-    Gvar::Block *last[4];
-    Block0Doc *scan = NULL;
-    Block0Doc *frame = NULL;
     char *infile = ninfile->answer;
-    Gvar::File* gvar = new Gvar::File(infile);
-    
+    Gvar::File* gvarf = new Gvar::File(infile);
     if (vip->answer) {
-      gvar->readVIPHeader();
+      G_message("Reading VIP Header");
+      gvarf->readVIPHeader();
     }
-    int count = 0;
-    Header *header;
-    while ( (header = gvar->readHeader()) ) {
-      Block *block = gvar->readBlock(header);
-      int id=header->blockId();
-      if ( block->crc16_ok() )  { // Good
-	if (id == 0) {
-	  Block0 *block0 = new Block0(block);
-	  scan = block0->getBlock0Doc();
-	  if ((frame == (Block0Doc *)NULL) || 
-	      (scan->frame() != frame->frame())) {
-	    frame=scan;
-	    std::cout << "Start new frame: " << frame->frame() << endl;
-	    newFrame(block,frame);
+    gvar=gvarf;
+  } else {
+  G_fatal_error("Either include a filename, or an address and port");
+  }
+
+  Gvar::Block *last[4];
+  Gvar::Block0Doc *scan = NULL;
+  Gvar::Block0Doc *frame = NULL;
+  Gvar::Header *header;
+
+  while ( header = gvar->readHeader() ) {
+    // header->print(cout);
+    Gvar::Block *block = gvar->readBlock(header);
+    int id=header->blockId();
+    if ( block->crc16_ok() )  { // Good
+      if (id == 0) {
+     	Gvar::Block0 *block0 = new Gvar::Block0(block);
+     	scan = block0->getBlock0Doc();
+	if ( (frame == (Gvar::Block0Doc *)NULL) || 
+	     (scan->frame() != frame->frame()) ) {
+	  if (frame != (Gvar::Block0Doc *)NULL) {
+	    closeFrame();
 	  }
-	  //	  std::cerr << scan->aScanCount() << endl;
-	} else if (frame != (Block0Doc *)NULL) {
-	  if (id <=2) {
-	    write(block);
-	    last[id]=block;
-	  } else if (id >= 3 && id <= 10) {
-	    write(block);
-	    last[3]=block;
-	  }
+	  frame=scan;
+	  // G_important_message(_("Start new frame: <%d>"),frame->frame());
+	  newFrame(block,frame);
 	}
-      } else {
-	if ( frame != (Block0Doc *)NULL) {
-	  std::cerr << "Bad Block:"<<header->blockId()<<" Frame:"<<scan->frame()<<" ScanCnt:"<<scan->aScanCount()<< endl;
-	  if (id==1 || id == 2) {
-	    write(last[id]);
-	  } else if (id <= 10) {
-	    write(last[3]);
-	  }
+	G_debug(4,_("Scan <%d>"),scan->aScanCount());
+      } else if (frame != (Gvar::Block0Doc *)NULL) {
+     	if (id <=2) {
+     	  write(block);
+     	  last[id]=block;
+     	} else if (id >= 3 && id <= 10) {
+     	  write(block);
+     	  last[3]=block;
+     	}
+      }
+    } else {
+      if ( frame != (Gvar::Block0Doc *)NULL) {
+	G_message(_("Bad Block: <%d> Frame: <%d> Scan:<%d>"),
+		  header->blockId(),scan->frame(),scan->aScanCount());
+	if (id==1 || id == 2) {
+	  write(last[id]);
+	} else if (id <= 10) {
+	  write(last[3]);
 	}
       }
     }
-    std::cerr << "Closing Frame" << endl;
-    closeFrame();
-    gvar->close();
-  } else {
-    G_fatal_error("Either include a filename, or an address and port");
   }
+  closeFrame();
+  gvar->close();
   exit(EXIT_SUCCESS);
-} 
+}
