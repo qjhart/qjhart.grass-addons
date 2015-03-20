@@ -62,7 +62,8 @@ compile the grass add-ons.
 ```
 #!bash
 # First get the grass source
-yumdownloader --source grass
+version=6.4.1
+yumdownloader --source grass-${version}
 #Setup your build environment ( this uses home directory)
 sudo yum install rpm-build redhat-rpm-config
 mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
@@ -85,7 +86,8 @@ GRASS_ADDON_PATH.
 
 ```
 #!bash
-GH=~/rpmbuild/BUILD/grass-6.4.1
+version=6.4.1
+GH=~/rpmbuild/BUILD/grass-${version}
 GHLIB=/usr/lib64
 GRASS_ADDON=~/grass
 mkdir -p ${GRASS_ADDON}/bin ${GRASS_ADDON}/scripts
