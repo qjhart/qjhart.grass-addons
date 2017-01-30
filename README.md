@@ -4,6 +4,10 @@ These are a number of grass commands that can be used for various
 purposes.  Most of these are used for the CIMIS program, but they are
 general enough to be used for other reasons.
 
+In particular, the Spatial CIMIS program uses the r.solpos and
+r.in.gvar programs.
+
+
 ## Compiling
 
 Each of the directories in the grass-addons source need to be compiled
@@ -35,10 +39,12 @@ make GRASS_HOME=. MODULE_TOPDIR=${GH} DISTDIR=${GRASS_ADDON} ARCH_DISTDIR=${GRAS
      ARCH_INC=-I${GH}/include ARCH_LIBDIR=${GHLIB} cmd
 ```
 
-Then add those paths to your environment, (like in your .bashrc file eg.) when running grass.
+Then add those paths to your environment, (like in your .bashrc file
+eg.) when running grass, to add these paths to your system.
+GRASS_ADDON_PATH is a standard GRASS environmental variable, the
+Spatial CIMIS program uses the GRASS_ADDON_ETC variable
 
-```
-#!bash
+``` bash
 export GRASS_ADDON_PATH=${GRASS_ADDON}/bin:${GRASS_ADDON}/scripts
 export GRASS_ADDON_ETC=${GRASS_ADDON}/etc
 ```
@@ -50,14 +56,15 @@ sufficient to compile grass add-ons, as some of the development files
 are missing from the installation, see for example,
 (https://bugzilla.redhat.com/show_bug.cgi?format=multiple&id=855524
 Bug 855524).  This includes the architecture specific grass makefiles
-used when compiling the grass code.  Therefore grass must be compiled
-from source.  There are many online documents on compiling source RPM
-packages, including: (http://wiki.centos.org/HowTos/RebuildSRPM
-HowTos/RebuildSRPM), which can be investigated.  Even though grass
-needs to be compiled to install the add-ons.  The standard grass RPMs
-can be used for the operation.  That is, the compilation of grass
-below, is simply used to create the files needed to successfully
-compile the grass add-ons.
+used when compiling the grass code.  This is the case at leat up through 6.4.4.  You can verify by trying to build an extension, eg. `g.extension operation=add extension=r.area`.  You see that the Makefiles are missing.
+
+Therefore grass must be compiledfrom source.  There are many online
+documents on compiling source RPM packages, including:
+(http://wiki.centos.org/HowTos/RebuildSRPM HowTos/RebuildSRPM), which
+can be investigated.  Even though grass needs to be compiled to
+install the add-ons.  The standard grass RPMs can be used for the
+operation.  That is, the compilation of grass below, is simply used to
+create the files needed to successfully compile the grass add-ons.
 
 ```
 #!bash
@@ -86,13 +93,13 @@ GRASS_ADDON_PATH.
 
 ```
 #!bash
-version=6.4.1
+version=6.4.4
 GH=~/rpmbuild/BUILD/grass-${version}
 GHLIB=/usr/lib64
 GRASS_ADDON=~/grass
 mkdir -p ${GRASS_ADDON}/bin ${GRASS_ADDON}/scripts
-make GRASS_HOME=. MODULE_TOPDIR=${GH} DISTDIR=${GRASS_ADDON} ARCH_DISTDIR=${GRASS_ADDON} \
-     ARCH_INC=-I${GH}/include ARCH_LIBDIR=${GHLIB} cmd 
+make GRASS_HOME=. MODULE_TOPDIR=${GH} DISTDIR=${GRASS_ADDON} \
+ ARCH_DISTDIR=${GRASS_ADDON} ARCH_INC=-I${GH}/include ARCH_LIBDIR=${GHLIB} cmd 
 ```
 
 ### Debian
